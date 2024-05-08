@@ -2,16 +2,16 @@ import styled from 'styled-components';
 
 const MainButton = styled.button`
 	padding: 9px;
-	background-color: #184e77;
+	background-color: ${(props) => props.theme.colors.buttons.primary.default};
 	margin-right: 15px;
 	border-radius: 5px;
 	border: none;
-	color: white;
-	font-size: 18px;
+	color: ${(props) => props.theme.colors.buttons.primary.text};
+	font-size: ${(props) => props.theme.fonts.buttons.primary.fontSize};
 	cursor: grab;
 
 	&:hover {
-		background-color: #0e2c44;
+		background-color: ${(props) => props.theme.colors.buttons.primary.active};
 	}
 `;
 
