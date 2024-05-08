@@ -1,34 +1,16 @@
 'use client';
+import styles from './top-navigation.module.scss';
 
 export default function TopNavigation() {
 	return (
-		<nav
-			style={{
-				width: '100%',
-				height: '60px',
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'space-between',
-				padding: '15px',
-				color: 'white',
-				fontWeight: '400',
-				fontSize: '18px',
-				background: `linear-gradient(
-			to right,
-			transparent,
-			#1A759F
-		)
-		#76C893`,
-			}}>
-			<div className="left">
+		<nav className={styles.navigationContainer}>
+			<div>
 				<img
 					src="#"
-					style={{ width: '30px', height: '30px', marginRight: '15px' }}
+					className={styles.logo}
 				/>
 			</div>
-			<div
-				className="right"
-				style={{ display: 'flex', alignItems: 'center' }}>
+			<div className={styles.profileContainer}>
 				<button
 					style={{
 						padding: '9px',
@@ -41,15 +23,7 @@ export default function TopNavigation() {
 					}}>
 					Create a design
 				</button>
-				<img
-					src="#"
-					style={{
-						width: '30px',
-						height: '30px',
-						marginLeft: '15px',
-						borderRadius: '50%',
-					}}
-				/>
+				<img src="#" />
 			</div>
 		</nav>
 	);
