@@ -1,0 +1,31 @@
+.dashboardContainer {
+	height: 75vh;
+
+	.noProjects {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		margin: auto 0;
+
+		img {
+			width: 300px;
+			height: 200px;
+			margin: 25px 0;
+		}
+
+		span {
+			color: #1a759f;
+			margin-bottom: 25px;
+
+			&.title {
+				font-size: 24px;
+			}
+
+			&.subTitle {
+				font-size: 18px;
+			}
+		}
+	}
+}
