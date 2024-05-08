@@ -1,4 +1,5 @@
 'use client';
+import Button from './button';
 import styles from './dashboard.module.scss';
 
 const projects = [];
@@ -14,18 +15,7 @@ export default function Dashboard() {
 					<span className={styles.subTitle}>
 						Click the button below and get started.
 					</span>
-					<button
-						style={{
-							padding: '9px',
-							backgroundColor: '#184E77',
-							marginRight: '15px',
-							borderRadius: '5px',
-							border: 'none',
-							color: 'white',
-							fontSize: '18px',
-						}}>
-						Create a design
-					</button>
+					<Button />
 				</div>
 			) : (
 				<div>Woohoo! There are projects!</div>
