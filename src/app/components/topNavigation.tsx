@@ -31,10 +31,13 @@ export default function TopNavigation() {
 				style={{ display: 'flex', alignItems: 'center' }}>
 				<button
 					style={{
-						padding: '7px',
+						padding: '9px',
 						backgroundColor: '#184E77',
 						marginRight: '15px',
 						borderRadius: '5px',
+						border: 'none',
+						color: 'white',
+						fontSize: '18px',
 					}}>
 					Create a design
 				</button>

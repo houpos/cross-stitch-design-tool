@@ -1,5 +1,4 @@
 import Dashboard from './components/dashboard';
-import Footer from './components/footer';
 import TopNavigation from './components/topNavigation';
 
 export default function Home() {
@@ -7,7 +6,6 @@ export default function Home() {
 		<>
 			<TopNavigation />
 			<Dashboard />
-			<Footer />
 		</>
 	);
 }
