@@ -1,8 +1,50 @@
 'use client';
 import Button from './button';
+import Cards from './cards';
 import styles from './dashboard.module.scss';
 
-const projects = [];
+const projects = [
+	{
+		title: 'First Project',
+		height: '8',
+		width: '8',
+	},
+	{
+		title: 'Second Project',
+		height: '8',
+		width: '8',
+	},
+	{
+		title: 'Third Project',
+		height: '8',
+		width: '8',
+	},
+	{
+		title: 'Fourth Project',
+		height: '8',
+		width: '8',
+	},
+	{
+		title: 'Fifth Project',
+		height: '8',
+		width: '8',
+	},
+	{
+		title: 'Sixth Project',
+		height: '8',
+		width: '8',
+	},
+	{
+		title: 'Seventh Project',
+		height: '8',
+		width: '8',
+	},
+	{
+		title: 'Eigth Project',
+		height: '8',
+		width: '8',
+	},
+];
 export default function Dashboard() {
 	return (
 		<main className={styles.dashboardContainer}>
@@ -18,7 +60,7 @@ export default function Dashboard() {
 					<Button />
 				</div>
 			) : (
-				<div>Woohoo! There are projects!</div>
+				<Cards projects={projects} />
 			)}
 		</main>
 	);
