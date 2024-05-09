@@ -10,7 +10,11 @@ export default function Cards({ projects }: CardsProps) {
 	return (
 		<CardContainer>
 			{projects.map((project) => (
-				<Card title={project.title} />
+				<Card
+					key={project.id}
+					id={project.id}
+					title={project.title}
+				/>
 			))}
 		</CardContainer>
 	);

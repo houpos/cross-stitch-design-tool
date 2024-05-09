@@ -27,6 +27,7 @@ export const CardWithImageAndTitle = styled.div`
 	overflow: hidden;
 	max-width: 445px;
 	box-shadow: 2px 2px 5px lightgray;
+	cursor: grab;
 
 	.cardHeader {
 		width: 100%;
