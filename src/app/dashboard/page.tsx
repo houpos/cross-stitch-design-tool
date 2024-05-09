@@ -1,8 +1,8 @@
 'use client';
 import { Project } from '../types';
-import Button from './button';
-import Cards from './cards';
-import styles from './dashboard.module.scss';
+import Button from '../components/button';
+import Cards from '../components/cards';
+import styles from './page.module.scss';
 
 const projects: Project[] = [
 	{
