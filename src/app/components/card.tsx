@@ -8,7 +8,7 @@ type CardProps = {
 
 export default function Card({ id, title }: CardProps) {
 	return (
-		<Link href={`/project/${id}`}>
+		<Link href={`/projects/${id}`}>
 			<CardWithImageAndTitle>
 				<div className="cardHeader">
 					<img src="/placholder.png" />
