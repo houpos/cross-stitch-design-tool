@@ -1,5 +1,16 @@
 import MainButton from '../styles/buttons';
 
-export default function Button() {
-	return <MainButton type="button"> Create a design</MainButton>;
+type ButtonProps = {
+	handleClick: () => void;
+};
+
+export default function Button({ handleClick }: ButtonProps) {
+	return (
+		<MainButton
+			type="button"
+			onClick={() => handleClick()}>
+			{' '}
+			Create a design
+		</MainButton>
+	);
 }

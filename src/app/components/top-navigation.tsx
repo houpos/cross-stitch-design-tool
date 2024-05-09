@@ -1,4 +1,3 @@
-'use client';
 import Button from './button';
 import styles from './top-navigation.module.scss';
 
@@ -12,7 +11,7 @@ export default function TopNavigation() {
 				/>
 			</div>
 			<div className={styles.profileContainer}>
-				<Button />
+				<Button handleClick={() => console.log('button clicked')} />
 				<img src="#" />
 			</div>
 		</nav>
