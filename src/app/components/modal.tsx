@@ -4,8 +4,9 @@ import CreateDesignForm from './create-design-form';
 
 export default function Modal({ show }: { show: boolean }) {
 	const dialogRef = useRef<HTMLDialogElement>(null);
+
 	useEffect(() => {
-		if (dialogRef.current?.open && !show) {
+		if (!show) {
 			dialogRef.current?.close();
 		} else if (!dialogRef.current?.open && show) {
 			dialogRef.current?.showModal();
@@ -15,13 +16,15 @@ export default function Modal({ show }: { show: boolean }) {
 		<dialog
 			ref={dialogRef}
 			className={styles.createDesignModal}>
-			<div className={styles.top}>
-				<span>Create a design</span>
-				<button>
-					<span>x</span>
-				</button>
+			<div>
+				<div className={styles.top}>
+					<span>Create a design</span>
+					<button>
+						<span>x</span>
+					</button>
+				</div>
+				<CreateDesignForm />
 			</div>
-			<CreateDesignForm />
 		</dialog>
 	);
 }
