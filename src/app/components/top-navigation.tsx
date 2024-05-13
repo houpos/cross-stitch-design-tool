@@ -11,7 +11,10 @@ export default function TopNavigation() {
 				/>
 			</div>
 			<div className={styles.profileContainer}>
-				<Button handleClick={() => console.log('button clicked')} />
+				<Button
+					handleClick={() => console.log('button clicked')}
+					title="Create a design"
+				/>
 				<img src="#" />
 			</div>
 		</nav>

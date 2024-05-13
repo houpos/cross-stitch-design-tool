@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { ButtonColorProps } from './types';
 
-export const ButtonWithText = styled.button<{ colors: ButtonColorProps }>`
+export const ButtonWithText = styled.button<{
+	colors?: ButtonColorProps | undefined;
+}>`
 	font-size: ${(props) => props.theme.fonts.buttons.primary.fontSize};
 	border: none;
 	border-radius: 5px;

@@ -4,8 +4,8 @@ import { ButtonWithText } from '../../styles/buttons';
 
 type ButtonProps = {
 	title: string;
-	type: 'button' | 'submit' | 'reset';
-	colors: ButtonColorProps;
+	type?: 'submit' | 'reset';
+	colors?: ButtonColorProps | undefined;
 	handleClick: () => void;
 };
 
@@ -18,7 +18,7 @@ export default function Button({
 	return (
 		<ButtonWithText
 			colors={colors}
-			type={type}
+			type={type || 'button'}
 			onClick={() => handleClick()}>
 			<span>{title}</span>
 		</ButtonWithText>
