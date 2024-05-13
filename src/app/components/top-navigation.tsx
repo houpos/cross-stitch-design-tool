@@ -1,4 +1,4 @@
-import Button from './button';
+import Button from './buttons/button';
 import styles from './top-navigation.module.scss';
 
 export default function TopNavigation() {

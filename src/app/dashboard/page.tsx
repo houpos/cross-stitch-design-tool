@@ -1,6 +1,6 @@
 'use client';
 import { Project } from '../types';
-import Button from '../components/button';
+import Button from '../components/buttons/button';
 import Cards from '../components/cards';
 import styles from './page.module.scss';
 import { useState } from 'react';
@@ -77,7 +77,10 @@ export default function Dashboard() {
 						<span className={styles.subTitle}>
 							Click the button below and get started.
 						</span>
-						<Button handleClick={handleClick} />
+						<Button
+							title="Create a design"
+							handleClick={handleClick}
+						/>
 					</div>
 				) : (
 					<Cards projects={projects} />

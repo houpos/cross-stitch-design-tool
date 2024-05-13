@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import styles from './modal.module.scss';
 import CreateDesignForm from './create-design-form';
+import CancelButton from './buttons/cancel-button';
 
 export default function Modal({ show }: { show: boolean }) {
 	const dialogRef = useRef<HTMLDialogElement>(null);
@@ -19,9 +20,7 @@ export default function Modal({ show }: { show: boolean }) {
 			<div>
 				<div className={styles.top}>
 					<span>Create a design</span>
-					<button>
-						<span>x</span>
-					</button>
+					<CancelButton />
 				</div>
 				<CreateDesignForm />
 			</div>

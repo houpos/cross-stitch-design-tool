@@ -28,27 +28,6 @@
 				font-size: 24px;
 				font-weight: 400;
 			}
-
-			button {
-				font-size: 34px;
-				border: none;
-				color: 184e77;
-				background: #d9ed92;
-				text-align: center;
-				width: 45px;
-				height: 45px;
-				border-radius: 100%;
-				display: inline-flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				text-decoration: none;
-				line-height: 1.5;
-
-				&:hover {
-					background: #b5e48c;
-				}
-			}
 		}
 	}
 }

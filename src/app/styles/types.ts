@@ -1,3 +1,9 @@
+export type ButtonTypes = {
+	default: string;
+	active: string;
+	text: string;
+};
+
 export type Theme = {
 	fonts: {
 		buttons: {
@@ -8,11 +14,8 @@ export type Theme = {
 	};
 	colors: {
 		buttons: {
-			primary: {
-				default: string;
-				active: string;
-				text: string;
-			};
+			primary: ButtonTypes;
+			cancel: ButtonTypes;
 		};
 	};
 };
