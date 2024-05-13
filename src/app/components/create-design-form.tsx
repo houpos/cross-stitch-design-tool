@@ -1,5 +1,17 @@
+import { useTheme } from 'styled-components';
 import styles from './create-design-form.module.scss';
-export default function CreateDesignForm() {
+import Button from './buttons/button';
+
+export default function CreateDesignForm({
+	handleCloseModal,
+}: {
+	handleCloseModal: () => void;
+}) {
+	const theme = useTheme();
+	const handleCreate = () => {
+		console.log('create!');
+	};
+
 	return (
 		<form
 			method="dialog"
@@ -30,17 +42,18 @@ export default function CreateDesignForm() {
 				</select>
 			</div>
 			<div className={styles.buttonContainer}>
-				<button
+				<Button
 					type="submit"
-					className={styles.create}>
-					Create
-				</button>
-				<button
-					id="cancel"
+					title="Create"
+					colors={theme.colors.buttons.primary}
+					handleClick={handleCreate}
+				/>
+				<Button
 					type="reset"
-					className={styles.cancel}>
-					Cancel
-				</button>
+					title="Cancel"
+					colors={theme.colors.buttons.cancel}
+					handleClick={handleCloseModal}
+				/>
 			</div>
 		</form>
 	);
