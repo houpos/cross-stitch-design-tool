@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ButtonTypes } from './types';
+import { ButtonColorProps } from './types';
 
 export const ButtonWithText = styled.button`
 	font-size: ${(props) => props.theme.fonts.buttons.primary.fontSize};
@@ -18,11 +18,11 @@ export const ButtonWithText = styled.button`
 `;
 
 export const RoundButton = styled(ButtonWithText)<{
-	buttonProperties: ButtonTypes;
+	buttonColors: ButtonColorProps;
 }>`
 	font-size: 34px;
-	color: ${(props) => props.buttonProperties.text};
-	background: ${(props) => props.buttonProperties.default};
+	color: ${(props) => props.buttonColors.text};
+	background: ${(props) => props.buttonColors.default};
 	padding: 0px;
 	border-radius: 100%;
 	width: 45px;
@@ -33,6 +33,6 @@ export const RoundButton = styled(ButtonWithText)<{
 	align-items: center;
 
 	&:hover {
-		background-color: ${(props) => props.buttonProperties.active};
+		background-color: ${(props) => props.buttonColors.active};
 	}
 `;
