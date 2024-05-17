@@ -2,7 +2,7 @@
 import { ThemeProvider } from 'styled-components';
 import theme from '../styles/theme';
 import TopNavigation from '../components/top-navigation';
-import { ProjectContextProvider } from '../contexts/context';
+import { ContextProvider } from '../contexts/context';
 
 export default function ProjectsLayout({
 	children,
@@ -11,10 +11,10 @@ export default function ProjectsLayout({
 }>) {
 	return (
 		<ThemeProvider theme={theme}>
-			<ProjectContextProvider>
+			<ContextProvider>
 				<TopNavigation />
 				{children}
-			</ProjectContextProvider>
+			</ContextProvider>
 		</ThemeProvider>
 	);
 }

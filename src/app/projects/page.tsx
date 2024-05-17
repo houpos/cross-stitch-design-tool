@@ -6,17 +6,17 @@ import styles from './page.module.scss';
 import { useEffect, useState } from 'react';
 import Modal from '../components/modal';
 import { useRouter } from 'next/navigation';
-import { ProjectActionType, useProjectContext } from '../contexts/context';
+import { ActionType, useAppContext } from '../contexts/context';
 import { projects } from '../data/projects';
 
 export default function Dashboard() {
 	const router = useRouter();
-	const { state, dispatch } = useProjectContext();
+	const { state, dispatch } = useAppContext();
 	const [showModal, setShowModal] = useState(false);
 
 	useEffect(() => {
 		if (!state || state?.allProjects.length === 0) {
-			dispatch({ type: ProjectActionType.ADD_INITIAL, payload: projects });
+			dispatch({ type: ActionType.ADD_INITIAL, payload: projects });
 			return;
 		}
 

@@ -1,10 +1,10 @@
 'use client';
-import { useProjectContext } from '@/app/contexts/context';
+import { useAppContext } from '@/app/contexts/context';
 import { Project } from '@/app/types';
 import { useEffect, useState } from 'react';
 
 export default function CurrentProject() {
-	const { state, dispatch } = useProjectContext();
+	const { state, dispatch } = useAppContext();
 	const [currentProject, setCurrentProject] = useState<Project | null>(null);
 
 	useEffect(() => {
@@ -17,7 +17,6 @@ export default function CurrentProject() {
 	return (
 		<>
 			<h1>{currentProject.title}</h1>
-
 			<div>
 				Dimensions: {currentProject.height} x {currentProject.width}
 			</div>

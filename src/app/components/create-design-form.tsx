@@ -4,7 +4,7 @@ import Button from './buttons/button';
 import { Project } from '../types';
 import { useState } from 'react';
 import { availableProjectGridDimensions } from '../data/projects';
-import { ProjectActionType, useProjectContext } from '../contexts/context';
+import { ActionType, useAppContext } from '../contexts/context';
 
 export default function CreateDesignForm({
 	handleClose,
@@ -12,7 +12,7 @@ export default function CreateDesignForm({
 	handleClose: () => void;
 }) {
 	const theme = useTheme();
-	const { dispatch } = useProjectContext();
+	const { dispatch } = useAppContext();
 	const [title, setTitle] = useState<string>('Your project title');
 	const [dimensionsIndex, setDimensionsIndex] = useState(0);
 
@@ -24,7 +24,7 @@ export default function CreateDesignForm({
 			width: availableProjectGridDimensions[dimensionsIndex].width,
 		};
 
-		dispatch({ type: ProjectActionType.ADD_PROJECT, payload: project });
+		dispatch({ type: ActionType.ADD_PROJECT, payload: project });
 		handleClose();
 	};
 
