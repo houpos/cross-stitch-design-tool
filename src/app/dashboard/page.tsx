@@ -5,6 +5,7 @@ import Cards from '../components/cards';
 import styles from './page.module.scss';
 import { useState } from 'react';
 import Modal from '../components/modal';
+import { useRouter } from 'next/navigation';
 
 const projects: Project[] = [];
 // const projects: Project[] = [
@@ -58,10 +59,16 @@ const projects: Project[] = [];
 // 	},
 // ];
 export default function Dashboard() {
+	const router = useRouter();
 	const [showModal, setShowModal] = useState(false);
 
 	const handleClick = () => {
 		setShowModal(true);
+	};
+
+	const handleProjectCreation = (project: Project) => {
+		console.log('create project!', project);
+		router.push(`/projects/${project.id}`);
 	};
 
 	return (
@@ -69,6 +76,7 @@ export default function Dashboard() {
 			<Modal
 				isShowing={showModal}
 				willClose={() => setShowModal(false)}
+				willSubmit={handleProjectCreation}
 			/>
 			<main className={styles.dashboardContainer}>
 				{projects.length === 0 ? (
