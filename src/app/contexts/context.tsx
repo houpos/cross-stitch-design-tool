@@ -13,7 +13,9 @@ type ProjectState = {
 	currentProject: Project | null;
 };
 
-type Action = { type: ProjectActionType.ADD_INITIAL; payload: Project[] };
+type Action =
+	| { type: ProjectActionType.ADD_INITIAL; payload: Project[] }
+	| { type: ProjectActionType.ADD_PROJECT; payload: Project };
 
 const initialState: ProjectState = {
 	allProjects: [],
@@ -27,6 +29,11 @@ const reducer = (state: ProjectState, action: Action): ProjectState => {
 			return {
 				...state,
 				allProjects: action.payload,
+			};
+		case ProjectActionType.ADD_PROJECT:
+			return {
+				currentProject: action.payload,
+				allProjects: [...state.allProjects, action.payload],
 			};
 		default:
 			return state;

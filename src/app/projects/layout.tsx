@@ -2,7 +2,7 @@
 import { ThemeProvider } from 'styled-components';
 import theme from '../styles/theme';
 import TopNavigation from '../components/top-navigation';
-import { ProjectContextProvider } from '../contexts/project-context';
+import { ProjectContextProvider } from '../contexts/context';
 
 export default function ProjectsLayout({
 	children,
