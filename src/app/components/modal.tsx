@@ -4,20 +4,26 @@ import styles from './modal.module.scss';
 import CreateDesignForm from './create-design-form';
 import CancelButton from './buttons/cancel-button';
 
-export default function Modal({ show }: { show: boolean }) {
+type ModalProps = {
+	isShowing: boolean;
+	willClose: () => void;
+};
+
+export default function Modal({ isShowing, willClose }: ModalProps) {
 	const dialogRef = useRef<HTMLDialogElement>(null);
 
 	const handleClose = () => {
 		dialogRef.current?.close();
+		willClose();
 	};
 
 	useEffect(() => {
-		if (!show) {
+		if (!isShowing) {
 			dialogRef.current?.close();
-		} else if (!dialogRef.current?.open && show) {
+		} else if (!dialogRef.current?.open && isShowing) {
 			dialogRef.current?.showModal();
 		}
-	}, [show]);
+	}, [isShowing]);
 	return (
 		<dialog
 			ref={dialogRef}

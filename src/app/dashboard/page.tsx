@@ -66,7 +66,10 @@ export default function Dashboard() {
 
 	return (
 		<>
-			<Modal show={showModal} />
+			<Modal
+				isShowing={showModal}
+				willClose={() => setShowModal(false)}
+			/>
 			<main className={styles.dashboardContainer}>
 				{projects.length === 0 ? (
 					<div className={styles.noProjects}>
