@@ -3,64 +3,25 @@ import { Project } from '../types';
 import Button from '../components/buttons/button';
 import Cards from '../components/cards';
 import styles from './page.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from '../components/modal';
 import { useRouter } from 'next/navigation';
+import {
+	ProjectActionType,
+	useProjectContext,
+} from '../contexts/project-context';
+import { projects } from '../data/projects';
 
-const projects: Project[] = [];
-// const projects: Project[] = [
-// 	{
-// 		id: '1',
-// 		title: 'First Project',
-// 		height: '8',
-// 		width: '8',
-// 	},
-// 	{
-// 		id: '2',
-// 		title: 'Second Project',
-// 		height: '8',
-// 		width: '8',
-// 	},
-// 	{
-// 		id: '3',
-// 		title: 'Third Project',
-// 		height: '8',
-// 		width: '8',
-// 	},
-// 	{
-// 		id: '4',
-// 		title: 'Fourth Project',
-// 		height: '8',
-// 		width: '8',
-// 	},
-// 	{
-// 		id: '5',
-// 		title: 'Fifth Project',
-// 		height: '8',
-// 		width: '8',
-// 	},
-// 	{
-// 		id: '6',
-// 		title: 'Sixth Project',
-// 		height: '8',
-// 		width: '8',
-// 	},
-// 	{
-// 		id: '7',
-// 		title: 'Seventh Project',
-// 		height: '8',
-// 		width: '8',
-// 	},
-// 	{
-// 		id: '8',
-// 		title: 'Eigth Project',
-// 		height: '8',
-// 		width: '8',
-// 	},
-// ];
 export default function Dashboard() {
 	const router = useRouter();
+	const { state, dispatch } = useProjectContext();
 	const [showModal, setShowModal] = useState(false);
+
+	useEffect(() => {
+		if (!state || state?.allProjects.length === 0) {
+			dispatch({ type: ProjectActionType.ADD_INITIAL, payload: projects });
+		}
+	}, [state]);
 
 	const handleClick = () => {
 		setShowModal(true);
@@ -79,7 +40,7 @@ export default function Dashboard() {
 				willSubmit={handleProjectCreation}
 			/>
 			<main className={styles.dashboardContainer}>
-				{projects.length === 0 ? (
+				{state?.allProjects.length === 0 ? (
 					<div className={styles.noProjects}>
 						<img src="#" />
 						<span className={styles.title}>
@@ -94,7 +55,7 @@ export default function Dashboard() {
 						/>
 					</div>
 				) : (
-					<Cards projects={projects} />
+					<Cards projects={state.allProjects} />
 				)}
 			</main>
 		</>
