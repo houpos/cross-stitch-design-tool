@@ -4,17 +4,19 @@ import { ButtonColorProps } from './types';
 export const ButtonWithText = styled.button<{
 	colors?: ButtonColorProps | undefined;
 }>`
-	font-size: ${(props) => props.theme.fonts.buttons.primary.fontSize};
 	border: none;
 	border-radius: 5px;
-	color: ${(props) =>
-		props?.colors?.text || props.theme.colors.buttons.primary.text};
 	background: ${(props) =>
 		props?.colors?.default || props.theme.colors.buttons.primary.default};
 	padding: 9px;
-
 	margin-right: 15px;
 	cursor: grab;
+
+	> span {
+		font-size: ${(props) => props.theme.fonts.buttons.primary.fontSize};
+		color: ${(props) =>
+			props?.colors?.text || props.theme.colors.buttons.primary.text};
+	}
 
 	&:hover {
 		background: ${(props) =>
