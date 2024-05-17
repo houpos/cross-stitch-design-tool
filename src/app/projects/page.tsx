@@ -6,10 +6,7 @@ import styles from './page.module.scss';
 import { useEffect, useState } from 'react';
 import Modal from '../components/modal';
 import { useRouter } from 'next/navigation';
-import {
-	ProjectActionType,
-	useProjectContext,
-} from '../contexts/project-context';
+import { ProjectActionType, useProjectContext } from '../contexts/context';
 import { projects } from '../data/projects';
 
 export default function Dashboard() {
@@ -20,6 +17,11 @@ export default function Dashboard() {
 	useEffect(() => {
 		if (!state || state?.allProjects.length === 0) {
 			dispatch({ type: ProjectActionType.ADD_INITIAL, payload: projects });
+			return;
+		}
+
+		if (state.currentProject) {
+			router.push(`/projects/${state.currentProject.id}`);
 		}
 	}, [state]);
 
@@ -27,17 +29,11 @@ export default function Dashboard() {
 		setShowModal(true);
 	};
 
-	const handleProjectCreation = (project: Project) => {
-		console.log('create project!', project);
-		router.push(`/projects/${project.id}`);
-	};
-
 	return (
 		<>
 			<Modal
 				isShowing={showModal}
 				willClose={() => setShowModal(false)}
-				willSubmit={handleProjectCreation}
 			/>
 			<main className={styles.dashboardContainer}>
 				{state?.allProjects.length === 0 ? (

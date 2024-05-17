@@ -3,19 +3,13 @@ import { useEffect, useRef } from 'react';
 import styles from './modal.module.scss';
 import CreateDesignForm from './create-design-form';
 import CancelButton from './buttons/cancel-button';
-import { Project } from '../types';
 
 type ModalProps = {
 	isShowing: boolean;
 	willClose: () => void;
-	willSubmit: (project: Project) => void;
 };
 
-export default function Modal({
-	isShowing,
-	willClose,
-	willSubmit,
-}: ModalProps) {
+export default function Modal({ isShowing, willClose }: ModalProps) {
 	const dialogRef = useRef<HTMLDialogElement>(null);
 
 	const handleClose = () => {
@@ -39,10 +33,7 @@ export default function Modal({
 					<span>Create a design</span>
 					<CancelButton handleClick={handleClose} />
 				</div>
-				<CreateDesignForm
-					handleClose={handleClose}
-					handleSubmit={willSubmit}
-				/>
+				<CreateDesignForm handleClose={handleClose} />
 			</div>
 		</dialog>
 	);

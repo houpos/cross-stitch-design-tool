@@ -3,20 +3,16 @@ import styles from './create-design-form.module.scss';
 import Button from './buttons/button';
 import { Project } from '../types';
 import { useState } from 'react';
+import { availableProjectGridDimensions } from '../data/projects';
+import { ProjectActionType, useProjectContext } from '../contexts/context';
 
 export default function CreateDesignForm({
 	handleClose,
-	handleSubmit,
 }: {
 	handleClose: () => void;
-	handleSubmit: (project: Project) => void;
 }) {
 	const theme = useTheme();
-	const availableDimensions = [
-		{ height: '4', width: '4', display: '4 x 4' },
-		{ height: '6', width: '6', display: '6 x 6' },
-		{ height: '8', width: '8', display: '8 x 8' },
-	];
+	const { dispatch } = useProjectContext();
 	const [title, setTitle] = useState<string>('Your project title');
 	const [dimensionsIndex, setDimensionsIndex] = useState(0);
 
@@ -24,10 +20,12 @@ export default function CreateDesignForm({
 		const project: Project = {
 			id: 'project-1',
 			title,
-			height: availableDimensions[dimensionsIndex].height,
-			width: availableDimensions[dimensionsIndex].width,
+			height: availableProjectGridDimensions[dimensionsIndex].height,
+			width: availableProjectGridDimensions[dimensionsIndex].width,
 		};
-		handleSubmit(project);
+
+		dispatch({ type: ProjectActionType.ADD_PROJECT, payload: project });
+		handleClose();
 	};
 
 	return (
@@ -58,7 +56,7 @@ export default function CreateDesignForm({
 					name="projectDimensions"
 					value={dimensionsIndex}
 					onChange={(e) => setDimensionsIndex(parseInt(e.target?.value))}>
-					{availableDimensions.map((dimension, index) => (
+					{availableProjectGridDimensions.map((dimension, index) => (
 						<option
 							key={index}
 							value={index}>
