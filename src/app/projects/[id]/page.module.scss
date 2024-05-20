@@ -1,0 +1,80 @@
+.designContainer {
+	display: flex;
+	flex-direction: column;
+
+	.infoContainer {
+		display: flex;
+		flex-direction: row;
+		background: lightgray;
+		padding: 10px;
+		align-items: center;
+		justify-content: flex-start;
+
+		> * {
+			margin-right: 10px;
+		}
+
+		.currentColor {
+			width: 30px;
+			height: 30px;
+			border: 1px solid darkgray;
+			border-radius: 5px;
+		}
+	}
+
+	.creationContainer {
+		display: flex;
+		flex-direction: row;
+
+		.designGridContainer {
+			width: 80%;
+			margin: 30px;
+			border: 1px solid lightgray;
+			height: min-content;
+
+			.row {
+				display: flex;
+				flex-direction: row;
+				border: 1px solid lightgray;
+				border-style: none none solid none;
+
+				&:last-child {
+					border-style: none;
+				}
+			}
+
+			.cell {
+				width: 30px;
+				height: 30px;
+				margin: 0;
+				padding: 0;
+				border: 1px solid lightgray;
+				border-style: none none none solid;
+
+				&:first-child {
+					border-style: none;
+				}
+			}
+		}
+
+		.colorContainer {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			column-gap: 15px;
+			row-gap: 15px;
+			align-items: center;
+			justify-items: center;
+			min-height: 400px;
+			height: 100%;
+			overflow: hidden;
+			scroll-behavior: smooth;
+
+			.color {
+				width: 45px;
+				height: 45px;
+				border-radius: 100%;
+				border-style: double;
+			}
+		}
+	}
+}
