@@ -1,25 +1,36 @@
 import { createContext, useContext, useReducer } from 'react';
 import { Project } from '../types';
 
+export enum AppFlowActionType {
+	INIT = 'INIT',
+	LOG_IN = 'LOG_IN',
+	GO_TO_DASHBOARD = 'GO_TO_DASHBOARD',
+	VIEW_PROJECT = 'VIEW_PROJECT',
+}
+
 export enum ActionType {
 	ADD_PROJECT = 'ADD_PROJECT',
 	DELETE_PROJECT = 'DELETE_PROJECT',
 	EDIT_PROJECT = 'EDIT_PROJECT',
 	ADD_INITIAL = 'ADD_INITIAL',
+	SELECT_PROJECT = 'SELECT_PROJECT',
 }
 
 type AppState = {
 	allProjects: Project[];
 	currentProject: Project | null;
+	flowStep: AppFlowActionType;
 };
 
 type Action =
 	| { type: ActionType.ADD_INITIAL; payload: Project[] }
-	| { type: ActionType.ADD_PROJECT; payload: Project };
+	| { type: ActionType.ADD_PROJECT; payload: Project }
+	| { type: ActionType.SELECT_PROJECT; payload: string };
 
 const initialState: AppState = {
 	allProjects: [],
 	currentProject: null,
+	flowStep: AppFlowActionType.INIT,
 };
 
 const reducer = (state: AppState, action: Action): AppState => {
@@ -29,12 +40,27 @@ const reducer = (state: AppState, action: Action): AppState => {
 			return {
 				...state,
 				allProjects: action.payload,
+				flowStep: AppFlowActionType.GO_TO_DASHBOARD,
 			};
 		case ActionType.ADD_PROJECT:
 			return {
 				currentProject: action.payload,
 				allProjects: [...state.allProjects, action.payload],
+				flowStep: AppFlowActionType.VIEW_PROJECT,
 			};
+		case ActionType.SELECT_PROJECT:
+			const project: Project | undefined = state.allProjects.find(
+				(project) => project.id === action.payload
+			);
+
+			if (project) {
+				return {
+					...state,
+					currentProject: project,
+					flowStep: AppFlowActionType.VIEW_PROJECT,
+				};
+			}
+
 		default:
 			return state;
 	}

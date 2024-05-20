@@ -1,16 +1,13 @@
 'use client';
-import { Project } from '../types';
 import Button from '../components/buttons/button';
 import Cards from '../components/cards';
 import styles from './page.module.scss';
 import { useEffect, useState } from 'react';
 import Modal from '../components/modal';
-import { useRouter } from 'next/navigation';
 import { ActionType, useAppContext } from '../contexts/context';
 import { projects } from '../data/projects';
 
 export default function Dashboard() {
-	const router = useRouter();
 	const { state, dispatch } = useAppContext();
 	const [showModal, setShowModal] = useState(false);
 
@@ -18,10 +15,6 @@ export default function Dashboard() {
 		if (!state || state?.allProjects.length === 0) {
 			dispatch({ type: ActionType.ADD_INITIAL, payload: projects });
 			return;
-		}
-
-		if (state.currentProject) {
-			router.push(`/projects/${state.currentProject.id}`);
 		}
 	}, [state]);
 
