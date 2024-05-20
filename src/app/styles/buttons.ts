@@ -1,18 +1,46 @@
 import styled from 'styled-components';
+import { ButtonColorProps } from './types';
 
-const MainButton = styled.button`
-	padding: 9px;
-	background-color: ${(props) => props.theme.colors.buttons.primary.default};
-	margin-right: 15px;
-	border-radius: 5px;
+export const ButtonWithText = styled.button<{
+	colors?: ButtonColorProps | undefined;
+}>`
 	border: none;
-	color: ${(props) => props.theme.colors.buttons.primary.text};
-	font-size: ${(props) => props.theme.fonts.buttons.primary.fontSize};
+	border-radius: 5px;
+	background: ${(props) =>
+		props?.colors?.default || props.theme.colors.buttons.primary.default};
+	padding: 9px;
+	margin-right: 15px;
 	cursor: grab;
 
+	> span {
+		font-size: ${(props) => props.theme.fonts.buttons.primary.fontSize};
+		color: ${(props) =>
+			props?.colors?.text || props.theme.colors.buttons.primary.text};
+	}
+
 	&:hover {
-		background-color: ${(props) => props.theme.colors.buttons.primary.active};
+		background: ${(props) =>
+			props?.colors?.active || props.theme.colors.buttons.primary.active};
 	}
 `;
 
-export default MainButton;
+export const RoundButton = styled(ButtonWithText)`
+	font-size: 34px;
+	padding: 0px;
+	border-radius: 100%;
+	width: 45px;
+	height: 45px;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
+
+export const RoundCancelButton = styled(RoundButton)`
+	color: ${(props) => props.theme.colors.buttons.cancel.text};
+	background: ${(props) => props.theme.colors.buttons.cancel.default};
+
+	&:hover {
+		background: ${(props) => props.theme.colors.buttons.cancel.active};
+	}
+`;

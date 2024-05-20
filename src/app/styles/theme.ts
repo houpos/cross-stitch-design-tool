@@ -16,6 +16,11 @@ const theme: Theme = {
 				active: colors.darkBlue,
 				text: colors.white,
 			},
+			cancel: {
+				default: colors.mindaro,
+				active: colors.lightYellowGreen,
+				text: colors.indigoDye,
+			},
 		},
 	},
 };
