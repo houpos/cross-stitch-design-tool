@@ -1,6 +1,6 @@
 'use client';
 import { useAppContext } from '@/app/contexts/context';
-import { Project } from '@/app/types';
+import { Color, Project } from '@/app/types';
 import { useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import { dmcColors } from '@/app/data/colors';
@@ -9,13 +9,14 @@ export default function CurrentProject() {
 	const { state, dispatch } = useAppContext();
 	const [currentProject, setCurrentProject] = useState<Project | null>(null);
 	const [grid, setGrid] = useState<number[][]>();
+	const [currentColor, setCurrentColor] = useState<Color>(dmcColors[0]);
 
 	useEffect(() => {
 		if (state?.currentProject) {
 			setCurrentProject(state.currentProject);
 			let newGrid = [];
 			const stitchesPerInch = state.currentProject.width * 10;
-			for (let i = 0; i < state.currentProject.height; i++) {
+			for (let i = 0; i < stitchesPerInch; i++) {
 				const row = new Array(stitchesPerInch).fill(null);
 				newGrid.push(row);
 			}
@@ -32,36 +33,47 @@ export default function CurrentProject() {
 				<div>
 					{currentProject.height} x {currentProject.width}
 				</div>
-				<div className={styles.currentColor}></div>
+				<div
+					className={styles.currentColor}
+					style={{ background: currentColor.hex }}></div>
 			</div>
 			<div className={styles.creationContainer}>
 				<div className={styles.designGridContainer}>
-					{grid?.map((row, rowIdx) => {
-						return (
-							<div
-								className={styles.row}
-								key={rowIdx}>
-								{row.map((cell, cellIdx) => {
-									return (
-										<div
-											className={styles.cell}
-											key={cellIdx}
-										/>
-									);
-								})}
-							</div>
-						);
-					}) || <div>Loading ...</div>}
+					<table>
+						<caption>{currentProject.title} design</caption>
+						<tbody>
+							{grid?.map((row, rowIdx) => {
+								return (
+									<tr
+										className={styles.row}
+										key={rowIdx}>
+										{row.map((cell, cellIdx) => {
+											return (
+												<td className={styles.cell}>
+													<button
+														key={cellIdx}
+														role="button"
+														aria-label={`ce`}
+													/>
+												</td>
+											);
+										})}
+									</tr>
+								);
+							})}
+						</tbody>
+					</table>
 				</div>
 				<div className={styles.colorContainer}>
 					{dmcColors.map((color) => (
 						<button
 							className={styles.color}
-							id={color.dmcId}
-							key={color.dmcId}
+							id={color.id}
+							key={color.id}
 							aria-label={color.name}
 							role="button"
 							style={{ background: color.hex }}
+							onClick={() => setCurrentColor(color)}
 						/>
 					))}
 				</div>

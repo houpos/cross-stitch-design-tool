@@ -1,6 +1,8 @@
-export const dmcColors = [
+import { Color } from '../types';
+
+export const dmcColors: Color[] = [
 	{
-		dmcId: '0',
+		id: '0',
 		name: 'White',
 		red: 255,
 		green: 255,
@@ -8,7 +10,15 @@ export const dmcColors = [
 		hex: '#FFFFFF',
 	},
 	{
-		dmcId: '208',
+		id: '310',
+		name: 'Black',
+		red: 0,
+		green: 0,
+		blue: 0,
+		hex: '#000000',
+	},
+	{
+		id: '208',
 		name: 'Lavender Very Dark',
 		red: 148,
 		green: 91,
@@ -16,7 +26,7 @@ export const dmcColors = [
 		hex: '#945B80',
 	},
 	{
-		dmcId: '209',
+		id: '209',
 		name: 'Lavender Dark',
 		red: 206,
 		green: 148,
@@ -24,7 +34,7 @@ export const dmcColors = [
 		hex: '#CE94BA',
 	},
 	{
-		dmcId: '210',
+		id: '210',
 		name: 'Lavender Medium',
 		red: 236,
 		green: 207,
@@ -32,7 +42,7 @@ export const dmcColors = [
 		hex: '#ECCFE1',
 	},
 	{
-		dmcId: '211',
+		id: '211',
 		name: 'Lavender Light',
 		red: 243,
 		green: 218,
@@ -40,7 +50,7 @@ export const dmcColors = [
 		hex: '#F3DAE4',
 	},
 	{
-		dmcId: '221',
+		id: '221',
 		name: 'Shell Pink Very Dark',
 		red: 156,
 		green: 41,
@@ -48,7 +58,7 @@ export const dmcColors = [
 		hex: '#9C294A',
 	},
 	{
-		dmcId: '223',
+		id: '223',
 		name: 'Shell Pink Light',
 		red: 219,
 		green: 128,
@@ -56,7 +66,7 @@ export const dmcColors = [
 		hex: '#DB8073',
 	},
 	{
-		dmcId: '224',
+		id: '224',
 		name: 'Shell Pink Very Light',
 		red: 255,
 		green: 199,
@@ -64,7 +74,7 @@ export const dmcColors = [
 		hex: '#FFC7B0',
 	},
 	{
-		dmcId: '225',
+		id: '225',
 		name: 'Shell Pink Ultra Very Light',
 		red: 255,
 		green: 240,
@@ -72,7 +82,7 @@ export const dmcColors = [
 		hex: '#FFF0E4',
 	},
 	{
-		dmcId: '300',
+		id: '300',
 		name: 'Mahogany Very Dark',
 		red: 143,
 		green: 57,
@@ -80,7 +90,7 @@ export const dmcColors = [
 		hex: '#8F3926',
 	},
 	{
-		dmcId: '301',
+		id: '301',
 		name: 'Mahogany Medium',
 		red: 209,
 		green: 102,
@@ -88,7 +98,7 @@ export const dmcColors = [
 		hex: '#D16654',
 	},
 	{
-		dmcId: '304',
+		id: '304',
 		name: 'Christmas Red Medium',
 		red: 188,
 		green: 0,
@@ -96,7 +106,7 @@ export const dmcColors = [
 		hex: '#BC0061',
 	},
 	{
-		dmcId: '307',
+		id: '307',
 		name: 'Lemon',
 		red: 255,
 		green: 231,
@@ -104,7 +114,7 @@ export const dmcColors = [
 		hex: '#FFE76D',
 	},
 	{
-		dmcId: '309',
+		id: '309',
 		name: 'Rose Dark',
 		red: 214,
 		green: 43,
@@ -112,15 +122,7 @@ export const dmcColors = [
 		hex: '#D62B5B',
 	},
 	{
-		dmcId: '310',
-		name: 'Black',
-		red: 0,
-		green: 0,
-		blue: 0,
-		hex: 0,
-	},
-	{
-		dmcId: '311',
+		id: '311',
 		name: 'Navy Blue Medium',
 		red: 0,
 		green: 79,
@@ -128,7 +130,7 @@ export const dmcColors = [
 		hex: '#004F61',
 	},
 	{
-		dmcId: '312',
+		id: '312',
 		name: 'Navy Blue Light',
 		red: 58,
 		green: 84,
@@ -136,7 +138,7 @@ export const dmcColors = [
 		hex: '#3A5467',
 	},
 	{
-		dmcId: '315',
+		id: '315',
 		name: 'Antique Mauve Very Dark',
 		red: 163,
 		green: 90,
@@ -144,7 +146,7 @@ export const dmcColors = [
 		hex: '#A35A5B',
 	},
 	{
-		dmcId: '316',
+		id: '316',
 		name: 'Antique Mauve Medium',
 		red: 220,
 		green: 141,
@@ -152,7 +154,7 @@ export const dmcColors = [
 		hex: '#DC8D8D',
 	},
 	{
-		dmcId: '317',
+		id: '317',
 		name: 'Pewter Grey',
 		red: 167,
 		green: 139,
@@ -160,7 +162,7 @@ export const dmcColors = [
 		hex: '#A78B88',
 	},
 	{
-		dmcId: '318',
+		id: '318',
 		name: 'Steel Grey Light',
 		red: 197,
 		green: 198,
@@ -168,7 +170,7 @@ export const dmcColors = [
 		hex: '#C5C6BE',
 	},
 	{
-		dmcId: '319',
+		id: '319',
 		name: 'Pistachio Grn Very Dark',
 		red: 85,
 		green: 95,
@@ -176,7 +178,7 @@ export const dmcColors = [
 		hex: '#555F52',
 	},
 	{
-		dmcId: '320',
+		id: '320',
 		name: 'Pistachio Green Medium',
 		red: 138,
 		green: 153,
@@ -184,7 +186,7 @@ export const dmcColors = [
 		hex: '#8A9978',
 	},
 	{
-		dmcId: '321',
+		id: '321',
 		name: 'Christmas Red',
 		red: 231,
 		green: 18,
@@ -192,7 +194,7 @@ export const dmcColors = [
 		hex: '#E71261',
 	},
 	{
-		dmcId: '322',
+		id: '322',
 		name: 'Navy Blue Very Light',
 		red: 81,
 		green: 109,
@@ -200,7 +202,7 @@ export const dmcColors = [
 		hex: '#516D87',
 	},
 	{
-		dmcId: '326',
+		id: '326',
 		name: 'Rose Very DarkP',
 		red: 188,
 		green: 22,
@@ -208,7 +210,7 @@ export const dmcColors = [
 		hex: '#BC1641',
 	},
 	{
-		dmcId: '327',
+		id: '327',
 		name: 'Violet Dark',
 		red: 61,
 		green: 0,
@@ -216,7 +218,7 @@ export const dmcColors = [
 		hex: '#3D0067',
 	},
 	{
-		dmcId: '333',
+		id: '333',
 		name: 'Blue Violet Very Dark',
 		red: 127,
 		green: 84,
@@ -224,7 +226,7 @@ export const dmcColors = [
 		hex: '#7F5482',
 	},
 	{
-		dmcId: '334',
+		id: '334',
 		name: 'Baby Blue Medium',
 		red: 115,
 		green: 140,
@@ -232,7 +234,7 @@ export const dmcColors = [
 		hex: '#738CAA',
 	},
 	{
-		dmcId: '335',
+		id: '335',
 		name: 'Rose',
 		red: 219,
 		green: 36,
@@ -240,15 +242,15 @@ export const dmcColors = [
 		hex: '#DB244F',
 	},
 	{
-		dmcId: '336',
+		id: '336',
 		name: 'Navy Blue',
 		red: 36,
 		green: 73,
 		blue: 103,
-		hex: 244967,
+		hex: '#244967',
 	},
 	{
-		dmcId: '340',
+		id: '340',
 		name: 'Blue Violet Medium',
 		red: 162,
 		green: 121,
@@ -256,7 +258,7 @@ export const dmcColors = [
 		hex: '#A279A4',
 	},
 	{
-		dmcId: '341',
+		id: '341',
 		name: 'Blue Violet Light',
 		red: 145,
 		green: 180,
@@ -264,7 +266,7 @@ export const dmcColors = [
 		hex: '#91B4C5',
 	},
 	{
-		dmcId: '347',
+		id: '347',
 		name: 'Salmon Very Dark',
 		red: 194,
 		green: 36,
@@ -272,7 +274,7 @@ export const dmcColors = [
 		hex: '#C22443',
 	},
 	{
-		dmcId: '349',
+		id: '349',
 		name: 'Coral Dark',
 		red: 220,
 		green: 61,
@@ -280,7 +282,7 @@ export const dmcColors = [
 		hex: '#DC3D5B',
 	},
 	{
-		dmcId: '350',
+		id: '350',
 		name: 'Coral Medium',
 		red: 237,
 		green: 69,
@@ -288,7 +290,7 @@ export const dmcColors = [
 		hex: '#ED455A',
 	},
 	{
-		dmcId: '351',
+		id: '351',
 		name: 'Coral',
 		red: 255,
 		green: 128,
@@ -296,7 +298,7 @@ export const dmcColors = [
 		hex: '#FF8087',
 	},
 	{
-		dmcId: '352',
+		id: '352',
 		name: 'Coral Light',
 		red: 255,
 		green: 157,
@@ -304,7 +306,7 @@ export const dmcColors = [
 		hex: '#FF9D90',
 	},
 	{
-		dmcId: '353',
+		id: '353',
 		name: 'Peach Flesh',
 		red: 255,
 		green: 196,
@@ -312,7 +314,7 @@ export const dmcColors = [
 		hex: '#FFC4B8',
 	},
 	{
-		dmcId: '355',
+		id: '355',
 		name: 'Terra Cotta Dark',
 		red: 189,
 		green: 73,
@@ -320,7 +322,7 @@ export const dmcColors = [
 		hex: '#BD492F',
 	},
 	{
-		dmcId: '356',
+		id: '356',
 		name: 'Terra Cotta Medium',
 		red: 226,
 		green: 114,
@@ -328,7 +330,7 @@ export const dmcColors = [
 		hex: '#E2725B',
 	},
 	{
-		dmcId: '367',
+		id: '367',
 		name: 'Pistachio Green Dark',
 		red: 95,
 		green: 112,
@@ -336,7 +338,7 @@ export const dmcColors = [
 		hex: '#5F705B',
 	},
 	{
-		dmcId: '368',
+		id: '368',
 		name: 'Pistachio Green Light',
 		red: 181,
 		green: 206,
@@ -344,7 +346,7 @@ export const dmcColors = [
 		hex: '#B5CEA2',
 	},
 	{
-		dmcId: '369',
+		id: '369',
 		name: 'Pistachio Grn Very Light',
 		red: 243,
 		green: 250,
@@ -352,7 +354,7 @@ export const dmcColors = [
 		hex: '#F3FAD1',
 	},
 	{
-		dmcId: '370',
+		id: '370',
 		name: 'Mustard Medium',
 		red: 184,
 		green: 138,
@@ -360,7 +362,7 @@ export const dmcColors = [
 		hex: '#B88A57',
 	},
 	{
-		dmcId: '371',
+		id: '371',
 		name: 'Mustard',
 		red: 196,
 		green: 155,
@@ -368,7 +370,7 @@ export const dmcColors = [
 		hex: '#C49B64',
 	},
 	{
-		dmcId: '372',
+		id: '372',
 		name: 'Mustard Light',
 		red: 203,
 		green: 162,
@@ -376,7 +378,7 @@ export const dmcColors = [
 		hex: '#CBA26B',
 	},
 	{
-		dmcId: '400',
+		id: '400',
 		name: 'Mahogany Dark',
 		red: 157,
 		green: 60,
@@ -384,7 +386,7 @@ export const dmcColors = [
 		hex: '#9D3C27',
 	},
 	{
-		dmcId: '402',
+		id: '402',
 		name: 'Mahogany Very Light',
 		red: 255,
 		green: 190,
@@ -392,7 +394,7 @@ export const dmcColors = [
 		hex: '#FFBEA4',
 	},
 	{
-		dmcId: '407',
+		id: '407',
 		name: 'Sportsman Flsh Very Dark',
 		red: 194,
 		green: 101,
@@ -400,7 +402,7 @@ export const dmcColors = [
 		hex: '#C2654C',
 	},
 	{
-		dmcId: '413',
+		id: '413',
 		name: 'Pewter Grey Dark',
 		red: 109,
 		green: 95,
@@ -408,7 +410,7 @@ export const dmcColors = [
 		hex: '#6D5F5F',
 	},
 	{
-		dmcId: '414',
+		id: '414',
 		name: 'Steel Grey Dark',
 		red: 167,
 		green: 139,
@@ -416,7 +418,7 @@ export const dmcColors = [
 		hex: '#A78B88',
 	},
 	{
-		dmcId: '415',
+		id: '415',
 		name: 'Pearl Grey',
 		red: 221,
 		green: 221,
@@ -424,7 +426,7 @@ export const dmcColors = [
 		hex: '#DDDDDA',
 	},
 	{
-		dmcId: '420',
+		id: '420',
 		name: 'Hazel Nut Brown Dark',
 		red: 140,
 		green: 91,
@@ -432,7 +434,7 @@ export const dmcColors = [
 		hex: '#8C5B2B',
 	},
 	{
-		dmcId: '422',
+		id: '422',
 		name: 'Hazel Nut Brown Light',
 		red: 237,
 		green: 172,
@@ -440,15 +442,15 @@ export const dmcColors = [
 		hex: '#EDAC7B',
 	},
 	{
-		dmcId: '433',
+		id: '433',
 		name: 'Brown Medium',
 		red: 151,
 		green: 84,
 		blue: 20,
-		hex: 975414,
+		hex: '#975414',
 	},
 	{
-		dmcId: '434',
+		id: '434',
 		name: 'Brown Light',
 		red: 178,
 		green: 103,
@@ -456,7 +458,7 @@ export const dmcColors = [
 		hex: '#B26746',
 	},
 	{
-		dmcId: '435',
+		id: '435',
 		name: 'Brown Very Light',
 		red: 187,
 		green: 107,
@@ -464,7 +466,7 @@ export const dmcColors = [
 		hex: '#BB6B39',
 	},
 	{
-		dmcId: '436',
+		id: '436',
 		name: 'Tan',
 		red: 231,
 		green: 152,
@@ -472,7 +474,7 @@ export const dmcColors = [
 		hex: '#E79873',
 	},
 	{
-		dmcId: '437',
+		id: '437',
 		name: 'Tan Light',
 		red: 238,
 		green: 171,
@@ -480,7 +482,7 @@ export const dmcColors = [
 		hex: '#EEAB79',
 	},
 	{
-		dmcId: '444',
+		id: '444',
 		name: 'Lemon Dark',
 		red: 255,
 		green: 176,
@@ -488,7 +490,7 @@ export const dmcColors = [
 		hex: '#FFB000',
 	},
 	{
-		dmcId: '445',
+		id: '445',
 		name: 'Lemon Light',
 		red: 255,
 		green: 255,
@@ -496,7 +498,7 @@ export const dmcColors = [
 		hex: '#FFFFBE',
 	},
 	{
-		dmcId: '451',
+		id: '451',
 		name: 'Shell Grey Dark',
 		red: 179,
 		green: 151,
@@ -504,7 +506,7 @@ export const dmcColors = [
 		hex: '#B3978F',
 	},
 	{
-		dmcId: '452',
+		id: '452',
 		name: 'Shell Grey Medium',
 		red: 210,
 		green: 185,
@@ -512,7 +514,7 @@ export const dmcColors = [
 		hex: '#D2B9AF',
 	},
 	{
-		dmcId: '453',
+		id: '453',
 		name: 'Shell Grey Light',
 		red: 235,
 		green: 207,
@@ -520,7 +522,7 @@ export const dmcColors = [
 		hex: '#EBCFB9',
 	},
 	{
-		dmcId: '469',
+		id: '469',
 		name: 'Avocado Green',
 		red: 116,
 		green: 114,
@@ -528,7 +530,7 @@ export const dmcColors = [
 		hex: '#74725C',
 	},
 	{
-		dmcId: '470',
+		id: '470',
 		name: 'Avocado Green Light',
 		red: 133,
 		green: 143,
@@ -536,7 +538,7 @@ export const dmcColors = [
 		hex: '#858F6C',
 	},
 	{
-		dmcId: '471',
+		id: '471',
 		name: 'Avocado Green Very Light',
 		red: 176,
 		green: 187,
@@ -544,7 +546,7 @@ export const dmcColors = [
 		hex: '#B0BB8C',
 	},
 	{
-		dmcId: '472',
+		id: '472',
 		name: 'Avocado Green Ultra Light',
 		red: 238,
 		green: 255,
@@ -552,7 +554,7 @@ export const dmcColors = [
 		hex: '#EEFFB6',
 	},
 	{
-		dmcId: '498',
+		id: '498',
 		name: 'Christmas Red Light',
 		red: 187,
 		green: 0,
@@ -560,7 +562,7 @@ export const dmcColors = [
 		hex: '#BB0061',
 	},
 	{
-		dmcId: '500',
+		id: '500',
 		name: 'Blue Green Very Dark',
 		red: 43,
 		green: 57,
@@ -568,23 +570,23 @@ export const dmcColors = [
 		hex: '#2B3929',
 	},
 	{
-		dmcId: '501',
+		id: '501',
 		name: 'Blue Green Dark',
 		red: 67,
 		green: 85,
 		blue: 73,
-		hex: 435549,
+		hex: '#435549',
 	},
 	{
-		dmcId: '502',
+		id: '502',
 		name: 'Blue Green',
 		red: 134,
 		green: 158,
 		blue: 134,
-		hex: 8.69e88,
+		hex: '#869e88',
 	},
 	{
-		dmcId: '503',
+		id: '503',
 		name: 'Blue Green Medium',
 		red: 195,
 		green: 206,
@@ -592,7 +594,7 @@ export const dmcColors = [
 		hex: '#C3CEB7',
 	},
 	{
-		dmcId: '504',
+		id: '504',
 		name: 'Blue Green Light',
 		red: 206,
 		green: 221,
@@ -600,7 +602,7 @@ export const dmcColors = [
 		hex: '#CEDDC1',
 	},
 	{
-		dmcId: '517',
+		id: '517',
 		name: 'Wedgewood Medium',
 		red: 16,
 		green: 127,
@@ -608,7 +610,7 @@ export const dmcColors = [
 		hex: '#107F87',
 	},
 	{
-		dmcId: '518',
+		id: '518',
 		name: 'Wedgewood Light',
 		red: 102,
 		green: 148,
@@ -616,7 +618,7 @@ export const dmcColors = [
 		hex: '#66949A',
 	},
 	{
-		dmcId: '519',
+		id: '519',
 		name: 'Sky Blue',
 		red: 194,
 		green: 209,
@@ -624,15 +626,15 @@ export const dmcColors = [
 		hex: '#C2D1CF',
 	},
 	{
-		dmcId: '520',
+		id: '520',
 		name: 'Fern Green Dark',
 		red: 55,
 		green: 73,
 		blue: 18,
-		hex: 374912,
+		hex: '#374912',
 	},
 	{
-		dmcId: '522',
+		id: '522',
 		name: 'Fern Green',
 		red: 159,
 		green: 169,
@@ -640,7 +642,7 @@ export const dmcColors = [
 		hex: '#9FA98E',
 	},
 	{
-		dmcId: '523',
+		id: '523',
 		name: 'Fern Green Light',
 		red: 172,
 		green: 183,
@@ -648,7 +650,7 @@ export const dmcColors = [
 		hex: '#ACB78E',
 	},
 	{
-		dmcId: '524',
+		id: '524',
 		name: 'Fern Green Very Light',
 		red: 205,
 		green: 182,
@@ -656,15 +658,15 @@ export const dmcColors = [
 		hex: '#CDB69E',
 	},
 	{
-		dmcId: '535',
+		id: '535',
 		name: 'Ash Grey Very Light',
 		red: 85,
 		green: 85,
 		blue: 89,
-		hex: 555559,
+		hex: '#555559',
 	},
 	{
-		dmcId: '543',
+		id: '543',
 		name: 'Beige Brown Ultra Very Light',
 		red: 239,
 		green: 214,
@@ -672,7 +674,7 @@ export const dmcColors = [
 		hex: '#EFD6BC',
 	},
 	{
-		dmcId: '550',
+		id: '550',
 		name: 'Violet Very Light',
 		red: 109,
 		green: 18,
@@ -680,15 +682,15 @@ export const dmcColors = [
 		hex: '#6D1261',
 	},
 	{
-		dmcId: '552',
+		id: '552',
 		name: 'Violet Medium',
 		red: 146,
 		green: 85,
 		blue: 130,
-		hex: 925582,
+		hex: '#925582',
 	},
 	{
-		dmcId: '553',
+		id: '553',
 		name: 'Violet',
 		red: 160,
 		green: 100,
@@ -696,7 +698,7 @@ export const dmcColors = [
 		hex: '#A06492',
 	},
 	{
-		dmcId: '554',
+		id: '554',
 		name: 'Violet Light',
 		red: 243,
 		green: 206,
@@ -704,7 +706,7 @@ export const dmcColors = [
 		hex: '#F3CEE1',
 	},
 	{
-		dmcId: '561',
+		id: '561',
 		name: 'Jade Very Dark',
 		red: 59,
 		green: 96,
@@ -712,15 +714,15 @@ export const dmcColors = [
 		hex: '#3B604C',
 	},
 	{
-		dmcId: '562',
+		id: '562',
 		name: 'Jade Medium',
 		red: 97,
 		green: 134,
 		blue: 97,
-		hex: 618661,
+		hex: '#618661',
 	},
 	{
-		dmcId: '563',
+		id: '563',
 		name: 'Jade Light',
 		red: 182,
 		green: 212,
@@ -728,7 +730,7 @@ export const dmcColors = [
 		hex: '#B6D4B4',
 	},
 	{
-		dmcId: '564',
+		id: '564',
 		name: 'Jade Very Light',
 		red: 214,
 		green: 230,
@@ -736,31 +738,23 @@ export const dmcColors = [
 		hex: '#D6E6CC',
 	},
 	{
-		dmcId: '580',
-		name: 'Moss Green Dark',
-		red: 0,
-		green: 103,
-		blue: 0,
-		hex: 6700,
-	},
-	{
-		dmcId: '581',
+		id: '581',
 		name: 'Moss Green',
 		red: 151,
 		green: 152,
 		blue: 49,
-		hex: 979831,
+		hex: '#979831',
 	},
 	{
-		dmcId: '597',
+		id: '597',
 		name: 'Turquoise',
 		red: 128,
 		green: 151,
 		blue: 132,
-		hex: 809784,
+		hex: '#809784',
 	},
 	{
-		dmcId: '598',
+		id: '598',
 		name: 'Turquoise Light',
 		red: 208,
 		green: 223,
@@ -768,7 +762,7 @@ export const dmcColors = [
 		hex: '#D0DFCD',
 	},
 	{
-		dmcId: '600',
+		id: '600',
 		name: 'Cranberry Very Dark',
 		red: 208,
 		green: 57,
@@ -776,7 +770,7 @@ export const dmcColors = [
 		hex: '#D0396A',
 	},
 	{
-		dmcId: '601',
+		id: '601',
 		name: 'Cranberry Dark',
 		red: 222,
 		green: 57,
@@ -784,7 +778,7 @@ export const dmcColors = [
 		hex: '#DE3969',
 	},
 	{
-		dmcId: '602',
+		id: '602',
 		name: 'Cranberry Medium',
 		red: 231,
 		green: 84,
@@ -792,7 +786,7 @@ export const dmcColors = [
 		hex: '#E7547A',
 	},
 	{
-		dmcId: '603',
+		id: '603',
 		name: 'Cranberry',
 		red: 255,
 		green: 115,
@@ -800,7 +794,7 @@ export const dmcColors = [
 		hex: '#FF738C',
 	},
 	{
-		dmcId: '604',
+		id: '604',
 		name: 'Cranberry Light',
 		red: 255,
 		green: 189,
@@ -808,7 +802,7 @@ export const dmcColors = [
 		hex: '#FFBDCA',
 	},
 	{
-		dmcId: '605',
+		id: '605',
 		name: 'Cranberry Very Light',
 		red: 255,
 		green: 207,
@@ -816,7 +810,7 @@ export const dmcColors = [
 		hex: '#FFCFD6',
 	},
 	{
-		dmcId: '606',
+		id: '606',
 		name: 'Bright Orange-Red',
 		red: 255,
 		green: 0,
@@ -824,7 +818,7 @@ export const dmcColors = [
 		hex: '#FF0000',
 	},
 	{
-		dmcId: '608',
+		id: '608',
 		name: 'Bright Orange',
 		red: 255,
 		green: 91,
@@ -832,15 +826,15 @@ export const dmcColors = [
 		hex: '#FF5B00',
 	},
 	{
-		dmcId: '610',
+		id: '610',
 		name: 'Drab Brown  Very Dark',
 		red: 151,
 		green: 104,
 		blue: 84,
-		hex: 976854,
+		hex: '#976854',
 	},
 	{
-		dmcId: '611',
+		id: '611',
 		name: 'Drab Brown Dark',
 		red: 158,
 		green: 109,
@@ -848,7 +842,7 @@ export const dmcColors = [
 		hex: '#9E6D5B',
 	},
 	{
-		dmcId: '612',
+		id: '612',
 		name: 'Drab Brown Medium',
 		red: 203,
 		green: 152,
@@ -856,7 +850,7 @@ export const dmcColors = [
 		hex: '#CB9867',
 	},
 	{
-		dmcId: '613',
+		id: '613',
 		name: 'Drab Brown Light',
 		red: 219,
 		green: 176,
@@ -864,7 +858,7 @@ export const dmcColors = [
 		hex: '#DBB07A',
 	},
 	{
-		dmcId: '632',
+		id: '632',
 		name: 'Negro Flesh Medium',
 		red: 162,
 		green: 77,
@@ -872,7 +866,7 @@ export const dmcColors = [
 		hex: '#A24D34',
 	},
 	{
-		dmcId: '640',
+		id: '640',
 		name: 'Beige Grey  Very Dark',
 		red: 163,
 		green: 163,
@@ -880,7 +874,7 @@ export const dmcColors = [
 		hex: '#A3A39D',
 	},
 	{
-		dmcId: '642',
+		id: '642',
 		name: 'Beige Grey Dark',
 		red: 174,
 		green: 176,
@@ -888,7 +882,7 @@ export const dmcColors = [
 		hex: '#AEB0AA',
 	},
 	{
-		dmcId: '644',
+		id: '644',
 		name: 'Beige Grey Medium',
 		red: 224,
 		green: 224,
@@ -896,23 +890,23 @@ export const dmcColors = [
 		hex: '#E0E0D7',
 	},
 	{
-		dmcId: '645',
+		id: '645',
 		name: 'Beaver Grey  Very Dark',
 		red: 113,
 		green: 113,
 		blue: 113,
-		hex: 717171,
+		hex: '#717171',
 	},
 	{
-		dmcId: '646',
+		id: '646',
 		name: 'Beaver Grey Dark',
 		red: 121,
 		green: 121,
 		blue: 121,
-		hex: 797979,
+		hex: '#797979',
 	},
 	{
-		dmcId: '647',
+		id: '647',
 		name: 'Beaver Grey Medium',
 		red: 190,
 		green: 190,
@@ -920,7 +914,7 @@ export const dmcColors = [
 		hex: '#BEBEB9',
 	},
 	{
-		dmcId: '648',
+		id: '648',
 		name: 'Beaver Grey Light',
 		red: 202,
 		green: 202,
@@ -928,7 +922,7 @@ export const dmcColors = [
 		hex: '#CACACA',
 	},
 	{
-		dmcId: '666',
+		id: '666',
 		name: 'Christmas Red Light',
 		red: 213,
 		green: 39,
@@ -936,7 +930,7 @@ export const dmcColors = [
 		hex: '#D52756',
 	},
 	{
-		dmcId: '676',
+		id: '676',
 		name: 'Old Gold Light',
 		red: 255,
 		green: 206,
@@ -944,7 +938,7 @@ export const dmcColors = [
 		hex: '#FFCE9E',
 	},
 	{
-		dmcId: '677',
+		id: '677',
 		name: 'Old Gold Very Light',
 		red: 255,
 		green: 231,
@@ -952,7 +946,7 @@ export const dmcColors = [
 		hex: '#FFE7B6',
 	},
 	{
-		dmcId: '680',
+		id: '680',
 		name: 'Old Gold Dark',
 		red: 209,
 		green: 140,
@@ -960,7 +954,7 @@ export const dmcColors = [
 		hex: '#D18C67',
 	},
 	{
-		dmcId: '699',
+		id: '699',
 		name: 'Chirstmas Green',
 		red: 0,
 		green: 91,
@@ -968,7 +962,7 @@ export const dmcColors = [
 		hex: '#005B06',
 	},
 	{
-		dmcId: '700',
+		id: '700',
 		name: 'Christmas Green Bright',
 		red: 0,
 		green: 96,
@@ -976,7 +970,7 @@ export const dmcColors = [
 		hex: '#00602F',
 	},
 	{
-		dmcId: '701',
+		id: '701',
 		name: 'Christmas Green Light',
 		red: 79,
 		green: 108,
@@ -984,7 +978,7 @@ export const dmcColors = [
 		hex: '#4F6C45',
 	},
 	{
-		dmcId: '702',
+		id: '702',
 		name: 'Kelly Green',
 		red: 79,
 		green: 121,
@@ -992,7 +986,7 @@ export const dmcColors = [
 		hex: '#4F7942',
 	},
 	{
-		dmcId: '703',
+		id: '703',
 		name: 'Chartreuse',
 		red: 121,
 		green: 144,
@@ -1000,7 +994,7 @@ export const dmcColors = [
 		hex: '#79904C',
 	},
 	{
-		dmcId: '704',
+		id: '704',
 		name: 'Chartreuse Bright',
 		red: 165,
 		green: 164,
@@ -1008,7 +1002,7 @@ export const dmcColors = [
 		hex: '#A5A467',
 	},
 	{
-		dmcId: '712',
+		id: '712',
 		name: 'Cream',
 		red: 245,
 		green: 240,
@@ -1016,7 +1010,7 @@ export const dmcColors = [
 		hex: '#F5F0DB',
 	},
 	{
-		dmcId: '718',
+		id: '718',
 		name: 'Plum',
 		red: 219,
 		green: 55,
@@ -1024,7 +1018,7 @@ export const dmcColors = [
 		hex: '#DB3779',
 	},
 	{
-		dmcId: '720',
+		id: '720',
 		name: 'Orange Spice Dark',
 		red: 200,
 		green: 36,
@@ -1032,7 +1026,7 @@ export const dmcColors = [
 		hex: '#C8242B',
 	},
 	{
-		dmcId: '721',
+		id: '721',
 		name: 'Orange Spice Medium',
 		red: 255,
 		green: 115,
@@ -1040,7 +1034,7 @@ export const dmcColors = [
 		hex: '#FF7361',
 	},
 	{
-		dmcId: '722',
+		id: '722',
 		name: 'Orange Spice Light',
 		red: 255,
 		green: 146,
@@ -1048,7 +1042,7 @@ export const dmcColors = [
 		hex: '#FF926D',
 	},
 	{
-		dmcId: '725',
+		id: '725',
 		name: 'Topaz',
 		red: 255,
 		green: 200,
@@ -1056,7 +1050,7 @@ export const dmcColors = [
 		hex: '#FFC87C',
 	},
 	{
-		dmcId: '726',
+		id: '726',
 		name: 'Topaz Light',
 		red: 255,
 		green: 224,
@@ -1064,7 +1058,7 @@ export const dmcColors = [
 		hex: '#FFE080',
 	},
 	{
-		dmcId: '727',
+		id: '727',
 		name: 'Topaz Very Light',
 		red: 255,
 		green: 235,
@@ -1072,7 +1066,7 @@ export const dmcColors = [
 		hex: '#FFEBA8',
 	},
 	{
-		dmcId: '729',
+		id: '729',
 		name: 'Old Gold Medium',
 		red: 243,
 		green: 176,
@@ -1080,15 +1074,15 @@ export const dmcColors = [
 		hex: '#F3B080',
 	},
 	{
-		dmcId: '730',
+		id: '730',
 		name: 'Olive Green Very Dark',
 		red: 132,
 		green: 102,
 		blue: 0,
-		hex: 846600,
+		hex: '#846600',
 	},
 	{
-		dmcId: '731',
+		id: '731',
 		name: 'Olive Green Dark',
 		red: 140,
 		green: 103,
@@ -1096,15 +1090,15 @@ export const dmcColors = [
 		hex: '#8C6700',
 	},
 	{
-		dmcId: '732',
+		id: '732',
 		name: 'Olive Green',
 		red: 145,
 		green: 104,
 		blue: 0,
-		hex: 916800,
+		hex: '#916800',
 	},
 	{
-		dmcId: '733',
+		id: '733',
 		name: 'Olive Green Medium',
 		red: 206,
 		green: 155,
@@ -1112,7 +1106,7 @@ export const dmcColors = [
 		hex: '#CE9B61',
 	},
 	{
-		dmcId: '734',
+		id: '734',
 		name: 'Olive Green Light',
 		red: 221,
 		green: 166,
@@ -1120,7 +1114,7 @@ export const dmcColors = [
 		hex: '#DDA66B',
 	},
 	{
-		dmcId: '738',
+		id: '738',
 		name: 'Tan Very Light',
 		red: 244,
 		green: 195,
@@ -1128,7 +1122,7 @@ export const dmcColors = [
 		hex: '#F4C38B',
 	},
 	{
-		dmcId: '739',
+		id: '739',
 		name: 'Tan Ultra Very Light',
 		red: 244,
 		green: 233,
@@ -1136,7 +1130,7 @@ export const dmcColors = [
 		hex: '#F4E9CA',
 	},
 	{
-		dmcId: '740',
+		id: '740',
 		name: 'Tangerine',
 		red: 255,
 		green: 131,
@@ -1144,7 +1138,7 @@ export const dmcColors = [
 		hex: '#FF8313',
 	},
 	{
-		dmcId: '741',
+		id: '741',
 		name: 'Tangerine Medium',
 		red: 255,
 		green: 142,
@@ -1152,7 +1146,7 @@ export const dmcColors = [
 		hex: '#FF8E04',
 	},
 	{
-		dmcId: '742',
+		id: '742',
 		name: 'Tangerine Light',
 		red: 255,
 		green: 183,
@@ -1160,7 +1154,7 @@ export const dmcColors = [
 		hex: '#FFB755',
 	},
 	{
-		dmcId: '743',
+		id: '743',
 		name: 'Yellow Medium',
 		red: 255,
 		green: 230,
@@ -1168,7 +1162,7 @@ export const dmcColors = [
 		hex: '#FFE692',
 	},
 	{
-		dmcId: '744',
+		id: '744',
 		name: 'Yellow Pale',
 		red: 255,
 		green: 239,
@@ -1176,7 +1170,7 @@ export const dmcColors = [
 		hex: '#FFEFAA',
 	},
 	{
-		dmcId: '745',
+		id: '745',
 		name: 'Yellow Light PALE',
 		red: 255,
 		green: 240,
@@ -1184,7 +1178,7 @@ export const dmcColors = [
 		hex: '#FFF0C5',
 	},
 	{
-		dmcId: '746',
+		id: '746',
 		name: 'Off White',
 		red: 246,
 		green: 234,
@@ -1192,7 +1186,7 @@ export const dmcColors = [
 		hex: '#F6EADB',
 	},
 	{
-		dmcId: '747',
+		id: '747',
 		name: 'Sky Blue Very Light',
 		red: 240,
 		green: 247,
@@ -1200,7 +1194,7 @@ export const dmcColors = [
 		hex: '#F0F7EF',
 	},
 	{
-		dmcId: '754',
+		id: '754',
 		name: 'Peach Flesh Light',
 		red: 251,
 		green: 227,
@@ -1208,7 +1202,7 @@ export const dmcColors = [
 		hex: '#FBE3D1',
 	},
 	{
-		dmcId: '758',
+		id: '758',
 		name: 'Terra Cotta Very Light',
 		red: 255,
 		green: 177,
@@ -1216,7 +1210,7 @@ export const dmcColors = [
 		hex: '#FFB193',
 	},
 	{
-		dmcId: '760',
+		id: '760',
 		name: 'Salmon',
 		red: 249,
 		green: 160,
@@ -1224,7 +1218,7 @@ export const dmcColors = [
 		hex: '#F9A092',
 	},
 	{
-		dmcId: '761',
+		id: '761',
 		name: 'Salmon Light',
 		red: 255,
 		green: 201,
@@ -1232,7 +1226,7 @@ export const dmcColors = [
 		hex: '#FFC9BC',
 	},
 	{
-		dmcId: '762',
+		id: '762',
 		name: 'Pearl Grey Very Light',
 		red: 232,
 		green: 232,
@@ -1240,7 +1234,7 @@ export const dmcColors = [
 		hex: '#E8E8E5',
 	},
 	{
-		dmcId: '772',
+		id: '772',
 		name: 'Pine Green Light',
 		red: 231,
 		green: 249,
@@ -1248,15 +1242,7 @@ export const dmcColors = [
 		hex: '#E7F9CB',
 	},
 	{
-		dmcId: '775',
-		name: 'Baby Blue Very Light',
-		red: 247,
-		green: 246,
-		blue: 248,
-		hex: '#F7F6F8',
-	},
-	{
-		dmcId: '776',
+		id: '776',
 		name: 'Pink Medium',
 		red: 255,
 		green: 177,
@@ -1264,7 +1250,7 @@ export const dmcColors = [
 		hex: '#FFB1AE',
 	},
 	{
-		dmcId: '778',
+		id: '778',
 		name: 'Antique Mauve Very Light',
 		red: 255,
 		green: 199,
@@ -1272,7 +1258,7 @@ export const dmcColors = [
 		hex: '#FFC7B8',
 	},
 	{
-		dmcId: '780',
+		id: '780',
 		name: 'Topaz Ultra Very Dark',
 		red: 181,
 		green: 98,
@@ -1280,7 +1266,7 @@ export const dmcColors = [
 		hex: '#B5622E',
 	},
 	{
-		dmcId: '781',
+		id: '781',
 		name: 'Topaz Very Dark',
 		red: 181,
 		green: 107,
@@ -1288,7 +1274,7 @@ export const dmcColors = [
 		hex: '#B56B38',
 	},
 	{
-		dmcId: '782',
+		id: '782',
 		name: 'Topaz Dark',
 		red: 204,
 		green: 119,
@@ -1296,7 +1282,7 @@ export const dmcColors = [
 		hex: '#CC7742',
 	},
 	{
-		dmcId: '783',
+		id: '783',
 		name: 'Topaz Medium',
 		red: 225,
 		green: 146,
@@ -1304,7 +1290,7 @@ export const dmcColors = [
 		hex: '#E19255',
 	},
 	{
-		dmcId: '791',
+		id: '791',
 		name: 'Cornflower Blue Very Dark',
 		red: 71,
 		green: 55,
@@ -1312,15 +1298,15 @@ export const dmcColors = [
 		hex: '#47375D',
 	},
 	{
-		dmcId: '792',
+		id: '792',
 		name: 'Cornflower Blue Dark',
 		red: 97,
 		green: 97,
 		blue: 128,
-		hex: 616180,
+		hex: '#616180',
 	},
 	{
-		dmcId: '793',
+		id: '793',
 		name: 'Cornflower Blue Medium',
 		red: 147,
 		green: 139,
@@ -1328,7 +1314,7 @@ export const dmcColors = [
 		hex: '#938BA4',
 	},
 	{
-		dmcId: '794',
+		id: '794',
 		name: 'Cornflower Blue Light',
 		red: 187,
 		green: 208,
@@ -1336,7 +1322,7 @@ export const dmcColors = [
 		hex: '#BBD0DA',
 	},
 	{
-		dmcId: '796',
+		id: '796',
 		name: 'Royal Blue Dark',
 		red: 30,
 		green: 58,
@@ -1344,7 +1330,7 @@ export const dmcColors = [
 		hex: '#1E3A5F',
 	},
 	{
-		dmcId: '797',
+		id: '797',
 		name: 'Royal Blue',
 		red: 30,
 		green: 66,
@@ -1352,7 +1338,7 @@ export const dmcColors = [
 		hex: '#∞E+00',
 	},
 	{
-		dmcId: '798',
+		id: '798',
 		name: 'Delft Dark',
 		red: 103,
 		green: 115,
@@ -1360,7 +1346,7 @@ export const dmcColors = [
 		hex: '#67738D',
 	},
 	{
-		dmcId: '799',
+		id: '799',
 		name: 'Delft Medium',
 		red: 132,
 		green: 156,
@@ -1368,7 +1354,7 @@ export const dmcColors = [
 		hex: '#849CB6',
 	},
 	{
-		dmcId: '800',
+		id: '800',
 		name: 'Delft Pale',
 		red: 233,
 		green: 238,
@@ -1376,7 +1362,7 @@ export const dmcColors = [
 		hex: '#E9EEE9',
 	},
 	{
-		dmcId: '801',
+		id: '801',
 		name: 'Coffee Brown Dark',
 		red: 123,
 		green: 71,
@@ -1384,15 +1370,7 @@ export const dmcColors = [
 		hex: '#7B4714',
 	},
 	{
-		dmcId: '806',
-		name: 'Peacock Blue Dark',
-		red: 30,
-		green: 130,
-		blue: 133,
-		hex: '#∞E+00',
-	},
-	{
-		dmcId: '807',
+		id: '807',
 		name: 'Peacock Blue',
 		red: 128,
 		green: 167,
@@ -1400,7 +1378,7 @@ export const dmcColors = [
 		hex: '#80A7A0',
 	},
 	{
-		dmcId: '809',
+		id: '809',
 		name: 'Delft',
 		red: 190,
 		green: 193,
@@ -1408,7 +1386,7 @@ export const dmcColors = [
 		hex: '#BEC1CD',
 	},
 	{
-		dmcId: '813',
+		id: '813',
 		name: 'Blue Light',
 		red: 175,
 		green: 195,
@@ -1416,7 +1394,7 @@ export const dmcColors = [
 		hex: '#AFC3CD',
 	},
 	{
-		dmcId: '814',
+		id: '814',
 		name: 'Garnet Dark',
 		red: 162,
 		green: 0,
@@ -1424,7 +1402,7 @@ export const dmcColors = [
 		hex: '#A20058',
 	},
 	{
-		dmcId: '815',
+		id: '815',
 		name: 'Garnet Medium',
 		red: 166,
 		green: 0,
@@ -1432,7 +1410,7 @@ export const dmcColors = [
 		hex: '#A6005B',
 	},
 	{
-		dmcId: '816',
+		id: '816',
 		name: 'Garnet',
 		red: 179,
 		green: 0,
@@ -1440,7 +1418,7 @@ export const dmcColors = [
 		hex: '#B3005B',
 	},
 	{
-		dmcId: '817',
+		id: '817',
 		name: 'Coral Red Very Dark',
 		red: 219,
 		green: 24,
@@ -1448,7 +1426,7 @@ export const dmcColors = [
 		hex: '#DB1855',
 	},
 	{
-		dmcId: '818',
+		id: '818',
 		name: 'Baby Pink',
 		red: 255,
 		green: 234,
@@ -1456,7 +1434,7 @@ export const dmcColors = [
 		hex: '#FFEAEB',
 	},
 	{
-		dmcId: '819',
+		id: '819',
 		name: 'Baby Pink Light',
 		red: 248,
 		green: 247,
@@ -1464,7 +1442,7 @@ export const dmcColors = [
 		hex: '#F8F7DD',
 	},
 	{
-		dmcId: '820',
+		id: '820',
 		name: 'Royal Blue Very Dark',
 		red: 30,
 		green: 54,
@@ -1472,7 +1450,7 @@ export const dmcColors = [
 		hex: '#∞E+00',
 	},
 	{
-		dmcId: '822',
+		id: '822',
 		name: 'Beige Grey Light',
 		red: 242,
 		green: 234,
@@ -1480,23 +1458,23 @@ export const dmcColors = [
 		hex: '#F2EADB',
 	},
 	{
-		dmcId: '823',
+		id: '823',
 		name: 'Navy Blue Dark',
 		red: 0,
 		green: 0,
 		blue: 73,
-		hex: 49,
+		hex: '#49',
 	},
 	{
-		dmcId: '824',
+		id: '824',
 		name: 'Blue Very Dark',
 		red: 71,
 		green: 97,
 		blue: 116,
-		hex: 476174,
+		hex: '#476174',
 	},
 	{
-		dmcId: '825',
+		id: '825',
 		name: 'Blue Dark',
 		red: 85,
 		green: 108,
@@ -1504,7 +1482,7 @@ export const dmcColors = [
 		hex: '#556C80',
 	},
 	{
-		dmcId: '826',
+		id: '826',
 		name: 'Blue Medium',
 		red: 115,
 		green: 138,
@@ -1512,7 +1490,7 @@ export const dmcColors = [
 		hex: '#738A99',
 	},
 	{
-		dmcId: '827',
+		id: '827',
 		name: 'Blue Very Light',
 		red: 213,
 		green: 231,
@@ -1520,7 +1498,7 @@ export const dmcColors = [
 		hex: '#D5E7E8',
 	},
 	{
-		dmcId: '828',
+		id: '828',
 		name: 'Blue Ultra Very Light',
 		red: 237,
 		green: 247,
@@ -1528,7 +1506,7 @@ export const dmcColors = [
 		hex: '#EDF7EE',
 	},
 	{
-		dmcId: '829',
+		id: '829',
 		name: 'Golden Olive Very Dark',
 		red: 130,
 		green: 90,
@@ -1536,7 +1514,7 @@ export const dmcColors = [
 		hex: '#825A08',
 	},
 	{
-		dmcId: '830',
+		id: '830',
 		name: 'Golden Olive Dark',
 		red: 136,
 		green: 95,
@@ -1544,15 +1522,15 @@ export const dmcColors = [
 		hex: '#885F12',
 	},
 	{
-		dmcId: '831',
+		id: '831',
 		name: 'Golden Olive Medium',
 		red: 144,
 		green: 103,
 		blue: 18,
-		hex: 906712,
+		hex: '#906712',
 	},
 	{
-		dmcId: '832',
+		id: '832',
 		name: 'Golden Olive',
 		red: 178,
 		green: 119,
@@ -1560,7 +1538,7 @@ export const dmcColors = [
 		hex: '#B27737',
 	},
 	{
-		dmcId: '833',
+		id: '833',
 		name: 'Golden Olive Light',
 		red: 219,
 		green: 182,
@@ -1568,7 +1546,7 @@ export const dmcColors = [
 		hex: '#DBB680',
 	},
 	{
-		dmcId: '834',
+		id: '834',
 		name: 'Golden Olive Very Light',
 		red: 242,
 		green: 209,
@@ -1576,7 +1554,7 @@ export const dmcColors = [
 		hex: '#F2D18E',
 	},
 	{
-		dmcId: '838',
+		id: '838',
 		name: 'Beige Brown Very Dark',
 		red: 94,
 		green: 56,
@@ -1584,7 +1562,7 @@ export const dmcColors = [
 		hex: '#5E381B',
 	},
 	{
-		dmcId: '839',
+		id: '839',
 		name: 'Beige Brown Dark',
 		red: 109,
 		green: 66,
@@ -1592,7 +1570,7 @@ export const dmcColors = [
 		hex: '#6D4227',
 	},
 	{
-		dmcId: '840',
+		id: '840',
 		name: 'Beige Brown Medium',
 		red: 128,
 		green: 85,
@@ -1600,7 +1578,7 @@ export const dmcColors = [
 		hex: '#80551E',
 	},
 	{
-		dmcId: '841',
+		id: '841',
 		name: 'Beige Brown Light',
 		red: 188,
 		green: 134,
@@ -1608,7 +1586,7 @@ export const dmcColors = [
 		hex: '#BC866B',
 	},
 	{
-		dmcId: '842',
+		id: '842',
 		name: 'Beige Brown Very Light',
 		red: 219,
 		green: 194,
@@ -1616,7 +1594,7 @@ export const dmcColors = [
 		hex: '#DBC2A4',
 	},
 	{
-		dmcId: '844',
+		id: '844',
 		name: 'Beaver Brown  Ultra Dark',
 		red: 107,
 		green: 103,
@@ -1624,7 +1602,7 @@ export const dmcColors = [
 		hex: '#6B6766',
 	},
 	{
-		dmcId: '868',
+		id: '868',
 		name: 'Hazel Nut Brown Very Dark',
 		red: 153,
 		green: 92,
@@ -1632,7 +1610,7 @@ export const dmcColors = [
 		hex: '#995C30',
 	},
 	{
-		dmcId: '869',
+		id: '869',
 		name: 'Hazel Nut Brn Very Dark',
 		red: 153,
 		green: 92,
@@ -1640,7 +1618,7 @@ export const dmcColors = [
 		hex: '#995C30',
 	},
 	{
-		dmcId: '890',
+		id: '890',
 		name: 'Pistachio Grn Ultra Dark',
 		red: 79,
 		green: 86,
@@ -1648,7 +1626,7 @@ export const dmcColors = [
 		hex: '#4F564C',
 	},
 	{
-		dmcId: '891',
+		id: '891',
 		name: 'Carnation Dark',
 		red: 241,
 		green: 49,
@@ -1656,7 +1634,7 @@ export const dmcColors = [
 		hex: '#F13154',
 	},
 	{
-		dmcId: '892',
+		id: '892',
 		name: 'Carnation Medium',
 		red: 249,
 		green: 90,
@@ -1664,7 +1642,7 @@ export const dmcColors = [
 		hex: '#F95A61',
 	},
 	{
-		dmcId: '893',
+		id: '893',
 		name: 'Carnation Light',
 		red: 243,
 		green: 149,
@@ -1672,7 +1650,7 @@ export const dmcColors = [
 		hex: '#F3959D',
 	},
 	{
-		dmcId: '894',
+		id: '894',
 		name: 'Carnation Very Light',
 		red: 255,
 		green: 194,
@@ -1680,7 +1658,7 @@ export const dmcColors = [
 		hex: '#FFC2BF',
 	},
 	{
-		dmcId: '895',
+		id: '895',
 		name: 'Hunter Green Very Dark',
 		red: 89,
 		green: 92,
@@ -1688,15 +1666,15 @@ export const dmcColors = [
 		hex: '#595C4E',
 	},
 	{
-		dmcId: '898',
+		id: '898',
 		name: 'Coffee Brown Very Dark',
 		red: 118,
 		green: 55,
 		blue: 19,
-		hex: 763713,
+		hex: '#763713',
 	},
 	{
-		dmcId: '899',
+		id: '899',
 		name: 'Rose Medium',
 		red: 233,
 		green: 109,
@@ -1704,7 +1682,7 @@ export const dmcColors = [
 		hex: '#E96D73',
 	},
 	{
-		dmcId: '900',
+		id: '900',
 		name: 'Burnt Orange Dark',
 		red: 206,
 		green: 43,
@@ -1712,7 +1690,7 @@ export const dmcColors = [
 		hex: '#CE2B00',
 	},
 	{
-		dmcId: '902',
+		id: '902',
 		name: 'Granet Very Dark',
 		red: 138,
 		green: 24,
@@ -1720,7 +1698,7 @@ export const dmcColors = [
 		hex: '#8A184D',
 	},
 	{
-		dmcId: '904',
+		id: '904',
 		name: 'Parrot Green Very Dark',
 		red: 78,
 		green: 95,
@@ -1728,15 +1706,15 @@ export const dmcColors = [
 		hex: '#4E5F39',
 	},
 	{
-		dmcId: '905',
+		id: '905',
 		name: 'Parrot Green Dark',
 		red: 98,
 		green: 119,
 		blue: 57,
-		hex: 627739,
+		hex: '#627739',
 	},
 	{
-		dmcId: '906',
+		id: '906',
 		name: 'Parrot Green Medium',
 		red: 143,
 		green: 163,
@@ -1744,7 +1722,7 @@ export const dmcColors = [
 		hex: '#8FA359',
 	},
 	{
-		dmcId: '907',
+		id: '907',
 		name: 'Parrot Green Light',
 		red: 185,
 		green: 200,
@@ -1752,15 +1730,15 @@ export const dmcColors = [
 		hex: '#B9C866',
 	},
 	{
-		dmcId: '909',
+		id: '909',
 		name: 'Emerald Green Very Dark',
 		red: 49,
 		green: 105,
 		blue: 85,
-		hex: 316955,
+		hex: '#316955',
 	},
 	{
-		dmcId: '910',
+		id: '910',
 		name: 'Emerald Green Dark',
 		red: 48,
 		green: 116,
@@ -1768,23 +1746,15 @@ export const dmcColors = [
 		hex: '#30745B',
 	},
 	{
-		dmcId: '911',
+		id: '911',
 		name: 'Emerald Green Medium',
 		red: 49,
 		green: 128,
 		blue: 97,
-		hex: 318061,
+		hex: '#318061',
 	},
 	{
-		dmcId: '912',
-		name: 'Emerald Green Light',
-		red: 115,
-		green: 158,
-		blue: 115,
-		hex: 7.39e75,
-	},
-	{
-		dmcId: '913',
+		id: '913',
 		name: 'Nile Green Medium',
 		red: 153,
 		green: 188,
@@ -1792,7 +1762,7 @@ export const dmcColors = [
 		hex: '#99BC95',
 	},
 	{
-		dmcId: '915',
+		id: '915',
 		name: 'Plum Dark',
 		red: 170,
 		green: 24,
@@ -1800,7 +1770,7 @@ export const dmcColors = [
 		hex: '#AA185B',
 	},
 	{
-		dmcId: '917',
+		id: '917',
 		name: 'Plum Medium',
 		red: 171,
 		green: 22,
@@ -1808,7 +1778,7 @@ export const dmcColors = [
 		hex: '#AB165F',
 	},
 	{
-		dmcId: '918',
+		id: '918',
 		name: 'Red Copper Dark',
 		red: 168,
 		green: 68,
@@ -1816,7 +1786,7 @@ export const dmcColors = [
 		hex: '#A8444C',
 	},
 	{
-		dmcId: '919',
+		id: '919',
 		name: 'Red Copper',
 		red: 180,
 		green: 75,
@@ -1824,7 +1794,7 @@ export const dmcColors = [
 		hex: '#B44B52',
 	},
 	{
-		dmcId: '920',
+		id: '920',
 		name: 'Copper Medium',
 		red: 197,
 		green: 94,
@@ -1832,7 +1802,7 @@ export const dmcColors = [
 		hex: '#C55E58',
 	},
 	{
-		dmcId: '921',
+		id: '921',
 		name: 'Copper',
 		red: 206,
 		green: 103,
@@ -1840,7 +1810,7 @@ export const dmcColors = [
 		hex: '#CE675B',
 	},
 	{
-		dmcId: '922',
+		id: '922',
 		name: 'Copper Light',
 		red: 237,
 		green: 134,
@@ -1848,23 +1818,23 @@ export const dmcColors = [
 		hex: '#ED8673',
 	},
 	{
-		dmcId: '924',
+		id: '924',
 		name: 'Grey Green Very Dark',
 		red: 86,
 		green: 99,
 		blue: 100,
-		hex: 566364,
+		hex: '#566364',
 	},
 	{
-		dmcId: '926',
+		id: '926',
 		name: 'Grey Green Light',
 		red: 96,
 		green: 116,
 		blue: 115,
-		hex: 607473,
+		hex: '#607473',
 	},
 	{
-		dmcId: '927',
+		id: '927',
 		name: 'Grey Green Light',
 		red: 200,
 		green: 198,
@@ -1872,7 +1842,7 @@ export const dmcColors = [
 		hex: '#C8C6C2',
 	},
 	{
-		dmcId: '928',
+		id: '928',
 		name: 'Grey Green Very Light',
 		red: 225,
 		green: 224,
@@ -1880,7 +1850,7 @@ export const dmcColors = [
 		hex: '#E1E0D8',
 	},
 	{
-		dmcId: '930',
+		id: '930',
 		name: 'Antique Blue Dark',
 		red: 102,
 		green: 122,
@@ -1888,7 +1858,7 @@ export const dmcColors = [
 		hex: '#667A8C',
 	},
 	{
-		dmcId: '931',
+		id: '931',
 		name: 'Antique Blue Medium',
 		red: 124,
 		green: 135,
@@ -1896,7 +1866,7 @@ export const dmcColors = [
 		hex: '#7C8791',
 	},
 	{
-		dmcId: '932',
+		id: '932',
 		name: 'Antique Blue Light',
 		red: 182,
 		green: 186,
@@ -1904,7 +1874,7 @@ export const dmcColors = [
 		hex: '#B6BAC2',
 	},
 	{
-		dmcId: '934',
+		id: '934',
 		name: 'Black Avocado Green',
 		red: 62,
 		green: 59,
@@ -1912,7 +1882,7 @@ export const dmcColors = [
 		hex: '#3E3B28',
 	},
 	{
-		dmcId: '935',
+		id: '935',
 		name: 'Avocado Green Dark',
 		red: 67,
 		green: 63,
@@ -1920,39 +1890,39 @@ export const dmcColors = [
 		hex: '#433F2F',
 	},
 	{
-		dmcId: '936',
+		id: '936',
 		name: 'Avocado Green Very Dark',
 		red: 69,
 		green: 69,
 		blue: 49,
-		hex: 454531,
+		hex: '#454531',
 	},
 	{
-		dmcId: '937',
+		id: '937',
 		name: 'Avocado Green Medium',
 		red: 73,
 		green: 86,
 		blue: 55,
-		hex: 495637,
+		hex: '#495637',
 	},
 	{
-		dmcId: '938',
+		id: '938',
 		name: 'Coffee Brown Ultra DarkK',
 		red: 99,
 		green: 39,
 		blue: 16,
-		hex: 632710,
+		hex: '#632710',
 	},
 	{
-		dmcId: '939',
+		id: '939',
 		name: 'Navy Blue Very Dark',
 		red: 0,
 		green: 0,
 		blue: 49,
-		hex: 31,
+		hex: '#31',
 	},
 	{
-		dmcId: '943',
+		id: '943',
 		name: 'Aquamarine Medium',
 		red: 0,
 		green: 162,
@@ -1960,7 +1930,7 @@ export const dmcColors = [
 		hex: '#00A275',
 	},
 	{
-		dmcId: '945',
+		id: '945',
 		name: 'Flesh Medium',
 		red: 255,
 		green: 206,
@@ -1968,7 +1938,7 @@ export const dmcColors = [
 		hex: '#FFCEA4',
 	},
 	{
-		dmcId: '946',
+		id: '946',
 		name: 'Burnt Orange Medium',
 		red: 244,
 		green: 73,
@@ -1976,7 +1946,7 @@ export const dmcColors = [
 		hex: '#F44900',
 	},
 	{
-		dmcId: '947',
+		id: '947',
 		name: 'Burnt Orange',
 		red: 255,
 		green: 91,
@@ -1984,7 +1954,7 @@ export const dmcColors = [
 		hex: '#FF5B00',
 	},
 	{
-		dmcId: '948',
+		id: '948',
 		name: 'Peach Flesh Very Light',
 		red: 255,
 		green: 243,
@@ -1992,7 +1962,7 @@ export const dmcColors = [
 		hex: '#FFF3E7',
 	},
 	{
-		dmcId: '950',
+		id: '950',
 		name: 'Sportsman Flesh',
 		red: 239,
 		green: 162,
@@ -2000,7 +1970,7 @@ export const dmcColors = [
 		hex: '#EFA27F',
 	},
 	{
-		dmcId: '951',
+		id: '951',
 		name: 'Flesh',
 		red: 255,
 		green: 229,
@@ -2008,7 +1978,7 @@ export const dmcColors = [
 		hex: '#FFE5BC',
 	},
 	{
-		dmcId: '954',
+		id: '954',
 		name: 'Nile Green',
 		red: 170,
 		green: 213,
@@ -2016,7 +1986,7 @@ export const dmcColors = [
 		hex: '#AAD5A4',
 	},
 	{
-		dmcId: '955',
+		id: '955',
 		name: 'Nile Green Light',
 		red: 214,
 		green: 230,
@@ -2024,7 +1994,7 @@ export const dmcColors = [
 		hex: '#D6E6CC',
 	},
 	{
-		dmcId: '956',
+		id: '956',
 		name: 'Geranium',
 		red: 255,
 		green: 109,
@@ -2032,7 +2002,7 @@ export const dmcColors = [
 		hex: '#FF6D73',
 	},
 	{
-		dmcId: '957',
+		id: '957',
 		name: 'Gernanium Pale',
 		red: 255,
 		green: 204,
@@ -2040,7 +2010,7 @@ export const dmcColors = [
 		hex: '#FFCCD0',
 	},
 	{
-		dmcId: '958',
+		id: '958',
 		name: 'Sea Green Dark',
 		red: 0,
 		green: 160,
@@ -2048,7 +2018,7 @@ export const dmcColors = [
 		hex: '#00A082',
 	},
 	{
-		dmcId: '959',
+		id: '959',
 		name: 'Sea Green Medium',
 		red: 171,
 		green: 206,
@@ -2056,7 +2026,7 @@ export const dmcColors = [
 		hex: '#ABCEB1',
 	},
 	{
-		dmcId: '961',
+		id: '961',
 		name: 'Dusty Rose Dark',
 		red: 243,
 		green: 108,
@@ -2064,7 +2034,7 @@ export const dmcColors = [
 		hex: '#F36C7B',
 	},
 	{
-		dmcId: '962',
+		id: '962',
 		name: 'Dusty Rose Medium',
 		red: 253,
 		green: 134,
@@ -2072,15 +2042,12 @@ export const dmcColors = [
 		hex: '#FD868D',
 	},
 	{
-		dmcId: '963',
+		id: '963',
 		name: 'Dusty Rose Ultra Very Light',
-		red: '',
-		green: 233,
-		blue: 233,
 		hex: '#FFE9E9',
 	},
 	{
-		dmcId: '964',
+		id: '964',
 		name: 'Sea Green Light',
 		red: 208,
 		green: 224,
@@ -2088,7 +2055,7 @@ export const dmcColors = [
 		hex: '#D0E0D2',
 	},
 	{
-		dmcId: '966',
+		id: '966',
 		name: 'Baby Green Medium',
 		red: 206,
 		green: 213,
@@ -2096,7 +2063,7 @@ export const dmcColors = [
 		hex: '#CED5B0',
 	},
 	{
-		dmcId: '970',
+		id: '970',
 		name: 'Pumpkin Light',
 		red: 255,
 		green: 117,
@@ -2104,7 +2071,7 @@ export const dmcColors = [
 		hex: '#FF7518',
 	},
 	{
-		dmcId: '971',
+		id: '971',
 		name: 'Pumpkin',
 		red: 255,
 		green: 106,
@@ -2112,7 +2079,7 @@ export const dmcColors = [
 		hex: '#FF6A00',
 	},
 	{
-		dmcId: '972',
+		id: '972',
 		name: 'Canary Dark',
 		red: 255,
 		green: 146,
@@ -2120,7 +2087,7 @@ export const dmcColors = [
 		hex: '#FF9200',
 	},
 	{
-		dmcId: '973',
+		id: '973',
 		name: 'Canary Bright',
 		red: 255,
 		green: 194,
@@ -2128,7 +2095,7 @@ export const dmcColors = [
 		hex: '#FFC243',
 	},
 	{
-		dmcId: '975',
+		id: '975',
 		name: 'Golden Brown Dark',
 		red: 158,
 		green: 67,
@@ -2136,7 +2103,7 @@ export const dmcColors = [
 		hex: '#∞E+00',
 	},
 	{
-		dmcId: '976',
+		id: '976',
 		name: 'Golden Brown Medium',
 		red: 246,
 		green: 141,
@@ -2144,7 +2111,7 @@ export const dmcColors = [
 		hex: '#F68D39',
 	},
 	{
-		dmcId: '977',
+		id: '977',
 		name: 'Golden Brown Light',
 		red: 255,
 		green: 164,
@@ -2152,7 +2119,7 @@ export const dmcColors = [
 		hex: '#FFA449',
 	},
 	{
-		dmcId: '986',
+		id: '986',
 		name: 'Forest Green Very Dark',
 		red: 58,
 		green: 82,
@@ -2160,15 +2127,15 @@ export const dmcColors = [
 		hex: '#3A5241',
 	},
 	{
-		dmcId: '987',
+		id: '987',
 		name: 'Forest Green Dark',
 		red: 83,
 		green: 97,
 		blue: 73,
-		hex: 536149,
+		hex: '#536149',
 	},
 	{
-		dmcId: '988',
+		id: '988',
 		name: 'Forest Green Medium',
 		red: 134,
 		green: 145,
@@ -2176,7 +2143,7 @@ export const dmcColors = [
 		hex: '#86916E',
 	},
 	{
-		dmcId: '989',
+		id: '989',
 		name: 'Forest Green',
 		red: 134,
 		green: 153,
@@ -2184,7 +2151,7 @@ export const dmcColors = [
 		hex: '#86996E',
 	},
 	{
-		dmcId: '991',
+		id: '991',
 		name: 'Aquamarine Dark',
 		red: 47,
 		green: 91,
@@ -2192,7 +2159,7 @@ export const dmcColors = [
 		hex: '#2F5B49',
 	},
 	{
-		dmcId: '992',
+		id: '992',
 		name: 'Aquamarine',
 		red: 146,
 		green: 183,
@@ -2200,7 +2167,7 @@ export const dmcColors = [
 		hex: '#92B7A5',
 	},
 	{
-		dmcId: '993',
+		id: '993',
 		name: 'Aquamarine Light',
 		red: 192,
 		green: 224,
@@ -2208,7 +2175,7 @@ export const dmcColors = [
 		hex: '#C0E0C8',
 	},
 	{
-		dmcId: '995',
+		id: '995',
 		name: 'Electric Blue Dark',
 		red: 0,
 		green: 123,
@@ -2216,7 +2183,7 @@ export const dmcColors = [
 		hex: '#007B86',
 	},
 	{
-		dmcId: '996',
+		id: '996',
 		name: 'Electric Blue Medium',
 		red: 170,
 		green: 222,
@@ -2224,7 +2191,7 @@ export const dmcColors = [
 		hex: '#AADEE1',
 	},
 	{
-		dmcId: '3011',
+		id: '3011',
 		name: 'Khaki Green Dark',
 		red: 123,
 		green: 91,
@@ -2232,7 +2199,7 @@ export const dmcColors = [
 		hex: '#7B5B40',
 	},
 	{
-		dmcId: '3012',
+		id: '3012',
 		name: 'Khaki Green Medium',
 		red: 170,
 		green: 134,
@@ -2240,7 +2207,7 @@ export const dmcColors = [
 		hex: '#AA8667',
 	},
 	{
-		dmcId: '3013',
+		id: '3013',
 		name: 'Khaki Green Light',
 		red: 208,
 		green: 195,
@@ -2248,7 +2215,7 @@ export const dmcColors = [
 		hex: '#D0C3A4',
 	},
 	{
-		dmcId: '3021',
+		id: '3021',
 		name: 'Brown Grey Very Dark',
 		red: 115,
 		green: 91,
@@ -2256,7 +2223,7 @@ export const dmcColors = [
 		hex: '#735B5D',
 	},
 	{
-		dmcId: '3022',
+		id: '3022',
 		name: 'Brown Grey Medium',
 		red: 172,
 		green: 172,
@@ -2264,7 +2231,7 @@ export const dmcColors = [
 		hex: '#ACACAA',
 	},
 	{
-		dmcId: '3023',
+		id: '3023',
 		name: 'Brown Grey Light',
 		red: 198,
 		green: 190,
@@ -2272,7 +2239,7 @@ export const dmcColors = [
 		hex: '#C6BEAD',
 	},
 	{
-		dmcId: '3024',
+		id: '3024',
 		name: 'Brown Grey Very Light',
 		red: 210,
 		green: 208,
@@ -2280,15 +2247,15 @@ export const dmcColors = [
 		hex: '#D2D0CD',
 	},
 	{
-		dmcId: '3031',
+		id: '3031',
 		name: 'Mocha Brown Very Dark',
 		red: 84,
 		green: 56,
 		blue: 23,
-		hex: 543817,
+		hex: '#543817',
 	},
 	{
-		dmcId: '3032',
+		id: '3032',
 		name: 'Mocha Brown Medium',
 		red: 188,
 		green: 156,
@@ -2296,7 +2263,7 @@ export const dmcColors = [
 		hex: '#BC9C78',
 	},
 	{
-		dmcId: '3033',
+		id: '3033',
 		name: 'Mocha Brown Very Light',
 		red: 239,
 		green: 219,
@@ -2304,7 +2271,7 @@ export const dmcColors = [
 		hex: '#EFDBBE',
 	},
 	{
-		dmcId: '3041',
+		id: '3041',
 		name: 'Antique Violet Medium',
 		red: 190,
 		green: 155,
@@ -2312,7 +2279,7 @@ export const dmcColors = [
 		hex: '#BE9BA7',
 	},
 	{
-		dmcId: '3042',
+		id: '3042',
 		name: 'Antique Violet Light',
 		red: 225,
 		green: 205,
@@ -2320,7 +2287,7 @@ export const dmcColors = [
 		hex: '#E1CDC8',
 	},
 	{
-		dmcId: '3045',
+		id: '3045',
 		name: 'Yellow Beige Dark',
 		red: 216,
 		green: 151,
@@ -2328,7 +2295,7 @@ export const dmcColors = [
 		hex: '#D89769',
 	},
 	{
-		dmcId: '3046',
+		id: '3046',
 		name: 'Yellow Beige Medium',
 		red: 229,
 		green: 193,
@@ -2336,7 +2303,7 @@ export const dmcColors = [
 		hex: '#E5C18B',
 	},
 	{
-		dmcId: '3047',
+		id: '3047',
 		name: 'Yellow Beige Light',
 		red: 255,
 		green: 236,
@@ -2344,15 +2311,15 @@ export const dmcColors = [
 		hex: '#FFECD3',
 	},
 	{
-		dmcId: '3051',
+		id: '3051',
 		name: 'Green Grey Dark',
 		red: 85,
 		green: 73,
 		blue: 0,
-		hex: 554900,
+		hex: '#554900',
 	},
 	{
-		dmcId: '3052',
+		id: '3052',
 		name: 'Green Grey Medium',
 		red: 137,
 		green: 141,
@@ -2360,7 +2327,7 @@ export const dmcColors = [
 		hex: '#898D72',
 	},
 	{
-		dmcId: '3053',
+		id: '3053',
 		name: 'Green Grey',
 		red: 187,
 		green: 179,
@@ -2368,7 +2335,7 @@ export const dmcColors = [
 		hex: '#BBB394',
 	},
 	{
-		dmcId: '3064',
+		id: '3064',
 		name: 'Sportsman Flsh Very Dark',
 		red: 194,
 		green: 101,
@@ -2376,7 +2343,7 @@ export const dmcColors = [
 		hex: '#C2654C',
 	},
 	{
-		dmcId: '3072',
+		id: '3072',
 		name: 'Beaver Grey Very Light',
 		red: 233,
 		green: 233,
@@ -2384,7 +2351,7 @@ export const dmcColors = [
 		hex: '#E9E9DF',
 	},
 	{
-		dmcId: '3078',
+		id: '3078',
 		name: 'Golden Yellow Very Light',
 		red: 255,
 		green: 255,
@@ -2392,7 +2359,7 @@ export const dmcColors = [
 		hex: '#FFFFDC',
 	},
 	{
-		dmcId: '3325',
+		id: '3325',
 		name: 'Baby Blue Light',
 		red: 202,
 		green: 226,
@@ -2400,7 +2367,7 @@ export const dmcColors = [
 		hex: '#CAE2E5',
 	},
 	{
-		dmcId: '3326',
+		id: '3326',
 		name: 'Rose Light',
 		red: 255,
 		green: 157,
@@ -2408,7 +2375,7 @@ export const dmcColors = [
 		hex: '#FF9D96',
 	},
 	{
-		dmcId: '3328',
+		id: '3328',
 		name: 'Salmon Dark',
 		red: 188,
 		green: 64,
@@ -2416,7 +2383,7 @@ export const dmcColors = [
 		hex: '#BC4055',
 	},
 	{
-		dmcId: '3340',
+		id: '3340',
 		name: 'Apricot Medium',
 		red: 255,
 		green: 123,
@@ -2424,7 +2391,7 @@ export const dmcColors = [
 		hex: '#FF7B67',
 	},
 	{
-		dmcId: '3341',
+		id: '3341',
 		name: 'Apricot',
 		red: 255,
 		green: 172,
@@ -2432,15 +2399,15 @@ export const dmcColors = [
 		hex: '#EBACA2',
 	},
 	{
-		dmcId: '3345',
+		id: '3345',
 		name: 'Hunter Green Dark',
 		red: 97,
 		green: 100,
 		blue: 82,
-		hex: 616452,
+		hex: '#616452',
 	},
 	{
-		dmcId: '3346',
+		id: '3346',
 		name: 'Hunter Green',
 		red: 120,
 		green: 134,
@@ -2448,15 +2415,15 @@ export const dmcColors = [
 		hex: '#78866B',
 	},
 	{
-		dmcId: '3347',
+		id: '3347',
 		name: 'Yellow Green Medium',
 		red: 128,
 		green: 152,
 		blue: 115,
-		hex: 809873,
+		hex: '#809873',
 	},
 	{
-		dmcId: '3348',
+		id: '3348',
 		name: 'Yellow Green Light',
 		red: 225,
 		green: 249,
@@ -2464,7 +2431,7 @@ export const dmcColors = [
 		hex: '#E1F9BE',
 	},
 	{
-		dmcId: '3350',
+		id: '3350',
 		name: 'Dusty Rose Ultra DarkK',
 		red: 201,
 		green: 79,
@@ -2472,7 +2439,7 @@ export const dmcColors = [
 		hex: '#C94F5B',
 	},
 	{
-		dmcId: '3354',
+		id: '3354',
 		name: 'Dusty Rose Light',
 		red: 255,
 		green: 214,
@@ -2480,7 +2447,7 @@ export const dmcColors = [
 		hex: '#FFD6D1',
 	},
 	{
-		dmcId: '3362',
+		id: '3362',
 		name: 'Pine Green Dark',
 		red: 96,
 		green: 95,
@@ -2488,7 +2455,7 @@ export const dmcColors = [
 		hex: '#605F54',
 	},
 	{
-		dmcId: '3363',
+		id: '3363',
 		name: 'Pine Green Medium',
 		red: 116,
 		green: 127,
@@ -2496,7 +2463,7 @@ export const dmcColors = [
 		hex: '#747F60',
 	},
 	{
-		dmcId: '3364',
+		id: '3364',
 		name: 'Pine Green',
 		red: 161,
 		green: 167,
@@ -2504,15 +2471,15 @@ export const dmcColors = [
 		hex: '#A1A787',
 	},
 	{
-		dmcId: '3371',
+		id: '3371',
 		name: 'Black Brown',
 		red: 83,
 		green: 37,
 		blue: 16,
-		hex: 532510,
+		hex: '#532510',
 	},
 	{
-		dmcId: '3607',
+		id: '3607',
 		name: 'Plum Light',
 		red: 231,
 		green: 79,
@@ -2520,7 +2487,7 @@ export const dmcColors = [
 		hex: '#E74F86',
 	},
 	{
-		dmcId: '3608',
+		id: '3608',
 		name: 'Plum Very Light',
 		red: 247,
 		green: 152,
@@ -2528,7 +2495,7 @@ export const dmcColors = [
 		hex: '#F798B6',
 	},
 	{
-		dmcId: '3609',
+		id: '3609',
 		name: 'Plum Ultra Light',
 		red: 255,
 		green: 214,
@@ -2536,7 +2503,7 @@ export const dmcColors = [
 		hex: '#FFD6E5',
 	},
 	{
-		dmcId: '3685',
+		id: '3685',
 		name: 'Mauve Dark',
 		red: 161,
 		green: 53,
@@ -2544,7 +2511,7 @@ export const dmcColors = [
 		hex: '#A1354F',
 	},
 	{
-		dmcId: '3687',
+		id: '3687',
 		name: 'Mauve',
 		red: 203,
 		green: 78,
@@ -2552,7 +2519,7 @@ export const dmcColors = [
 		hex: '#CB4E61',
 	},
 	{
-		dmcId: '3688',
+		id: '3688',
 		name: 'Mauve Medium',
 		red: 250,
 		green: 151,
@@ -2560,7 +2527,7 @@ export const dmcColors = [
 		hex: '#FA9790',
 	},
 	{
-		dmcId: '3689',
+		id: '3689',
 		name: 'Mauve Light',
 		red: 255,
 		green: 213,
@@ -2568,7 +2535,7 @@ export const dmcColors = [
 		hex: '#FFD5D8',
 	},
 	{
-		dmcId: '3705',
+		id: '3705',
 		name: 'Melon Dark',
 		red: 255,
 		green: 85,
@@ -2576,7 +2543,7 @@ export const dmcColors = [
 		hex: '#FF555B',
 	},
 	{
-		dmcId: '3706',
+		id: '3706',
 		name: 'Melon Medium',
 		red: 255,
 		green: 128,
@@ -2584,7 +2551,7 @@ export const dmcColors = [
 		hex: '#FF806D',
 	},
 	{
-		dmcId: '3708',
+		id: '3708',
 		name: 'Melon Light',
 		red: 254,
 		green: 212,
@@ -2592,7 +2559,7 @@ export const dmcColors = [
 		hex: '#FED4DB',
 	},
 	{
-		dmcId: '3712',
+		id: '3712',
 		name: 'Salmon Medium',
 		red: 230,
 		green: 101,
@@ -2600,7 +2567,7 @@ export const dmcColors = [
 		hex: '#E6656B',
 	},
 	{
-		dmcId: '3713',
+		id: '3713',
 		name: 'Salmon Very Light',
 		red: 253,
 		green: 229,
@@ -2608,7 +2575,7 @@ export const dmcColors = [
 		hex: '#FDE5D9',
 	},
 	{
-		dmcId: '3716',
+		id: '3716',
 		name: 'Dusty Rose Very Light',
 		red: 255,
 		green: 211,
@@ -2616,7 +2583,7 @@ export const dmcColors = [
 		hex: '#FFD3D4',
 	},
 	{
-		dmcId: '3721',
+		id: '3721',
 		name: 'Shell Pink Dark',
 		red: 184,
 		green: 75,
@@ -2624,7 +2591,7 @@ export const dmcColors = [
 		hex: '#B84B4D',
 	},
 	{
-		dmcId: '3722',
+		id: '3722',
 		name: 'Shell Pink Medium',
 		red: 184,
 		green: 89,
@@ -2632,7 +2599,7 @@ export const dmcColors = [
 		hex: '#B85958',
 	},
 	{
-		dmcId: '3726',
+		id: '3726',
 		name: 'Antique Mauve Dark',
 		red: 195,
 		green: 118,
@@ -2640,7 +2607,7 @@ export const dmcColors = [
 		hex: '#C3767B',
 	},
 	{
-		dmcId: '3727',
+		id: '3727',
 		name: 'Antique Mauve Light',
 		red: 255,
 		green: 199,
@@ -2648,7 +2615,7 @@ export const dmcColors = [
 		hex: '#FFC7C4',
 	},
 	{
-		dmcId: '3731',
+		id: '3731',
 		name: 'Dusty Rose Very Dark',
 		red: 209,
 		green: 93,
@@ -2656,7 +2623,7 @@ export const dmcColors = [
 		hex: '#D15D67',
 	},
 	{
-		dmcId: '3733',
+		id: '3733',
 		name: 'Dusty Rose',
 		red: 255,
 		green: 154,
@@ -2664,7 +2631,7 @@ export const dmcColors = [
 		hex: '#FF9A94',
 	},
 	{
-		dmcId: '3740',
+		id: '3740',
 		name: 'Antique Violet Dark',
 		red: 156,
 		green: 125,
@@ -2672,7 +2639,7 @@ export const dmcColors = [
 		hex: '#9C7D85',
 	},
 	{
-		dmcId: '3743',
+		id: '3743',
 		name: 'Antique Violet Very Light',
 		red: 235,
 		green: 235,
@@ -2680,7 +2647,7 @@ export const dmcColors = [
 		hex: '#EBEBE7',
 	},
 	{
-		dmcId: '3746',
+		id: '3746',
 		name: 'Blue Violet Dark',
 		red: 149,
 		green: 102,
@@ -2688,7 +2655,7 @@ export const dmcColors = [
 		hex: '#9566A2',
 	},
 	{
-		dmcId: '3747',
+		id: '3747',
 		name: 'Blue Violet Very Light',
 		red: 230,
 		green: 236,
@@ -2696,7 +2663,7 @@ export const dmcColors = [
 		hex: '#E6ECE8',
 	},
 	{
-		dmcId: '3750',
+		id: '3750',
 		name: 'Antique Blue Very Dark',
 		red: 12,
 		green: 91,
@@ -2704,7 +2671,7 @@ export const dmcColors = [
 		hex: '#0C5B6C',
 	},
 	{
-		dmcId: '3752',
+		id: '3752',
 		name: 'Antique Blue Very Light',
 		red: 194,
 		green: 209,
@@ -2712,15 +2679,15 @@ export const dmcColors = [
 		hex: '#C2D1CE',
 	},
 	{
-		dmcId: '3753',
-		name: 'Ant. Blue Ultra Very Light',
+		id: '3753',
+		name: 'Blue Ultra Very Light',
 		red: 237,
 		green: 247,
 		blue: 247,
 		hex: '#EDF7F7',
 	},
 	{
-		dmcId: '3755',
+		id: '3755',
 		name: 'Baby Blue',
 		red: 158,
 		green: 176,
@@ -2728,7 +2695,7 @@ export const dmcColors = [
 		hex: '#9EB0CE',
 	},
 	{
-		dmcId: '3756',
+		id: '3756',
 		name: 'Baby Blue Ultra Very Light',
 		red: 248,
 		green: 248,
@@ -2736,15 +2703,7 @@ export const dmcColors = [
 		hex: '#F8F8FC',
 	},
 	{
-		dmcId: '3760',
-		name: 'Wedgewood',
-		red: 102,
-		green: 142,
-		blue: 152,
-		hex: 6.68e100,
-	},
-	{
-		dmcId: '3761',
+		id: '3761',
 		name: 'Sky Blue Light',
 		red: 227,
 		green: 234,
@@ -2752,15 +2711,15 @@ export const dmcColors = [
 		hex: '#E3EAE6',
 	},
 	{
-		dmcId: '3765',
+		id: '3765',
 		name: 'Peacock Blue Very Dark',
 		red: 24,
 		green: 128,
 		blue: 134,
-		hex: 188086,
+		hex: '#188086',
 	},
 	{
-		dmcId: '3766',
+		id: '3766',
 		name: 'Peacock Blue Light',
 		red: 24,
 		green: 101,
@@ -2768,7 +2727,7 @@ export const dmcColors = [
 		hex: '#18656F',
 	},
 	{
-		dmcId: '3768',
+		id: '3768',
 		name: 'Grey Green Dark',
 		red: 92,
 		green: 110,
@@ -2776,7 +2735,7 @@ export const dmcColors = [
 		hex: '#5C6E6C',
 	},
 	{
-		dmcId: '3770',
+		id: '3770',
 		name: 'Flesh Very Light',
 		red: 255,
 		green: 250,
@@ -2784,7 +2743,7 @@ export const dmcColors = [
 		hex: '#FFFAE0',
 	},
 	{
-		dmcId: '3772',
+		id: '3772',
 		name: 'Negro Flesh',
 		red: 173,
 		green: 83,
@@ -2792,7 +2751,7 @@ export const dmcColors = [
 		hex: '#AD533E',
 	},
 	{
-		dmcId: '3773',
+		id: '3773',
 		name: 'Sportsman Flsh Medium',
 		red: 231,
 		green: 134,
@@ -2800,7 +2759,7 @@ export const dmcColors = [
 		hex: '#E78667',
 	},
 	{
-		dmcId: '3774',
+		id: '3774',
 		name: 'Sportsman Flsh Very Light',
 		red: 255,
 		green: 220,
@@ -2808,7 +2767,7 @@ export const dmcColors = [
 		hex: '#FFDCC1',
 	},
 	{
-		dmcId: '3776',
+		id: '3776',
 		name: 'Mahogony Light',
 		red: 221,
 		green: 109,
@@ -2816,7 +2775,7 @@ export const dmcColors = [
 		hex: '#DD6D5B',
 	},
 	{
-		dmcId: '3777',
+		id: '3777',
 		name: 'Terra Cotta Very Dark',
 		red: 191,
 		green: 64,
@@ -2824,7 +2783,7 @@ export const dmcColors = [
 		hex: '#BF4024',
 	},
 	{
-		dmcId: '3778',
+		id: '3778',
 		name: 'Terra Cotta Light',
 		red: 237,
 		green: 122,
@@ -2832,15 +2791,15 @@ export const dmcColors = [
 		hex: '#ED7A64',
 	},
 	{
-		dmcId: '3779',
-		name: 'Ter. Cotta Ultra Very Light',
+		id: '3779',
+		name: 'Terra Cotta Ultra Very Light',
 		red: 255,
 		green: 177,
 		blue: 152,
 		hex: '#FFB198',
 	},
 	{
-		dmcId: '3781',
+		id: '3781',
 		name: 'Mocha Brown Dark',
 		red: 113,
 		green: 71,
@@ -2848,7 +2807,7 @@ export const dmcColors = [
 		hex: '#71472A',
 	},
 	{
-		dmcId: '3782',
+		id: '3782',
 		name: 'Mocho Brown Light',
 		red: 206,
 		green: 175,
@@ -2856,7 +2815,7 @@ export const dmcColors = [
 		hex: '#CEAF90',
 	},
 	{
-		dmcId: '3787',
+		id: '3787',
 		name: 'Brown Grey Dark',
 		red: 139,
 		green: 109,
@@ -2864,7 +2823,7 @@ export const dmcColors = [
 		hex: '#8B6D73',
 	},
 	{
-		dmcId: '3790',
+		id: '3790',
 		name: 'Beige Grey Ultra Dark',
 		red: 140,
 		green: 117,
@@ -2872,7 +2831,7 @@ export const dmcColors = [
 		hex: '#8C756D',
 	},
 	{
-		dmcId: '3799',
+		id: '3799',
 		name: 'Pewter Grey  Very Dark',
 		red: 81,
 		green: 76,
