@@ -6,6 +6,12 @@ export type Project = {
 	grid: string[][];
 };
 
+export type ProjectDimension = {
+	height: number;
+	width: number;
+	display: string;
+};
+
 export type Color = {
 	id: string;
 	name: string;

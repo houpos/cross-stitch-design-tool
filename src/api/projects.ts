@@ -1,13 +1,6 @@
-import { Project } from '../types';
+import { Project, ProjectDimension } from './types';
 
-export const availableProjectGridDimensions = [
-	{ height: 2, width: 2, display: '2 x 2' },
-	{ height: 4, width: 4, display: '4 x 4' },
-	{ height: 6, width: 6, display: '6 x 6' },
-	{ height: 8, width: 8, display: '8 x 8' },
-];
-
-export const projects: Project[] = [
+const allProjects: Project[] = [
 	{
 		id: '1',
 		title: 'First Project',
@@ -65,3 +58,20 @@ export const projects: Project[] = [
 		grid: [],
 	},
 ];
+
+const availableProjectGridDimensions: ProjectDimension[] = [
+	{ height: 2, width: 2, display: '2 x 2' },
+	{ height: 4, width: 4, display: '4 x 4' },
+	{ height: 6, width: 6, display: '6 x 6' },
+	{ height: 8, width: 8, display: '8 x 8' },
+];
+
+export const getAllProjects = async (): Promise<Project[]> => {
+	return allProjects;
+};
+
+export const getAvailableProjectGridDimensions = async (): Promise<
+	ProjectDimension[]
+> => {
+	return availableProjectGridDimensions;
+};

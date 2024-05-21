@@ -1,6 +1,6 @@
-import { Color } from '../types';
+import { Color } from './types';
 
-export const dmcColors: Color[] = [
+const dmcColors: Color[] = [
 	{
 		id: '0',
 		name: 'White',
@@ -2840,7 +2840,7 @@ export const dmcColors: Color[] = [
 	},
 ];
 
-export const getColorsAsObject = (): { [id: string]: Color } => {
+export const getColorsAsObject = async (): Promise<{ [id: string]: Color }> => {
 	return dmcColors.reduce((arr, curr: Color) => {
 		if (!arr) {
 			arr = {} as any;
@@ -2848,4 +2848,8 @@ export const getColorsAsObject = (): { [id: string]: Color } => {
 		arr[curr.id] = curr;
 		return arr;
 	}, {} as any);
+};
+
+export const getDmcColors = async (): Promise<Color[]> => {
+	return dmcColors;
 };
