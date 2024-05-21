@@ -1,4 +1,3 @@
-import { useTheme } from 'styled-components';
 import styles from './create-design-form.module.scss';
 import { Project } from '../types';
 import { useState } from 'react';
@@ -10,7 +9,6 @@ export default function CreateDesignForm({
 }: {
 	handleClose: () => void;
 }) {
-	const theme = useTheme();
 	const { dispatch } = useAppContext();
 	const [title, setTitle] = useState<string>('Your project title');
 	const [dimensionsIndex, setDimensionsIndex] = useState(0);
