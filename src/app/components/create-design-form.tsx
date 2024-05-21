@@ -1,16 +1,19 @@
 import styles from './create-design-form.module.scss';
 import { useState } from 'react';
 import { ActionType, useAppContext } from '../contexts/context';
-import { getAvailableProjectGridDimensions } from '@/api/projects';
-import { Project } from '@/api/types';
+import { Project, ProjectDimension } from '@/api/types';
 
-export default async function CreateDesignForm({
+export default function CreateDesignForm({
 	handleClose,
 }: {
 	handleClose: () => void;
 }) {
-	const availableProjectGridDimensions =
-		await getAvailableProjectGridDimensions();
+	const availableProjectGridDimensions: ProjectDimension[] = [
+		{ height: 2, width: 2, display: '2 x 2' },
+		{ height: 4, width: 4, display: '4 x 4' },
+		{ height: 6, width: 6, display: '6 x 6' },
+		{ height: 8, width: 8, display: '8 x 8' },
+	];
 	const { dispatch } = useAppContext();
 	const [title, setTitle] = useState<string>('Your project title');
 	const [dimensionsIndex, setDimensionsIndex] = useState(0);

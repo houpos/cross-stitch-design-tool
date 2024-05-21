@@ -29,7 +29,7 @@ export default function Modal() {
 						<MdClose />
 					</button>
 				</div>
-				{/* <CreateDesignForm handleClose={handleClose} /> */}
+				<CreateDesignForm handleClose={handleModal} />
 			</div>
 		</dialog>
 	);
