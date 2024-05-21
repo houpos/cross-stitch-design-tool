@@ -1,6 +1,6 @@
-import { CardWithImageAndTitle } from '../styles/cards';
 import { ActionType, useAppContext } from '../contexts/context';
 import { useRouter } from 'next/navigation';
+import styles from './card.module.scss';
 
 type CardProps = {
 	id: string;
@@ -19,14 +19,17 @@ export default function Card({ id, title }: CardProps) {
 			role="link"
 			onClick={() => handleClick()}
 			id={id}>
-			<CardWithImageAndTitle>
-				<div className="cardHeader">
-					<img src="/placholder.png" />
+			<div className={styles.card}>
+				<div className={styles.cardHeader}>
+					<img
+						className={styles.cardImage}
+						src="/placholder.png"
+					/>
 				</div>
-				<div className="cardBody">
+				<div className={styles.cardBody}>
 					<span>{title}</span>
 				</div>
-			</CardWithImageAndTitle>
+			</div>
 		</button>
 	);
 }
