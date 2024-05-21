@@ -1,12 +1,13 @@
 'use client';
 import { ActionType, useAppContext } from '@/app/contexts/context';
-import { Color, Project } from '@/app/types';
 import { useEffect, useState } from 'react';
 import styles from './page.module.scss';
-import { dmcColors, getColorsAsObject } from '@/app/data/colors';
+import { getColorsAsObject, getDmcColors } from '@/api/colors';
+import { Color, Project } from '@/api/types';
 
-export default function CurrentProject() {
-	const allColors: { [id: string]: Color } = getColorsAsObject();
+export default async function CurrentProject() {
+	const dmcColors: Color[] = await getDmcColors();
+	const allColorsAsObject: { [id: string]: Color } = await getColorsAsObject();
 	const { state, dispatch } = useAppContext();
 	const [currentProject, setCurrentProject] = useState<Project | null>(null);
 	const [grid, setGrid] = useState<string[][]>();
@@ -73,7 +74,7 @@ export default function CurrentProject() {
 											return (
 												<td
 													className={styles.cell}
-													style={{ background: allColors[cell]?.hex }}
+													style={{ background: allColorsAsObject[cell]?.hex }}
 													key={cellIdx}>
 													<button
 														role="button"
