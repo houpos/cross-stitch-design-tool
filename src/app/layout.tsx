@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { ContextProvider } from './contexts/context';
+import TopNavigation from './components/top-navigation';
+import { ModalProvider } from './contexts/modal-context';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,7 +20,12 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<ContextProvider>{children}</ContextProvider>
+				<ContextProvider>
+					<ModalProvider>
+						<TopNavigation />
+						{children}
+					</ModalProvider>
+				</ContextProvider>
 			</body>
 		</html>
 	);
