@@ -1,12 +1,13 @@
 import { getAllProjects } from '@/api/projects';
 import styles from './page.module.scss';
 import Cards from './components/cards';
+import CreateDesignButton from './components/create-design-button';
 
 export default async function Home() {
 	const allProjects = await getAllProjects();
 	return (
 		<main className={styles.dashboardContainer}>
-			{!allProjects ? (
+			{allProjects.length === 0 ? (
 				<div className={styles.noProjects}>
 					<img src="#" />
 					<span className={styles.title}>
@@ -15,10 +16,7 @@ export default async function Home() {
 					<span className={styles.subTitle}>
 						Click the button below and get started.
 					</span>
-					{/* <Button
-						title="Create a design"
-						handleClick={handleClick}
-					/> */}
+					<CreateDesignButton />
 				</div>
 			) : (
 				<Cards projects={allProjects} />
