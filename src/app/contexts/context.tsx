@@ -1,5 +1,6 @@
+'use client';
+import { Project } from '@/api/types';
 import { createContext, useContext, useReducer } from 'react';
-import { Project } from '../types';
 
 export enum AppFlowActionType {
 	INIT = 'INIT',
@@ -107,7 +108,7 @@ export function useAppContext() {
 	const context = useContext(AppContext);
 
 	if (context === undefined) {
-		throw new Error('useAppContext must be used withing ContextProvider');
+		throw new Error('useAppContext must be used within ContextProvider');
 	}
 
 	return context;
