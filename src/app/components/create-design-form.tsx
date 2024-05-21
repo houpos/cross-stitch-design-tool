@@ -22,6 +22,7 @@ export default function CreateDesignForm({
 			title,
 			height: availableProjectGridDimensions[dimensionsIndex].height,
 			width: availableProjectGridDimensions[dimensionsIndex].width,
+			grid: [],
 		};
 
 		dispatch({ type: ActionType.ADD_PROJECT, payload: project });

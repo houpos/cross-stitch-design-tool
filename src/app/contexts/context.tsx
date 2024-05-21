@@ -25,7 +25,8 @@ type AppState = {
 type Action =
 	| { type: ActionType.ADD_INITIAL; payload: Project[] }
 	| { type: ActionType.ADD_PROJECT; payload: Project }
-	| { type: ActionType.SELECT_PROJECT; payload: string };
+	| { type: ActionType.SELECT_PROJECT; payload: string }
+	| { type: ActionType.EDIT_PROJECT; payload: string[][] };
 
 const initialState: AppState = {
 	allProjects: [],
@@ -60,6 +61,26 @@ const reducer = (state: AppState, action: Action): AppState => {
 					flowStep: AppFlowActionType.VIEW_PROJECT,
 				};
 			}
+		case ActionType.EDIT_PROJECT:
+			const newProject = {
+				...state.currentProject,
+				grid: action.payload,
+			};
+
+			const newAllProjects = state.allProjects.map((project) => {
+				if (project.id === state.currentProject?.id) {
+					return {
+						...project,
+						grid: action.payload,
+					};
+				}
+				return project;
+			});
+			return {
+				...state,
+				allProjects: newAllProjects as Project[],
+				currentProject: newProject as Project,
+			};
 
 		default:
 			return state;

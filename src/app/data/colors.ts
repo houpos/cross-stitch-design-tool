@@ -2839,3 +2839,13 @@ export const dmcColors: Color[] = [
 		hex: '#514C53',
 	},
 ];
+
+export const getColorsAsObject = (): { [id: string]: Color } => {
+	return dmcColors.reduce((arr, curr: Color) => {
+		if (!arr) {
+			arr = {} as any;
+		}
+		arr[curr.id] = curr;
+		return arr;
+	}, {} as any);
+};

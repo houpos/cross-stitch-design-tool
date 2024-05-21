@@ -1,29 +1,46 @@
 'use client';
-import { useAppContext } from '@/app/contexts/context';
+import { ActionType, useAppContext } from '@/app/contexts/context';
 import { Color, Project } from '@/app/types';
 import { useEffect, useState } from 'react';
 import styles from './page.module.scss';
-import { dmcColors } from '@/app/data/colors';
+import { dmcColors, getColorsAsObject } from '@/app/data/colors';
 
 export default function CurrentProject() {
+	const allColors: { [id: string]: Color } = getColorsAsObject();
 	const { state, dispatch } = useAppContext();
 	const [currentProject, setCurrentProject] = useState<Project | null>(null);
-	const [grid, setGrid] = useState<number[][]>();
+	const [grid, setGrid] = useState<string[][]>();
 	const [currentColor, setCurrentColor] = useState<Color>(dmcColors[0]);
 
 	useEffect(() => {
 		if (state?.currentProject) {
 			setCurrentProject(state.currentProject);
-			let newGrid = [];
-			const stitchesPerInch = state.currentProject.width * 10;
-			for (let i = 0; i < stitchesPerInch; i++) {
-				const row = new Array(stitchesPerInch).fill(null);
-				newGrid.push(row);
+
+			if (state.currentProject.grid.length === 0) {
+				let newGrid = [];
+				const stitchesPerInch = state.currentProject.width * 10;
+				for (let i = 0; i < stitchesPerInch; i++) {
+					const row = new Array(stitchesPerInch).fill(null);
+					newGrid.push(row);
+				}
+				setGrid(newGrid);
+			} else {
+				setGrid(state.currentProject.grid);
 			}
-			console.log('new grid', newGrid);
-			setGrid(newGrid);
 		}
 	}, [state?.currentProject]);
+
+	const handleCellSelection = (rowIdx: number, cellIdx: number) => {
+		if (!grid) return;
+		const newGrid = [...grid];
+		newGrid[rowIdx][cellIdx] =
+			newGrid[rowIdx][cellIdx] === currentColor.id ? '' : currentColor.id;
+		setGrid(newGrid);
+	};
+
+	const handleSave = () => {
+		dispatch({ type: ActionType.EDIT_PROJECT, payload: grid });
+	};
 
 	if (!currentProject) return null;
 	return (
@@ -36,6 +53,11 @@ export default function CurrentProject() {
 				<div
 					className={styles.currentColor}
 					style={{ background: currentColor.hex }}></div>
+				<button
+					role="button"
+					onClick={() => handleSave()}>
+					Save
+				</button>
 			</div>
 			<div className={styles.creationContainer}>
 				<div className={styles.designGridContainer}>
@@ -49,11 +71,14 @@ export default function CurrentProject() {
 										key={rowIdx}>
 										{row.map((cell, cellIdx) => {
 											return (
-												<td className={styles.cell}>
+												<td
+													className={styles.cell}
+													style={{ background: allColors[cell]?.hex }}
+													key={cellIdx}>
 													<button
-														key={cellIdx}
 														role="button"
-														aria-label={`ce`}
+														aria-label={`cell for row ${rowIdx}, column ${cellIdx}`}
+														onClick={() => handleCellSelection(rowIdx, cellIdx)}
 													/>
 												</td>
 											);

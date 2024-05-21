@@ -3,6 +3,7 @@ export type Project = {
 	title: string;
 	height: number;
 	width: number;
+	grid: string[][];
 };
 
 export type Color = {
