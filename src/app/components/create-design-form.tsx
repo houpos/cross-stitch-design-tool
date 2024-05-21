@@ -1,6 +1,5 @@
 import { useTheme } from 'styled-components';
 import styles from './create-design-form.module.scss';
-import Button from './buttons/button';
 import { Project } from '../types';
 import { useState } from 'react';
 import { availableProjectGridDimensions } from '../data/projects';
@@ -67,18 +66,18 @@ export default function CreateDesignForm({
 				</select>
 			</div>
 			<div className={styles.buttonContainer}>
-				<Button
+				<button
+					className="button-with-text submit"
 					type="submit"
-					title="Create"
-					colors={theme.colors.buttons.primary}
-					handleClick={prepareProject}
-				/>
-				<Button
+					onClick={() => prepareProject()}>
+					Create
+				</button>
+				<button
+					className="button-with-text cancel"
 					type="reset"
-					title="Cancel"
-					colors={theme.colors.buttons.cancel}
-					handleClick={handleClose}
-				/>
+					onClick={() => handleClose()}>
+					Cancel
+				</button>
 			</div>
 		</form>
 	);

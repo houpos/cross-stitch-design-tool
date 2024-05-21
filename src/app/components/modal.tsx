@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import styles from './modal.module.scss';
 import CreateDesignForm from './create-design-form';
-import CancelButton from './buttons/cancel-button';
+import { MdClose } from 'react-icons/md';
 
 type ModalProps = {
 	isShowing: boolean;
@@ -31,7 +31,12 @@ export default function Modal({ isShowing, willClose }: ModalProps) {
 			<div>
 				<div className={styles.top}>
 					<span>Create a design</span>
-					<CancelButton handleClick={handleClose} />
+					<button
+						className="round-button cancel"
+						type="button"
+						onClick={() => handleClose()}>
+						<MdClose />
+					</button>
 				</div>
 				<CreateDesignForm handleClose={handleClose} />
 			</div>

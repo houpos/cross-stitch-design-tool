@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Button from './buttons/button';
 import styles from './top-navigation.module.scss';
 import Modal from './modal';
 
@@ -23,10 +22,12 @@ export default function TopNavigation() {
 					/>
 				</div>
 				<div className={styles.profileContainer}>
-					<Button
-						handleClick={handleClick}
-						title="Create a design"
-					/>
+					<button
+						className="button-with-text button"
+						type="button"
+						onClick={() => handleClick()}>
+						Create a design
+					</button>
 					<img src="#" />
 				</div>
 			</nav>

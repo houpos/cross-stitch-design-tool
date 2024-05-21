@@ -1,5 +1,4 @@
 'use client';
-import Button from '../components/buttons/button';
 import Cards from '../components/cards';
 import styles from './page.module.scss';
 import { useEffect, useState } from 'react';
@@ -38,10 +37,12 @@ export default function Dashboard() {
 						<span className={styles.subTitle}>
 							Click the button below and get started.
 						</span>
-						<Button
-							title="Create a design"
-							handleClick={handleClick}
-						/>
+						<button
+							className="button-with-text button"
+							type="button"
+							onClick={() => handleClick()}>
+							Create a design
+						</button>
 					</div>
 				) : (
 					<Cards projects={state.allProjects} />
