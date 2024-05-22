@@ -3,6 +3,7 @@ import styles from './create-design-form.module.scss';
 import { useState } from 'react';
 import { ActionType, useAppContext } from '../contexts/context';
 import { Project, ProjectDimension } from '@/api/types';
+import { useRouter } from 'next/navigation';
 
 export default function CreateDesignForm({
 	handleClose,
@@ -16,6 +17,7 @@ export default function CreateDesignForm({
 		{ height: 8, width: 8, display: '8 x 8' },
 	];
 	const { dispatch } = useAppContext();
+	const router = useRouter();
 	const [title, setTitle] = useState<string>('Your project title');
 	const [dimensionsIndex, setDimensionsIndex] = useState(0);
 
@@ -30,6 +32,7 @@ export default function CreateDesignForm({
 
 		dispatch({ type: ActionType.ADD_PROJECT, payload: project });
 		handleClose();
+		router.push(`/projects/${project.id}`);
 	};
 
 	return (
