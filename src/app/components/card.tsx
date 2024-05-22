@@ -1,3 +1,4 @@
+'use client';
 import { ActionType, useAppContext } from '../contexts/context';
 import { useRouter } from 'next/navigation';
 import styles from './card.module.scss';
@@ -17,7 +18,7 @@ export default function Card({ id, title }: CardProps) {
 	return (
 		<button
 			role="link"
-			onClick={() => handleClick()}
+			onClick={() => {}}
 			id={id}>
 			<div className={styles.card}>
 				<div className={styles.cardHeader}>
