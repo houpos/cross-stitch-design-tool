@@ -1,3 +1,4 @@
+'use client';
 import styles from './create-design-form.module.scss';
 import { useState } from 'react';
 import { ActionType, useAppContext } from '../contexts/context';
