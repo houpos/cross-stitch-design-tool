@@ -2,24 +2,24 @@
 import { ActionType, useAppContext } from '../contexts/context';
 import { useRouter } from 'next/navigation';
 import styles from './card.module.scss';
+import { Project } from '@/api/types';
 
 type CardProps = {
-	id: string;
-	title: string;
+	project: Project;
 };
 
-export default function Card({ id, title }: CardProps) {
+export default function Card({ project }: CardProps) {
 	const { dispatch } = useAppContext();
 	const router = useRouter();
 	const handleClick = () => {
-		dispatch({ type: ActionType.SELECT_PROJECT, payload: id });
-		router.push(`projects/${id}`);
+		dispatch({ type: ActionType.SELECT_PROJECT, payload: project });
+		router.push(`projects/${project.id}`);
 	};
 	return (
 		<button
 			role="link"
-			onClick={() => {}}
-			id={id}>
+			onClick={() => handleClick()}
+			id={project.id}>
 			<div className={styles.card}>
 				<div className={styles.cardHeader}>
 					<img
@@ -28,7 +28,7 @@ export default function Card({ id, title }: CardProps) {
 					/>
 				</div>
 				<div className={styles.cardBody}>
-					<span>{title}</span>
+					<span>{project.title}</span>
 				</div>
 			</div>
 		</button>

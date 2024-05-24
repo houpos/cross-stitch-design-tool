@@ -1,4 +1,4 @@
-import { Project } from '../types';
+import { Project } from '@/api/types';
 import Card from './card';
 import styles from './cards.module.scss';
 
@@ -12,8 +12,7 @@ export default function Cards({ projects }: CardsProps) {
 			{projects.map((project) => (
 				<Card
 					key={project.id}
-					id={project.id}
-					title={project.title}
+					project={project}
 				/>
 			))}
 		</div>

@@ -28,9 +28,8 @@ export default function DrawingGrid() {
 		dispatch({ type: ActionType.EDIT_PROJECT, payload: newGrid });
 	};
 
-	if (!state?.currentProject || !state?.currentProject?.grid) return null;
+	if (!state?.currentProject || !state.currentProject?.grid) return null;
 	const currentProject: Project = state.currentProject;
-
 	return (
 		<div className={styles.designGridContainer}>
 			<table>
