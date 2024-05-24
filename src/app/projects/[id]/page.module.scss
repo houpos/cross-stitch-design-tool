@@ -13,82 +13,10 @@
 		> * {
 			margin-right: 10px;
 		}
-
-		.currentColor {
-			width: 30px;
-			height: 30px;
-			border: 1px solid darkgray;
-			border-radius: 5px;
-		}
 	}
 
 	.creationContainer {
 		display: flex;
 		flex-direction: row;
-
-		.designGridContainer {
-			width: 80%;
-			margin: 30px;
-			height: min-content;
-
-			> table {
-				border: 1px solid lightgray;
-				border-collapse: collapse;
-
-				caption {
-					visibility: hidden;
-					line-height: 0;
-				}
-
-				th,
-				td {
-					border: 1px solid lightgray;
-				}
-
-				.row {
-					display: flex;
-					flex-direction: row;
-
-					td {
-						margin: 0;
-						padding: 0;
-						width: 20px;
-						height: 20px;
-
-						button {
-							margin: 0;
-							padding: 0;
-							width: 100%;
-							height: 100%;
-							background: transparent;
-							border: none;
-							display: block;
-							margin: auto;
-						}
-					}
-				}
-			}
-		}
-
-		.colorContainer {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			column-gap: 15px;
-			row-gap: 15px;
-			align-items: center;
-			justify-items: center;
-			min-height: 400px;
-			height: 100%;
-			overflow: hidden;
-			scroll-behavior: smooth;
-
-			.color {
-				width: 45px;
-				height: 45px;
-				border-radius: 100%;
-				border-style: double;
-				cursor: pointer;
-			}
-		}
 	}
 }
