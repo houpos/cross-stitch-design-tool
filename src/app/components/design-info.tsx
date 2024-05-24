@@ -4,7 +4,6 @@ import styles from './design-info.module.scss';
 
 export default function DesignInformation() {
 	const { state } = useAppContext();
-	console.log('state', state);
 
 	if (!state || !state.currentProject) return null;
 	return (
