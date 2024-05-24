@@ -1,5 +1,5 @@
 'use client';
-import { Project } from '@/api/types';
+import { Color, Project } from '@/api/types';
 import { createContext, useContext, useReducer } from 'react';
 
 export enum AppFlowActionType {
@@ -15,24 +15,28 @@ export enum ActionType {
 	EDIT_PROJECT = 'EDIT_PROJECT',
 	ADD_INITIAL = 'ADD_INITIAL',
 	SELECT_PROJECT = 'SELECT_PROJECT',
+	SELECT_COLOR = 'SELECT_COLOR',
 }
 
 type AppState = {
 	allProjects: Project[];
 	currentProject: Project | null;
 	flowStep: AppFlowActionType;
+	selectedColor: Color | null;
 };
 
 type Action =
 	| { type: ActionType.ADD_INITIAL; payload: Project[] }
 	| { type: ActionType.ADD_PROJECT; payload: Project }
 	| { type: ActionType.SELECT_PROJECT; payload: string }
-	| { type: ActionType.EDIT_PROJECT; payload: string[][] };
+	| { type: ActionType.EDIT_PROJECT; payload: string[][] }
+	| { type: ActionType.SELECT_COLOR; payload: Color };
 
 const initialState: AppState = {
 	allProjects: [],
 	currentProject: null,
 	flowStep: AppFlowActionType.INIT,
+	selectedColor: null,
 };
 
 const reducer = (state: AppState, action: Action): AppState => {
@@ -46,6 +50,7 @@ const reducer = (state: AppState, action: Action): AppState => {
 			};
 		case ActionType.ADD_PROJECT:
 			return {
+				...state,
 				currentProject: action.payload,
 				allProjects: [...state.allProjects, action.payload],
 				flowStep: AppFlowActionType.VIEW_PROJECT,
@@ -82,7 +87,11 @@ const reducer = (state: AppState, action: Action): AppState => {
 				allProjects: newAllProjects as Project[],
 				currentProject: newProject as Project,
 			};
-
+		case ActionType.SELECT_COLOR:
+			return {
+				...state,
+				selectedColor: action.payload,
+			};
 		default:
 			return state;
 	}
