@@ -1,32 +1,36 @@
-import { CardWithImageAndTitle } from '../styles/cards';
+'use client';
 import { ActionType, useAppContext } from '../contexts/context';
 import { useRouter } from 'next/navigation';
+import styles from './card.module.scss';
+import { Project } from '@/api/types';
 
 type CardProps = {
-	id: string;
-	title: string;
+	project: Project;
 };
 
-export default function Card({ id, title }: CardProps) {
+export default function Card({ project }: CardProps) {
 	const { dispatch } = useAppContext();
 	const router = useRouter();
 	const handleClick = () => {
-		dispatch({ type: ActionType.SELECT_PROJECT, payload: id });
-		router.push(`projects/${id}`);
+		dispatch({ type: ActionType.SELECT_PROJECT, payload: project });
+		router.push(`projects/${project.id}`);
 	};
 	return (
 		<button
 			role="link"
 			onClick={() => handleClick()}
-			id={id}>
-			<CardWithImageAndTitle>
-				<div className="cardHeader">
-					<img src="/placholder.png" />
+			id={project.id}>
+			<div className={styles.card}>
+				<div className={styles.cardHeader}>
+					<img
+						className={styles.cardImage}
+						src="/placholder.png"
+					/>
 				</div>
-				<div className="cardBody">
-					<span>{title}</span>
+				<div className={styles.cardBody}>
+					<span>{project.title}</span>
 				</div>
-			</CardWithImageAndTitle>
+			</div>
 		</button>
 	);
 }

@@ -1,6 +1,6 @@
-import { CardContainer } from '../styles/cards';
-import { Project } from '../types';
+import { Project } from '@/api/types';
 import Card from './card';
+import styles from './cards.module.scss';
 
 type CardsProps = {
 	projects: Project[];
@@ -8,14 +8,13 @@ type CardsProps = {
 
 export default function Cards({ projects }: CardsProps) {
 	return (
-		<CardContainer>
+		<div className={styles.cardContainer}>
 			{projects.map((project) => (
 				<Card
 					key={project.id}
-					id={project.id}
-					title={project.title}
+					project={project}
 				/>
 			))}
-		</CardContainer>
+		</div>
 	);
 }

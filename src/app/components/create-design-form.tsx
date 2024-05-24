@@ -1,18 +1,23 @@
-import { useTheme } from 'styled-components';
+'use client';
 import styles from './create-design-form.module.scss';
-import Button from './buttons/button';
-import { Project } from '../types';
 import { useState } from 'react';
-import { availableProjectGridDimensions } from '../data/projects';
 import { ActionType, useAppContext } from '../contexts/context';
+import { Project, ProjectDimension } from '@/api/types';
+import { useRouter } from 'next/navigation';
 
 export default function CreateDesignForm({
 	handleClose,
 }: {
 	handleClose: () => void;
 }) {
-	const theme = useTheme();
+	const availableProjectGridDimensions: ProjectDimension[] = [
+		{ height: 2, width: 2, display: '2 x 2' },
+		{ height: 4, width: 4, display: '4 x 4' },
+		{ height: 6, width: 6, display: '6 x 6' },
+		{ height: 8, width: 8, display: '8 x 8' },
+	];
 	const { dispatch } = useAppContext();
+	const router = useRouter();
 	const [title, setTitle] = useState<string>('Your project title');
 	const [dimensionsIndex, setDimensionsIndex] = useState(0);
 
@@ -22,10 +27,12 @@ export default function CreateDesignForm({
 			title,
 			height: availableProjectGridDimensions[dimensionsIndex].height,
 			width: availableProjectGridDimensions[dimensionsIndex].width,
+			grid: [],
 		};
 
 		dispatch({ type: ActionType.ADD_PROJECT, payload: project });
 		handleClose();
+		router.push(`/projects/${project.id}`);
 	};
 
 	return (
@@ -66,18 +73,18 @@ export default function CreateDesignForm({
 				</select>
 			</div>
 			<div className={styles.buttonContainer}>
-				<Button
+				<button
+					className="button-with-text submit"
 					type="submit"
-					title="Create"
-					colors={theme.colors.buttons.primary}
-					handleClick={prepareProject}
-				/>
-				<Button
+					onClick={() => prepareProject()}>
+					Create
+				</button>
+				<button
+					className="button-with-text cancel"
 					type="reset"
-					title="Cancel"
-					colors={theme.colors.buttons.cancel}
-					handleClick={handleClose}
-				/>
+					onClick={() => handleClose()}>
+					Cancel
+				</button>
 			</div>
 		</form>
 	);

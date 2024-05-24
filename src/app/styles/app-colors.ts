@@ -1,4 +1,4 @@
-const colors = {
+const appColors = {
 	mindaro: '#D9ED92',
 	lightYellowGreen: '#B5E48C',
 	lightGreen: '#99D98C',
@@ -13,4 +13,4 @@ const colors = {
 	white: '#FFF',
 };
 
-export default colors;
+export default appColors;

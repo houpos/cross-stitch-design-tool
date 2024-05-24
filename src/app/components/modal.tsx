@@ -2,28 +2,20 @@
 import { useEffect, useRef } from 'react';
 import styles from './modal.module.scss';
 import CreateDesignForm from './create-design-form';
-import CancelButton from './buttons/cancel-button';
+import { MdClose } from 'react-icons/md';
+import { useModalContext } from '../contexts/modal-context';
 
-type ModalProps = {
-	isShowing: boolean;
-	willClose: () => void;
-};
-
-export default function Modal({ isShowing, willClose }: ModalProps) {
+export default function Modal() {
+	const { showModal, handleModal } = useModalContext();
 	const dialogRef = useRef<HTMLDialogElement>(null);
 
-	const handleClose = () => {
-		dialogRef.current?.close();
-		willClose();
-	};
-
 	useEffect(() => {
-		if (!isShowing) {
+		if (!showModal) {
 			dialogRef.current?.close();
-		} else if (!dialogRef.current?.open && isShowing) {
+		} else if (!dialogRef.current?.open && showModal) {
 			dialogRef.current?.showModal();
 		}
-	}, [isShowing]);
+	}, [showModal]);
 	return (
 		<dialog
 			ref={dialogRef}
@@ -31,9 +23,14 @@ export default function Modal({ isShowing, willClose }: ModalProps) {
 			<div>
 				<div className={styles.top}>
 					<span>Create a design</span>
-					<CancelButton handleClick={handleClose} />
+					<button
+						className="round-button cancel"
+						type="button"
+						onClick={() => handleModal()}>
+						<MdClose />
+					</button>
 				</div>
-				<CreateDesignForm handleClose={handleClose} />
+				<CreateDesignForm handleClose={handleModal} />
 			</div>
 		</dialog>
 	);

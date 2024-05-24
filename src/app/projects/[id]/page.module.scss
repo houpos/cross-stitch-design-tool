@@ -1,0 +1,22 @@
+.designContainer {
+	display: flex;
+	flex-direction: column;
+
+	.infoContainer {
+		display: flex;
+		flex-direction: row;
+		background: lightgray;
+		padding: 10px;
+		align-items: center;
+		justify-content: flex-start;
+
+		> * {
+			margin-right: 10px;
+		}
+	}
+
+	.creationContainer {
+		display: flex;
+		flex-direction: row;
+	}
+}
