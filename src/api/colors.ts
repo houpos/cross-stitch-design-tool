@@ -2840,16 +2840,6 @@ const dmcColors: Color[] = [
 	},
 ];
 
-export const getColorsAsObject = async (): Promise<{ [id: string]: Color }> => {
-	return dmcColors.reduce((arr, curr: Color) => {
-		if (!arr) {
-			arr = {} as any;
-		}
-		arr[curr.id] = curr;
-		return arr;
-	}, {} as any);
-};
-
 export const getDmcColors = async (): Promise<Color[]> => {
 	return dmcColors;
 };
