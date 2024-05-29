@@ -1,5 +1,5 @@
 'use client';
-import { Color, Project } from '@/api/types';
+import { Color, GridData, Project } from '@/api/types';
 import { createContext, useContext, useReducer } from 'react';
 
 export enum ActionType {
@@ -19,7 +19,7 @@ type AppState = {
 type Action =
 	| { type: ActionType.ADD_PROJECT; payload: Project }
 	| { type: ActionType.SELECT_PROJECT; payload: Project }
-	| { type: ActionType.EDIT_PROJECT; payload: string[][] }
+	| { type: ActionType.EDIT_PROJECT; payload: GridData }
 	| { type: ActionType.SELECT_COLOR; payload: Color };
 
 const initialState: AppState = {
@@ -39,7 +39,7 @@ const reducer = (state: AppState, action: Action): AppState => {
 		case ActionType.EDIT_PROJECT:
 			const newProject = {
 				...state.currentProject,
-				grid: action.payload,
+				gridData: action.payload,
 			};
 
 			return {

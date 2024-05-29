@@ -2832,7 +2832,7 @@ const dmcColors: Color[] = [
 	},
 	{
 		id: '3799',
-		name: 'Pewter Grey  Very Dark',
+		name: 'Pewter Grey Very Dark',
 		red: 81,
 		green: 76,
 		blue: 83,
