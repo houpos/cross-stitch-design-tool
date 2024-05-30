@@ -1,6 +1,6 @@
 import { Color } from './types';
 
-const dmcColors: Color[] = [
+export const dmcColors: Color[] = [
 	{
 		id: '0',
 		name: 'White',
