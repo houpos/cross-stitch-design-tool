@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { ActionType, useAppContext } from '../contexts/context';
 import styles from './drawing-grid.module.scss';
 import { Project } from '@/api/types';
+import Designer from './designer';
 
 export default function DrawingGrid() {
 	const { state, dispatch } = useAppContext();
@@ -64,33 +65,17 @@ export default function DrawingGrid() {
 	const currentProject: Project = state.currentProject;
 	return (
 		<div className={styles.designGridContainer}>
-			<table>
-				<caption>{currentProject.title} design</caption>
-				<tbody>
-					{currentProject.gridData.grid.map((row, rowIdx) => {
-						return (
-							<tr
-								className={styles.row}
-								key={rowIdx}>
-								{row.map((cell, cellIdx) => {
-									return (
-										<td
-											className={styles.cell}
-											style={{ background: cell }}
-											key={cellIdx}>
-											<button
-												role="button"
-												aria-label={`cell for row ${rowIdx}, column ${cellIdx}`}
-												onClick={() => handleCellSelection(rowIdx, cellIdx)}
-											/>
-										</td>
-									);
-								})}
-							</tr>
-						);
-					})}
-				</tbody>
-			</table>
+			<Designer
+				grid={currentProject.gridData.grid}
+				title={`${currentProject.title} design`}>
+				{(rowIdx: number, cellIdx: number) => (
+					<button
+						role="button"
+						aria-label={`cell for row ${rowIdx}, column ${cellIdx}`}
+						onClick={() => handleCellSelection(rowIdx, cellIdx)}
+					/>
+				)}
+			</Designer>
 		</div>
 	);
 }

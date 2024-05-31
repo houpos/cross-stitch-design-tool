@@ -1,14 +1,20 @@
 'use client';
-import { useAppContext } from '@/app/contexts/context';
 import styles from './page.module.scss';
 import useCrossStitchDetails from '@/app/hooks/use-cross-stitch-details';
+import Designer from '@/app/components/designer';
 
 export default function Instructions() {
-	const { state } = useAppContext();
-	const { getSkeinCount, getStitchCount, allColors } = useCrossStitchDetails();
+	const {
+		getSkeinCount,
+		getStitchCount,
+		allColors,
+		currentProject,
+		grid,
+		gridColors,
+	} = useCrossStitchDetails();
 
-	if (!state || !state.currentProject) return null;
-	const currentProject = state.currentProject;
+	if (!currentProject || !grid || !gridColors) return null;
+	console.log('grid colors', gridColors);
 	return (
 		<div className={styles.instructionContainer}>
 			<div className={styles.titleContainer}>
@@ -18,8 +24,12 @@ export default function Instructions() {
 				</span>
 				<hr className={styles.printOnly} />
 			</div>
-			<div className={styles.designContainer}>
-				[drawing with symbols goes here]
+			<div className={styles.designGridContainer}>
+				<Designer grid={grid}>
+					{(rowIdx: number, cellIdx: number, cell: string) => (
+						<span>{gridColors[cell]?.symbol || ''}</span>
+					)}
+				</Designer>
 			</div>
 			<div className={styles.designInfo}>
 				<h2>Design Information</h2>
@@ -59,24 +69,20 @@ export default function Instructions() {
 						</tr>
 					</thead>
 					<tbody>
-						{Object.keys(currentProject.gridData.colorsUsed).map(
-							(hex, index) => (
-								<tr key={index}>
-									<td>TBD</td>
-									<td>
-										<div
-											className={styles.box}
-											style={{ backgroundColor: hex }}
-										/>
-									</td>
-									<td>{allColors[hex]?.name}</td>
-									<td>{allColors[hex]?.id}</td>
-									<td>
-										{getSkeinCount(currentProject.gridData.colorsUsed[hex])}
-									</td>
-								</tr>
-							)
-						)}
+						{Object.keys(gridColors).map((hex, index) => (
+							<tr key={index}>
+								<td>{gridColors[hex].symbol}</td>
+								<td>
+									<div
+										className={styles.box}
+										style={{ backgroundColor: hex }}
+									/>
+								</td>
+								<td>{allColors[hex]?.name}</td>
+								<td>{allColors[hex]?.id}</td>
+								<td>{getSkeinCount(gridColors[hex].count)}</td>
+							</tr>
+						))}
 					</tbody>
 				</table>
 				<span>
@@ -84,7 +90,6 @@ export default function Instructions() {
 					14 count fabric
 				</span>
 			</div>
-			<h2>Getting Started</h2>
 		</div>
 	);
 }
