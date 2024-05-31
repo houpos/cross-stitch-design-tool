@@ -11,7 +11,7 @@ export enum ActionType {
 	SELECT_COLOR = 'SELECT_COLOR',
 }
 
-type AppState = {
+export type AppState = {
 	currentProject: Project | null;
 	selectedColor: Color | null;
 };

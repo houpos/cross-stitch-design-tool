@@ -1,19 +1,45 @@
 'use client';
-import { Color } from '@/api/types';
+import { Color, Project } from '@/api/types';
 import { getAllColorsAsObject } from '@/app/actions';
 import { useEffect, useState } from 'react';
+import { AppState, useAppContext } from '../contexts/context';
+
+const symbols: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&'.split('');
 
 export default function useCrossStitchDetails() {
+	const { state }: { state: AppState } = useAppContext();
 	const [allColors, setAllColors] = useState<{ [key: string]: Color }>({});
+	const [currentProject, setCurrentProject] = useState<Project>();
+	const [grid, setGrid] = useState<string[][]>();
+	const [gridColors, setGridColors] = useState<{
+		[key: string]: { count: number; symbol: string };
+	}>();
 
 	useEffect(() => {
 		const updateAllColors = async () => {
 			const allColorsAsObject = await getAllColorsAsObject();
 			setAllColors(allColorsAsObject);
 		};
-
 		updateAllColors();
 	}, []);
+
+	useEffect(() => {
+		if (state?.currentProject) {
+			setCurrentProject(state.currentProject);
+			setGrid(state.currentProject.gridData.grid);
+
+			const colorsWithCountAndSymbol = Object.keys(
+				state.currentProject.gridData.colorsUsed
+			).reduce((acc, curr, index) => {
+				acc[curr] = {
+					count: state.currentProject?.gridData.colorsUsed[curr] || 0,
+					symbol: symbols[index],
+				};
+				return acc;
+			}, {} as { [key: string]: { count: number; symbol: string } });
+			setGridColors(colorsWithCountAndSymbol);
+		}
+	}, [state?.currentProject]);
 	const getSkeinCount = (colorCount: number): number => {
 		// https://www.mismatch.co.uk/cross.htm#floss_amt
 		/* A skein of floss is approximately 8-1/2 yards long. Assume most people
@@ -44,5 +70,8 @@ export default function useCrossStitchDetails() {
 		getSkeinCount,
 		getStitchCount,
 		allColors,
+		currentProject,
+		grid,
+		gridColors,
 	};
 }
