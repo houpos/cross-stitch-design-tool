@@ -64,3 +64,10 @@ a {
 .round-button.cancel:hover {
 	background: #b5e48c;
 }
+
+@media print {
+	.no-print,
+	.no-print * {
+		display: none !important;
+	}
+}

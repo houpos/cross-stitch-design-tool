@@ -14,7 +14,6 @@ export default function Instructions() {
 	} = useCrossStitchDetails();
 
 	if (!currentProject || !grid || !gridColors) return null;
-	console.log('grid colors', gridColors);
 	return (
 		<div className={styles.instructionContainer}>
 			<div className={styles.titleContainer}>
