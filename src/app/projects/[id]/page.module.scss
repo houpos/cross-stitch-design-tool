@@ -5,13 +5,14 @@
 	.infoContainer {
 		display: flex;
 		flex-direction: row;
-		background: lightgray;
+		background: transparent;
+		box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2);
 		padding: 10px;
 		align-items: center;
 		justify-content: flex-start;
 
 		> * {
-			margin-right: 10px;
+			margin-right: 25px;
 		}
 	}
 
