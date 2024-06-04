@@ -2,6 +2,7 @@
 import styles from './page.module.scss';
 import useCrossStitchDetails from '@/app/hooks/use-cross-stitch-details';
 import Designer from '@/app/components/designer';
+import { MdPrint } from 'react-icons/md';
 
 export default function Instructions() {
 	const {
@@ -21,6 +22,13 @@ export default function Instructions() {
 				<span className={styles.subTitle}>
 					cross stitch diagram and instructions
 				</span>
+				<button
+					className={`round-button ${styles.print} no-print`}
+					role="button"
+					aria-label="print cross stitch instructions"
+					onClick={() => window.print()}>
+					<MdPrint />
+				</button>
 				<hr className={styles.printOnly} />
 			</div>
 			<div className={styles.designGridContainer}>

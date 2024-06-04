@@ -35,6 +35,22 @@
 		margin-top: 10px;
 	}
 
+	.titleContainer {
+		position: relative;
+		button.print {
+			background: #52b69a;
+			color: black;
+			font-size: 28px;
+			position: absolute;
+			right: 0%;
+			top: 0%;
+
+			&:hover {
+				background: #168aad;
+			}
+		}
+	}
+
 	.designGridContainer {
 		width: 80%;
 		margin: 30px;
