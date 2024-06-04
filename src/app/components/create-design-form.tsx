@@ -13,8 +13,6 @@ export default function CreateDesignForm({
 	const availableProjectGridDimensions: ProjectDimension[] = [
 		{ height: 2, width: 2, display: '2 x 2' },
 		{ height: 4, width: 4, display: '4 x 4' },
-		{ height: 6, width: 6, display: '6 x 6' },
-		{ height: 8, width: 8, display: '8 x 8' },
 	];
 	const { dispatch } = useAppContext();
 	const router = useRouter();
