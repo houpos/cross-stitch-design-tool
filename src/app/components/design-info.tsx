@@ -19,7 +19,11 @@ export default function DesignInformation() {
 				className={styles.currentColor}
 				style={{ background: state.selectedColor?.hex || 'transparent' }}
 			/>
-			<Link href={`${currentPath}/instructions`}>Instructions</Link>
+			<Link
+				href={`${currentPath}/instructions`}
+				className="button-with-text button">
+				Instructions
+			</Link>
 		</>
 	);
 }
