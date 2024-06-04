@@ -70,4 +70,13 @@ a {
 	.no-print * {
 		display: none !important;
 	}
+
+	::-webkit-scrollbar {
+		display: none;
+	}
+
+	html,
+	body {
+		overflow: visible;
+	}
 }
