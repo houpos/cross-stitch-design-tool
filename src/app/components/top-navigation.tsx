@@ -11,14 +11,18 @@ export default function TopNavigation() {
 						href="/"
 						aria-label="navigate to account home page">
 						<img
-							src="#"
+							alt=""
+							src="/"
 							className={styles.logo}
 						/>
 					</Link>
 				</div>
 				<div className={styles.profileContainer}>
 					<CreateDesignButton />
-					<img src="#" />
+					<img
+						alt=""
+						src="/"
+					/>
 				</div>
 			</nav>
 		</>

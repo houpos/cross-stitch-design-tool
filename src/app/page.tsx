@@ -7,11 +7,14 @@ export default async function Home() {
 	const allProjects = await getAllProjects();
 	return (
 		<main className={styles.dashboardContainer}>
-			{allProjects.length === 0 ? (
+			{allProjects.length > 0 ? (
 				<div className={styles.noProjects}>
-					<img src="#" />
+					<img
+						src="/bear-with-hoop.jpg"
+						alt=""
+					/>
 					<span className={styles.title}>
-						You currently don't have any projects!
+						You currently don&apos;t have any projects!
 					</span>
 					<span className={styles.subTitle}>
 						Click the button below and get started.

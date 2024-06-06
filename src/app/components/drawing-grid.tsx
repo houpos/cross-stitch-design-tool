@@ -24,7 +24,7 @@ export default function DrawingGrid() {
 				payload: { grid: emptyGrid, stitchCount: 0 },
 			});
 		}
-	}, [state?.currentProject]);
+	}, [state?.currentProject, dispatch]);
 
 	const handleCellSelection = (rowIdx: number, cellIdx: number) => {
 		const currentColor = state.selectedColor;
