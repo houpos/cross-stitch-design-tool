@@ -3,6 +3,7 @@ import { ActionType, useAppContext } from '../contexts/context';
 import { useRouter } from 'next/navigation';
 import styles from './card.module.scss';
 import { Project } from '@/api/types';
+import Image from 'next/image';
 
 type CardProps = {
 	project: Project;
@@ -22,9 +23,10 @@ export default function Card({ project }: CardProps) {
 			id={project.id}>
 			<div className={styles.card}>
 				<div className={styles.cardHeader}>
-					<img
+					<Image
+						alt=""
 						className={styles.cardImage}
-						src="/placholder.png"
+						src="/placeholder.png"
 					/>
 				</div>
 				<div className={styles.cardBody}>
