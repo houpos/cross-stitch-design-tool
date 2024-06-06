@@ -5,7 +5,7 @@ import styles from './top-navigation.module.scss';
 export default function TopNavigation() {
 	return (
 		<>
-			<nav className={styles.navigationContainer}>
+			<nav className={`${styles.navigationContainer} no-print`}>
 				<div>
 					<Link
 						href="/"

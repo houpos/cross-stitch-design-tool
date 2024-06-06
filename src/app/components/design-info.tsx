@@ -1,9 +1,12 @@
 'use client';
+import Link from 'next/link';
 import { useAppContext } from '../contexts/context';
 import styles from './design-info.module.scss';
+import { usePathname } from 'next/navigation';
 
 export default function DesignInformation() {
 	const { state } = useAppContext();
+	const currentPath = usePathname();
 
 	if (!state || !state.currentProject) return null;
 	return (
@@ -14,7 +17,13 @@ export default function DesignInformation() {
 			</div>
 			<div
 				className={styles.currentColor}
-				style={{ background: state.selectedColor?.hex || 'transparent' }}></div>
+				style={{ background: state.selectedColor?.hex || 'transparent' }}
+			/>
+			<Link
+				href={`${currentPath}/instructions`}
+				className="button-with-text button">
+				Instructions
+			</Link>
 		</>
 	);
 }

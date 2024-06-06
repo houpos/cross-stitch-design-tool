@@ -1,9 +1,14 @@
+export type GridData = {
+	grid: string[][];
+	colorsUsed: { [key: string]: number };
+};
+
 export type Project = {
 	id: string;
 	title: string;
 	height: number;
 	width: number;
-	grid: string[][];
+	gridData: GridData;
 };
 
 export type ProjectDimension = {
