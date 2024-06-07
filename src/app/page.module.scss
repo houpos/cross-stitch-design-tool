@@ -1,33 +1,33 @@
 .dashboardContainer {
-	height: 75vh;
-	padding: 30px;
+  height: 75vh;
+  padding: 30px;
 
-	.noProjects {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height: 100%;
-		margin: auto 0;
+  .noProjects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: auto 0;
 
-		img {
-			width: auto;
-			height: 300px;
-			margin: 25px 0;
-			border-radius: 25px;
-		}
+    img {
+      width: auto;
+      height: 300px;
+      margin: 25px 0;
+      border-radius: 25px;
+    }
 
-		> span {
-			color: #1a759f;
-			margin-bottom: 25px;
+    > span {
+      color: #1a759f;
+      margin-bottom: 25px;
 
-			&.title {
-				font-size: 24px;
-			}
+      &.title {
+        font-size: 24px;
+      }
 
-			&.subTitle {
-				font-size: 18px;
-			}
-		}
-	}
+      &.subTitle {
+        font-size: 18px;
+      }
+    }
+  }
 }
