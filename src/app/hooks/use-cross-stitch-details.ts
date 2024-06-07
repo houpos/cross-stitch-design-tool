@@ -29,7 +29,7 @@ export default function useCrossStitchDetails() {
       setGrid(state.currentProject.gridData.grid);
 
       const colorsWithCountAndSymbol = Object.keys(
-        state.currentProject.gridData.colorsUsed,
+        state.currentProject.gridData.colorsUsed
       ).reduce(
         (acc, curr, index) => {
           acc[curr] = {
@@ -38,7 +38,7 @@ export default function useCrossStitchDetails() {
           };
           return acc;
         },
-        {} as { [key: string]: { count: number; symbol: string } },
+        {} as { [key: string]: { count: number; symbol: string } }
       );
       setGridColors(colorsWithCountAndSymbol);
     }

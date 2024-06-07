@@ -12,6 +12,6 @@ export const getAllColorsAsObject = async (): Promise<{
       acc[curr.hex] = curr;
       return acc;
     },
-    {} as { [key: string]: Color },
+    {} as { [key: string]: Color }
   );
 };
