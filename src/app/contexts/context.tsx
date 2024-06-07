@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
-'use client';
-import { Color, GridData, Project } from '@/api/types';
-import React, { createContext, useContext, useReducer } from 'react';
+"use client";
+import { Color, GridData, Project } from "@/api/types";
+import React, { createContext, useContext, useReducer } from "react";
 
 export enum ActionType {
-  ADD_PROJECT = 'ADD_PROJECT',
-  DELETE_PROJECT = 'DELETE_PROJECT',
-  EDIT_PROJECT = 'EDIT_PROJECT',
-  ADD_INITIAL = 'ADD_INITIAL',
-  SELECT_PROJECT = 'SELECT_PROJECT',
-  SELECT_COLOR = 'SELECT_COLOR',
+  ADD_PROJECT = "ADD_PROJECT",
+  DELETE_PROJECT = "DELETE_PROJECT",
+  EDIT_PROJECT = "EDIT_PROJECT",
+  ADD_INITIAL = "ADD_INITIAL",
+  SELECT_PROJECT = "SELECT_PROJECT",
+  SELECT_COLOR = "SELECT_COLOR",
 }
 
 export type AppState = {
@@ -78,7 +78,7 @@ export function useAppContext() {
   const context = useContext(AppContext);
 
   if (context === undefined) {
-    throw new Error('useAppContext must be used within ContextProvider');
+    throw new Error("useAppContext must be used within ContextProvider");
   }
 
   return context;

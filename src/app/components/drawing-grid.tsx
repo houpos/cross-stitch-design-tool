@@ -1,9 +1,9 @@
-'use client';
-import { useEffect } from 'react';
-import { ActionType, useAppContext } from '../contexts/context';
-import styles from './drawing-grid.module.scss';
-import { Project } from '@/api/types';
-import Designer from './designer';
+"use client";
+import { useEffect } from "react";
+import { ActionType, useAppContext } from "../contexts/context";
+import styles from "./drawing-grid.module.scss";
+import { Project } from "@/api/types";
+import Designer from "./designer";
 
 export default function DrawingGrid() {
   const { state, dispatch } = useAppContext();
@@ -71,7 +71,8 @@ export default function DrawingGrid() {
     <div className={styles.designGridContainer}>
       <Designer
         grid={currentProject.gridData.grid}
-        title={`${currentProject.title} design`}>
+        title={`${currentProject.title} design`}
+      >
         {(rowIdx: number, cellIdx: number) => (
           <button
             role="button"

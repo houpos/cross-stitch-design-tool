@@ -1,48 +1,51 @@
-'use client';
-import { Color, Project } from '@/api/types';
-import { getAllColorsAsObject } from '@/app/actions';
-import { useEffect, useState } from 'react';
-import { AppState, useAppContext } from '../contexts/context';
+"use client";
+import { Color, Project } from "@/api/types";
+import { getAllColorsAsObject } from "@/app/actions";
+import { useEffect, useState } from "react";
+import { AppState, useAppContext } from "../contexts/context";
 
-const symbols: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&'.split('');
+const symbols: string[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&".split("");
 
 export default function useCrossStitchDetails() {
-	const { state }: { state: AppState } = useAppContext();
-	const [allColors, setAllColors] = useState<{ [key: string]: Color }>({});
-	const [currentProject, setCurrentProject] = useState<Project>();
-	const [grid, setGrid] = useState<string[][]>();
-	const [gridColors, setGridColors] = useState<{
-		[key: string]: { count: number; symbol: string };
-	}>();
+  const { state }: { state: AppState } = useAppContext();
+  const [allColors, setAllColors] = useState<{ [key: string]: Color }>({});
+  const [currentProject, setCurrentProject] = useState<Project>();
+  const [grid, setGrid] = useState<string[][]>();
+  const [gridColors, setGridColors] = useState<{
+    [key: string]: { count: number; symbol: string };
+  }>();
 
-	useEffect(() => {
-		const updateAllColors = async () => {
-			const allColorsAsObject = await getAllColorsAsObject();
-			setAllColors(allColorsAsObject);
-		};
-		updateAllColors();
-	}, []);
+  useEffect(() => {
+    const updateAllColors = async () => {
+      const allColorsAsObject = await getAllColorsAsObject();
+      setAllColors(allColorsAsObject);
+    };
+    updateAllColors();
+  }, []);
 
-	useEffect(() => {
-		if (state?.currentProject) {
-			setCurrentProject(state.currentProject);
-			setGrid(state.currentProject.gridData.grid);
+  useEffect(() => {
+    if (state?.currentProject) {
+      setCurrentProject(state.currentProject);
+      setGrid(state.currentProject.gridData.grid);
 
-			const colorsWithCountAndSymbol = Object.keys(
-				state.currentProject.gridData.colorsUsed
-			).reduce((acc, curr, index) => {
-				acc[curr] = {
-					count: state.currentProject?.gridData.colorsUsed[curr] || 0,
-					symbol: symbols[index],
-				};
-				return acc;
-			}, {} as { [key: string]: { count: number; symbol: string } });
-			setGridColors(colorsWithCountAndSymbol);
-		}
-	}, [state?.currentProject]);
-	const getSkeinCount = (colorCount: number): number => {
-		// https://www.mismatch.co.uk/cross.htm#floss_amt
-		/* A skein of floss is approximately 8-1/2 yards long. Assume most people
+      const colorsWithCountAndSymbol = Object.keys(
+        state.currentProject.gridData.colorsUsed,
+      ).reduce(
+        (acc, curr, index) => {
+          acc[curr] = {
+            count: state.currentProject?.gridData.colorsUsed[curr] || 0,
+            symbol: symbols[index],
+          };
+          return acc;
+        },
+        {} as { [key: string]: { count: number; symbol: string } },
+      );
+      setGridColors(colorsWithCountAndSymbol);
+    }
+  }, [state?.currentProject]);
+  const getSkeinCount = (colorCount: number): number => {
+    // https://www.mismatch.co.uk/cross.htm#floss_amt
+    /* A skein of floss is approximately 8-1/2 yards long. Assume most people
 				stitch with an 18" length of floss. This gives 17 segments of 18" each per skein.
 
 				Most of the time, people stitch with more than one strand. There are 6 strands of floss per skein. So 6/strands_used is the number of pieces per segment.
@@ -55,23 +58,23 @@ export default function useCrossStitchDetails() {
 
 			stitches_per_skein = 17 * (15 / (6 / 14)) * (6 / 2);
 		*/
-		return Math.ceil(colorCount / 1785);
-	};
+    return Math.ceil(colorCount / 1785);
+  };
 
-	const getStitchCount = (colorsWithCounts: {
-		[key: string]: number;
-	}): number =>
-		Object.values(colorsWithCounts).reduce((acc, curr) => {
-			acc = acc + curr;
-			return acc;
-		}, 0);
+  const getStitchCount = (colorsWithCounts: {
+    [key: string]: number;
+  }): number =>
+    Object.values(colorsWithCounts).reduce((acc, curr) => {
+      acc = acc + curr;
+      return acc;
+    }, 0);
 
-	return {
-		getSkeinCount,
-		getStitchCount,
-		allColors,
-		currentProject,
-		grid,
-		gridColors,
-	};
+  return {
+    getSkeinCount,
+    getStitchCount,
+    allColors,
+    currentProject,
+    grid,
+    gridColors,
+  };
 }
