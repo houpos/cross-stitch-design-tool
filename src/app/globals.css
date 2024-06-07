@@ -1,82 +1,82 @@
 * {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
 body {
-	max-width: 100vw;
-	overflow-x: hidden;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
-	background: white;
-	height: 100vh;
-	width: 100vw;
+  background: white;
+  height: 100vh;
+  width: 100vw;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .button-with-text,
 .round-button {
-	border: none;
-	border-radius: 5px;
-	padding: 9px;
-	margin-right: 15px;
-	cursor: grab;
-	font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  padding: 9px;
+  margin-right: 15px;
+  cursor: grab;
+  font-size: 18px;
 }
 
 .round-button {
-	font-size: 34px;
-	padding: 0px;
-	border-radius: 100%;
-	width: 45px;
-	height: 45px;
-	display: inline-flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  font-size: 34px;
+  padding: 0px;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-with-text.submit,
 .button-with-text.button {
-	color: white;
-	background: #184e77;
+  color: white;
+  background: #184e77;
 }
 
 .button-with-text.submit:hover,
 .button-with-text.button:hover {
-	background: #0e2c44;
+  background: #0e2c44;
 }
 
 .button-with-text.cancel,
 .round-button.cancel {
-	color: #184e77;
-	background: #d9ed92;
+  color: #184e77;
+  background: #d9ed92;
 }
 
 .button-with-text.cancel:hover,
 .round-button.cancel:hover {
-	background: #b5e48c;
+  background: #b5e48c;
 }
 
 @media print {
-	.no-print,
-	.no-print * {
-		display: none !important;
-	}
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
 
-	::-webkit-scrollbar {
-		display: none;
-	}
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
-	html,
-	body {
-		overflow: visible;
-	}
+  html,
+  body {
+    overflow: visible;
+  }
 }

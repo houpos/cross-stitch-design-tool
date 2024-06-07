@@ -1,32 +1,32 @@
 .navigationContainer {
-	position: sticky;
-	top: 0;
-	width: 100%;
-	height: 60px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 15px;
-	color: white;
-	font-weight: 400;
-	font-size: 18px;
-	background: linear-gradient(to right, transparent, #1a759f) #76c893;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+  background: linear-gradient(to right, transparent, #1a759f) #76c893;
 
-	.logo {
-		width: 30px;
-		height: 30px;
-		margin-right: 15px;
-	}
+  .logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+  }
 
-	.profileContainer {
-		display: flex;
-		align-items: center;
+  .profileContainer {
+    display: flex;
+    align-items: center;
 
-		img {
-			width: 30px;
-			height: 30px;
-			margin-left: 15px;
-			border-radius: 50%;
-		}
-	}
+    img {
+      width: 30px;
+      height: 30px;
+      margin-left: 15px;
+      border-radius: 50%;
+    }
+  }
 }

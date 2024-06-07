@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function useModal() {
-	const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-	const handleModal = () => {
-		setShowModal(!showModal);
-	};
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
 
-	return {
-		showModal,
-		handleModal,
-	};
+  return {
+    showModal,
+    handleModal,
+  };
 }

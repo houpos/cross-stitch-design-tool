@@ -1,37 +1,37 @@
 .createDesignForm {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 
-	.row {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		font-size: 18px;
-		margin-bottom: 25px;
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 25px;
 
-		select,
-		option,
-		input {
-			height: 35px;
-			line-height: 2;
-			font-size: 16px;
-			border: 1px solid lightgray;
-			border-radius: 5px;
-		}
+    select,
+    option,
+    input {
+      height: 35px;
+      line-height: 2;
+      font-size: 16px;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+    }
 
-		select {
-			background: white;
-			padding: 5px;
-			min-width: 150px;
-		}
-	}
+    select {
+      background: white;
+      padding: 5px;
+      min-width: 150px;
+    }
+  }
 
-	.buttonContainer {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-top: 25px;
-	}
+  .buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+  }
 }
