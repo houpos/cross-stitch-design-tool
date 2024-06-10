@@ -42,11 +42,11 @@ export default function Instructions() {
       <div className={styles.designInfo}>
         <h2>Design Information</h2>
         <ul>
-          <li>
+          <li data-cy="finalProjectDimensions">
             Dimensions (W x H): {currentProject.width}in x{" "}
             {currentProject.height}in
           </li>
-          <li>
+          <li data-cy="finalProjectStitchCount">
             Stitch count: {getStitchCount(currentProject.gridData.colorsUsed)}
           </li>
         </ul>
@@ -66,7 +66,7 @@ export default function Instructions() {
       </div>
       <div className={styles.floss}>
         <h2>Floss &amp; Colors</h2>
-        <table>
+        <table data-cy="flossCalculations">
           <thead>
             <tr>
               <th>Symbol</th>

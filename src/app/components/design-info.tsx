@@ -16,12 +16,14 @@ export default function DesignInformation() {
         {state.currentProject.height} x {state.currentProject.width}
       </div>
       <div
+        data-cy="selectedColor"
         className={styles.currentColor}
         style={{ background: state.selectedColor?.hex || "transparent" }}
       />
       <Link
         href={`${currentPath}/instructions`}
         className="button-with-text button"
+        data-cy="generateInstructions"
       >
         Instructions
       </Link>

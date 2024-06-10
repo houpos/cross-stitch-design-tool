@@ -11,6 +11,7 @@ export default function ColorSelector({ colors }: { colors: Color[] }) {
         <button
           className={styles.color}
           id={color.id}
+          data-cy="color"
           key={color.id}
           aria-label={color.name}
           role="button"
