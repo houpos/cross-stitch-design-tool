@@ -26,6 +26,7 @@ export default function Instructions() {
           className={`round-button ${styles.print} no-print`}
           role="button"
           aria-label="print cross stitch instructions"
+          data-cy="print"
           onClick={() => window.print()}
         >
           <MdPrint />

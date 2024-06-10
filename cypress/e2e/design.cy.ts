@@ -1,8 +1,9 @@
 describe("Begin new project spec", () => {
-  xit("creates a new design", () => {
+  beforeEach(() => {
     // visit project page
     cy.visit("http://localhost:3000/projects/2");
-
+  })
+  it("creates a new design", () => {
     // select a color
     cy.get('[data-cy="color"]').eq(3).click();
 
@@ -19,9 +20,6 @@ describe("Begin new project spec", () => {
   });
 
   it("produces instructions", () => {
-    // visit project page
-    cy.visit("http://localhost:3000/projects/2");
-
     // select a color
     cy.get('[data-cy="color"]').eq(4).click();
 
@@ -47,5 +45,8 @@ describe("Begin new project spec", () => {
     );
     cy.get('[data-cy="flossCalculations"]').find("td")
       .should("have.length", 5);
+
+    // print
+    cy.get('[data-cy="print"]').should("be.visible");
   })
 });
