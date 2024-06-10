@@ -45,6 +45,7 @@ export default function CreateDesignForm({
           type="text"
           id="projectTitle"
           name="projectTitle"
+          data-cy="projectTitle"
           required
           minLength={4}
           maxLength={20}
@@ -60,6 +61,7 @@ export default function CreateDesignForm({
           required
           id="projectDimensions"
           name="projectDimensions"
+          data-cy="projectDimensions"
           value={dimensionsIndex}
           onChange={(e) => setDimensionsIndex(parseInt(e.target?.value))}
         >
@@ -73,6 +75,7 @@ export default function CreateDesignForm({
       <div className={styles.buttonContainer}>
         <button
           className="button-with-text submit"
+          data-cy="submit"
           type="submit"
           onClick={() => prepareProject()}
         >
@@ -81,6 +84,7 @@ export default function CreateDesignForm({
         <button
           className="button-with-text cancel"
           type="reset"
+          data-cy="cancel"
           onClick={() => handleClose()}
         >
           Cancel
