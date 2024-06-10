@@ -4,7 +4,8 @@ import "./globals.css";
 import { ContextProvider } from "./contexts/context";
 import TopNavigation from "./components/top-navigation";
 import { ModalProvider } from "./contexts/modal-context";
-import React from "react";
+import React, { Suspense } from "react";
+import { NavigationEvents } from "./components/navigation-events";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,9 @@ export default function RootLayout({
           <ModalProvider>
             <TopNavigation />
             {children}
+            <Suspense fallback={null}>
+              <NavigationEvents />
+            </Suspense>
           </ModalProvider>
         </ContextProvider>
       </body>

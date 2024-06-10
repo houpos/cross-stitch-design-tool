@@ -1,6 +1,6 @@
 import { Project } from "./types";
 
-const allProjects: Project[] = [
+export const allProjects: Project[] = [
   {
     id: "1",
     title: "First Project",
