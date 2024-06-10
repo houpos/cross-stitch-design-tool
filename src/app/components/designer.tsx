@@ -8,7 +8,7 @@ type DesignerProps = {
 
 export default function Designer({ grid, title, children }: DesignerProps) {
   return (
-    <table className={styles.designTable}>
+    <table className={styles.designTable} data-cy="designTable">
       {title && <caption>{title}</caption>}
       <tbody>
         {grid.map((row, rowIdx) => {

@@ -1,7 +1,8 @@
 "use server";
 
 import { getDmcColors } from "@/api/colors";
-import { Color } from "@/api/types";
+import { allProjects } from "@/api/projects";
+import { Color, Project } from "@/api/types";
 
 export const getAllColorsAsObject = async (): Promise<{
   [key: string]: Color;
@@ -14,4 +15,8 @@ export const getAllColorsAsObject = async (): Promise<{
     },
     {} as { [key: string]: Color }
   );
+};
+
+export const getAllProjects = async (): Promise<Project[]> => {
+  return allProjects;
 };

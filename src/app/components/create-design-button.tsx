@@ -9,6 +9,7 @@ export default function CreateDesignButton() {
       className="button-with-text button"
       type="button"
       onClick={() => handleModal()}
+      data-cy="create"
     >
       Create a design
     </button>

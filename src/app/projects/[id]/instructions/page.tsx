@@ -26,6 +26,7 @@ export default function Instructions() {
           className={`round-button ${styles.print} no-print`}
           role="button"
           aria-label="print cross stitch instructions"
+          data-cy="print"
           onClick={() => window.print()}
         >
           <MdPrint />
@@ -42,11 +43,11 @@ export default function Instructions() {
       <div className={styles.designInfo}>
         <h2>Design Information</h2>
         <ul>
-          <li>
+          <li data-cy="finalProjectDimensions">
             Dimensions (W x H): {currentProject.width}in x{" "}
             {currentProject.height}in
           </li>
-          <li>
+          <li data-cy="finalProjectStitchCount">
             Stitch count: {getStitchCount(currentProject.gridData.colorsUsed)}
           </li>
         </ul>
@@ -76,7 +77,7 @@ export default function Instructions() {
               <th># Skeins*</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody data-cy="flossCalculations">
             {Object.keys(gridColors).map((hex, index) => (
               <tr key={index}>
                 <td>{gridColors[hex].symbol}</td>

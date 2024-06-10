@@ -24,6 +24,7 @@ export default function Modal() {
           <button
             className="round-button cancel"
             type="button"
+            data-cy="cancel"
             onClick={() => handleModal()}
           >
             <MdClose />

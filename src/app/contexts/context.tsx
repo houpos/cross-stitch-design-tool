@@ -13,17 +13,20 @@ export enum ActionType {
 }
 
 export type AppState = {
+  allProjects: Project[];
   currentProject: Project | null;
   selectedColor: Color | null;
 };
 
 type Action =
+  { type: ActionType.ADD_INITIAL; payload: Project[] }
   | { type: ActionType.ADD_PROJECT; payload: Project }
   | { type: ActionType.SELECT_PROJECT; payload: Project }
   | { type: ActionType.EDIT_PROJECT; payload: GridData }
   | { type: ActionType.SELECT_COLOR; payload: Color };
 
 const initialState: AppState = {
+  allProjects: [],
   currentProject: null,
   selectedColor: null,
 };
@@ -31,7 +34,17 @@ const initialState: AppState = {
 const reducer = (state: AppState, action: Action): AppState => {
   if (!action) return state;
   switch (action.type) {
+    case ActionType.ADD_INITIAL:
+      return {
+        ...state,
+        allProjects: action.payload,
+      }
     case ActionType.ADD_PROJECT:
+      return {
+        ...state,
+        currentProject: action.payload,
+        allProjects: [...state.allProjects, action.payload],
+      };
     case ActionType.SELECT_PROJECT:
       return {
         ...state,
