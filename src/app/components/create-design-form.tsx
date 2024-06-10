@@ -25,7 +25,10 @@ export default function CreateDesignForm({
       title,
       height: availableProjectGridDimensions[dimensionsIndex].height,
       width: availableProjectGridDimensions[dimensionsIndex].width,
-      grid: [],
+      gridData: {
+        grid: [],
+        colorsUsed: {},
+      },
     };
 
     dispatch({ type: ActionType.ADD_PROJECT, payload: project });
