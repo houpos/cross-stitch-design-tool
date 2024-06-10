@@ -66,7 +66,7 @@ export default function Instructions() {
       </div>
       <div className={styles.floss}>
         <h2>Floss &amp; Colors</h2>
-        <table data-cy="flossCalculations">
+        <table>
           <thead>
             <tr>
               <th>Symbol</th>
@@ -76,7 +76,7 @@ export default function Instructions() {
               <th># Skeins*</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody data-cy="flossCalculations">
             {Object.keys(gridColors).map((hex, index) => (
               <tr key={index}>
                 <td>{gridColors[hex].symbol}</td>
