@@ -27,7 +27,7 @@ export function NavigationEvents() {
       );
       dispatch({ type: ActionType.ADD_PROJECT, payload: currentProject[0] });
     }
-  }, [pathname, state?.allProjects, state?.currentProject]);
+  }, [pathname, state?.allProjects, state?.currentProject, dispatch]);
 
   return null;
 }

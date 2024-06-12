@@ -16,7 +16,7 @@ export default function Card({ project }: CardProps) {
     router.push(`projects/${project.id}`);
   };
   return (
-    <button role="link" onClick={() => handleClick()} id={project.id}>
+    <button role="link" onClick={() => handleClick()} id={project.id} data-testid="card">
       <div className={styles.card}>
         <div className={styles.cardHeader}>
           <img alt="" className={styles.cardImage} src="/placeholder.png" />
