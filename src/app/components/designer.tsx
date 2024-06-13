@@ -10,6 +10,11 @@ export default function Designer({ grid, title, children }: DesignerProps) {
   return (
     <table className={styles.designTable} data-cy="designTable">
       {title && <caption>{title}</caption>}
+      <thead className="visually-hidden">
+        <tr>
+          <th>clickable cells</th>
+        </tr>
+      </thead>
       <tbody>
         {grid.map((row, rowIdx) => {
           return (

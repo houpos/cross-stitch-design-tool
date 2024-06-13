@@ -1,12 +1,22 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ActionType, useAppContext } from "../contexts/context";
 import styles from "./drawing-grid.module.scss";
-import { Project } from "@/api/types";
+import { Color, Project } from "@/api/types";
 import Designer from "./designer";
+import { getAllColorsAsObject } from "../actions";
 
 export default function DrawingGrid() {
   const { state, dispatch } = useAppContext();
+  const [allColors, setAllColors] = useState<{ [key: string]: Color }>({});
+
+  useEffect(() => {
+    const updateAllColors = async () => {
+      const allColorsAsObject = await getAllColorsAsObject();
+      setAllColors(allColorsAsObject);
+    };
+    updateAllColors();
+  }, []);
 
   useEffect(() => {
     if (
@@ -73,10 +83,10 @@ export default function DrawingGrid() {
         grid={currentProject.gridData.grid}
         title={`${currentProject.title} design`}
       >
-        {(rowIdx: number, cellIdx: number) => (
+        {(rowIdx: number, cellIdx: number, cell: string) => (
           <button
             data-cy="colorTheGrid"
-            aria-label={`cell for row ${rowIdx}, column ${cellIdx}`}
+            aria-label={`row ${rowIdx}, column ${cellIdx}. ${cell ? `Has color ${allColors[cell]?.name}` : "Has no color"} `}
             onClick={() => handleCellSelection(rowIdx, cellIdx)}
           />
         )}
