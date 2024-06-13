@@ -86,7 +86,7 @@ export default function DrawingGrid() {
         {(rowIdx: number, cellIdx: number, cell: string) => (
           <button
             data-cy="colorTheGrid"
-            aria-label={`row ${rowIdx}, column ${cellIdx}. ${cell ? `Has color ${allColors[cell]?.name}` : "Has no color"} `}
+            aria-label={`${cell ? `${allColors[cell]?.name}` : "No color"}`}
             onClick={() => handleCellSelection(rowIdx, cellIdx)}
           />
         )}
