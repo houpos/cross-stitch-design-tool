@@ -15,10 +15,10 @@ export default async function CurrentProject() {
         <DesignInformation />
       </div>
       <div className={styles.creationContainer}>
-        <DrawingGrid />
         <Suspense fallback={<div>Loading ... </div>}>
           <ColorSelector colors={dmcColors} />
         </Suspense>
+        <DrawingGrid />
       </div>
     </main>
   );
