@@ -4,12 +4,12 @@ describe("Begin new project spec", () => {
     cy.get(`[data-cy="create"]`).first().click();
   });
 
-  xit("opens and closes the modal", () => {
+  it("opens and closes the modal", () => {
     cy.get(`[data-cy="cancel"]`).first().click();
     cy.get("dialog").should("not.have.attr", "open");
   });
 
-  xit("creates a new design", () => {
+  it("creates a new design", () => {
     // fill out form
     cy.get(`[data-cy="projectTitle"]`).type("{selectAll}This is a test");
     cy.get(`[data-cy="projectDimensions"]`).select("4 x 4");
