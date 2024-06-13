@@ -10,7 +10,7 @@ export default async function CurrentProject() {
   const dmcColors: Color[] = await getDmcColors();
 
   return (
-    <section className={styles.designContainer}>
+    <main className={styles.designContainer}>
       <div className={styles.infoContainer}>
         <DesignInformation />
       </div>
@@ -20,6 +20,6 @@ export default async function CurrentProject() {
           <ColorSelector colors={dmcColors} />
         </Suspense>
       </div>
-    </section>
+    </main>
   );
 }
