@@ -25,6 +25,7 @@ export default function Modal() {
             className="round-button cancel"
             type="button"
             data-cy="cancel"
+            aria-label="cancel and close modal"
             onClick={() => handleModal()}
           >
             <MdClose />
