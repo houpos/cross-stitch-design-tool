@@ -65,6 +65,12 @@ a {
   background: #b5e48c;
 }
 
+.button-with-text:disabled,
+.button-with-text:disabled:hover {
+  cursor: not-allowed;
+  background: lightgray;
+}
+
 @media print {
   .no-print,
   .no-print * {

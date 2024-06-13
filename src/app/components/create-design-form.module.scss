@@ -19,6 +19,10 @@
       font-size: 16px;
       border: 1px solid lightgray;
       border-radius: 5px;
+
+      &:invalid {
+        background: rgba(255, 0, 0, 0.267);
+      }
     }
 
     select {

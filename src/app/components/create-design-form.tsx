@@ -18,6 +18,7 @@ export default function CreateDesignForm({
   const router = useRouter();
   const [title, setTitle] = useState<string>("Your project title");
   const [dimensionsIndex, setDimensionsIndex] = useState(0);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const prepareProject = () => {
     const project: Project = {
@@ -47,12 +48,17 @@ export default function CreateDesignForm({
           name="projectTitle"
           data-cy="projectTitle"
           required
-          minLength={4}
+          minLength={1}
           maxLength={20}
           size={20}
-          pattern="[a-zA-Z]\s"
+          pattern="[a-zA-Z0-9_ ]*"
           value={title}
-          onChange={(e) => setTitle(e.target?.value)}
+          onChange={(e) => {
+            if (e.target?.validity) {
+              setIsFormValid(e.target.validity.valid);
+            }
+            setTitle(e.target?.value);
+          }}
         />
       </div>
       <div className={styles.row}>
@@ -77,6 +83,7 @@ export default function CreateDesignForm({
           className="button-with-text submit"
           data-cy="submit"
           type="submit"
+          disabled={!isFormValid}
           onClick={() => prepareProject()}
         >
           Create
