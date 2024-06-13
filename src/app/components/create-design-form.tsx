@@ -42,7 +42,6 @@ export default function CreateDesignForm({
       <div className={styles.row}>
         <label htmlFor="projectTitle">Title</label>
         <input
-          autoFocus
           type="text"
           id="projectTitle"
           name="projectTitle"

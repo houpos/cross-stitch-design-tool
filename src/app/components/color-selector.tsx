@@ -14,7 +14,6 @@ export default function ColorSelector({ colors }: { colors: Color[] }) {
           data-cy="color"
           key={color.id}
           aria-label={color.name}
-          role="button"
           style={{ background: color.hex }}
           onClick={() =>
             dispatch({ type: ActionType.SELECT_COLOR, payload: color })

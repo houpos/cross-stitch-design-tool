@@ -24,7 +24,6 @@ export default function Instructions() {
         </span>
         <button
           className={`round-button ${styles.print} no-print`}
-          role="button"
           aria-label="print cross stitch instructions"
           data-cy="print"
           onClick={() => window.print()}
