@@ -17,10 +17,17 @@ export default function Modal() {
     }
   }, [showModal]);
   return (
-    <dialog ref={dialogRef} className={styles.createDesignModal}>
+    // eslint-disable-next-line jsx-a11y/no-redundant-roles
+    <dialog
+      role="dialog"
+      aria-modal="true"
+      ref={dialogRef}
+      className={styles.createDesignModal}
+      aria-labelledby="title"
+    >
       <div>
         <div className={styles.top}>
-          <span>Create a design</span>
+          <h1 id="title">Create a design</h1>
           <button
             className="round-button cancel"
             type="button"
