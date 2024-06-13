@@ -13,7 +13,6 @@ export default function TopNavigation() {
         </div>
         <div className={styles.profileContainer}>
           <CreateDesignButton />
-          <img alt="" src="/" />
         </div>
       </nav>
     </>
