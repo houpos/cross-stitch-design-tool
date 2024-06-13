@@ -7,6 +7,7 @@ export default async function Home() {
   const allProjects = await getAllProjects();
   return (
     <main className={styles.dashboardContainer}>
+      <h1 className="visually-hidden">Dashboard</h1>
       {allProjects.length === 0 ? (
         <div className={styles.noProjects}>
           <img src="/bear-with-hoop.jpg" alt="" />

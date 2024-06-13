@@ -16,7 +16,7 @@ export default function Instructions() {
 
   if (!currentProject || !grid || !gridColors) return null;
   return (
-    <div className={styles.instructionContainer}>
+    <main className={styles.instructionContainer}>
       <div className={styles.titleContainer}>
         <h1>{currentProject.title}</h1>
         <span className={styles.subTitle}>
@@ -24,14 +24,13 @@ export default function Instructions() {
         </span>
         <button
           className={`round-button ${styles.print} no-print`}
-          role="button"
           aria-label="print cross stitch instructions"
           data-cy="print"
           onClick={() => window.print()}
         >
           <MdPrint />
         </button>
-        <hr className={styles.printOnly} />
+        <hr className={styles.printOnly} aria-hidden={true} />
       </div>
       <div className={styles.designGridContainer}>
         <Designer grid={grid}>
@@ -99,6 +98,6 @@ export default function Instructions() {
           14 count fabric
         </span>
       </div>
-    </div>
+    </main>
   );
 }

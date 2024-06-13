@@ -10,16 +10,16 @@ export default async function CurrentProject() {
   const dmcColors: Color[] = await getDmcColors();
 
   return (
-    <section className={styles.designContainer}>
+    <main className={styles.designContainer}>
       <div className={styles.infoContainer}>
         <DesignInformation />
       </div>
       <div className={styles.creationContainer}>
-        <DrawingGrid />
         <Suspense fallback={<div>Loading ... </div>}>
           <ColorSelector colors={dmcColors} />
         </Suspense>
+        <DrawingGrid />
       </div>
-    </section>
+    </main>
   );
 }
