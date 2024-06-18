@@ -8,6 +8,7 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - uses: actions/checkout@v4
       - run: |
+          npm install
           npm run lint
           npm run test
           npm run test:e2e
