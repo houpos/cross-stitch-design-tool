@@ -1,0 +1,13 @@
+name: Run Lint and Unit Tests
+run-name: Testing and linting ${{ github.repository }} 🚀
+on: [push]
+jobs:
+  unit_test-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - uses: actions/checkout@v4
+      - run: |
+          npm install
+          npm run lint
+          npm run test
