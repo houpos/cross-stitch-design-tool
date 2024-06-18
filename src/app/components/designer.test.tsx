@@ -25,8 +25,10 @@ describe("Design Grid component", () => {
         {testChild}
       </Designer>
     );
-    expect(container.querySelectorAll("tr").length).toEqual(4);
+    expect(container.querySelectorAll("tbody tr").length).toEqual(4);
     expect(container.querySelectorAll("td").length).toEqual(16);
-    expect(container.querySelectorAll("td > div")[3]).toHaveTextContent('0 - 3');
+    expect(container.querySelectorAll("td > div")[3]).toHaveTextContent(
+      "0 - 3"
+    );
   });
 });
