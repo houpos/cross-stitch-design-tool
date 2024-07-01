@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { db } from "@vercel/postgres";
+import { VercelPoolClient, db } from "@vercel/postgres";
 import {
   companies,
   flossColors,
@@ -9,9 +9,7 @@ import {
   users,
 } from "@/data/seed";
 
-const client = await db.connect();
-
-async function seedUsers() {
+async function seedUsers(client: VercelPoolClient) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     // Create the "users" table if it doesn't exist
@@ -50,7 +48,7 @@ async function seedUsers() {
   }
 }
 
-async function seedCompanies() {
+async function seedCompanies(client: VercelPoolClient) {
   try {
     // Create the "companies" table if it doesn't exist
     const createTable = await client.sql`
@@ -87,7 +85,7 @@ async function seedCompanies() {
   }
 }
 
-async function seedProjectDimensions() {
+async function seedProjectDimensions(client: VercelPoolClient) {
   try {
     // Create the "projectDimensions" table if it doesn't exist
     const createTable = await client.sql`
@@ -124,7 +122,7 @@ async function seedProjectDimensions() {
   }
 }
 
-async function seedFlossColors() {
+async function seedFlossColors(client: VercelPoolClient) {
   try {
     // Create the "flossColors" table if it doesn't exist
     const createTable = await client.sql`
@@ -162,7 +160,7 @@ async function seedFlossColors() {
   }
 }
 
-async function seedProjects() {
+async function seedProjects(client: VercelPoolClient) {
   try {
     // Create the "projects" table if it doesn't exist
     const createTable = await client.sql`
@@ -198,7 +196,7 @@ async function seedProjects() {
   }
 }
 
-async function seedColorsUsed() {
+async function seedColorsUsed(client: VercelPoolClient) {
   try {
     // Create the "flossColorsUsed" table if it doesn't exist
     const createTable = await client.sql`
@@ -238,18 +236,21 @@ async function seedColorsUsed() {
 
 export async function GET() {
   try {
+    const client: VercelPoolClient = await db.connect();
     await client.sql`BEGIN`;
-    await seedUsers();
-    await seedCompanies();
-    await seedProjectDimensions();
-    await seedFlossColors();
-    await seedProjects();
-    await seedColorsUsed();
+    await seedUsers(client);
+    await seedCompanies(client);
+    await seedProjectDimensions(client);
+    await seedFlossColors(client);
+    await seedProjects(client);
+    await seedColorsUsed(client);
     await client.sql`COMMIT`;
 
     return Response.json({ message: "Database seeded successfully" });
   } catch (error) {
-    await client.sql`ROLLBACK`;
-    return Response.json({ error }, { status: 500 });
+    return Response.json(
+      { error, message: "Database seed error" },
+      { status: 500 }
+    );
   }
 }
