@@ -235,6 +235,7 @@ async function seedColorsUsed(client: VercelPoolClient) {
 }
 
 export async function GET() {
+  console.log("here");
   try {
     const client: VercelPoolClient = await db.connect();
     await client.sql`BEGIN`;
