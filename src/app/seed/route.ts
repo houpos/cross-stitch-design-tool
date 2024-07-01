@@ -53,20 +53,19 @@ async function seedCompanies(client: VercelPoolClient) {
     // Create the "companies" table if it doesn't exist
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS companies (
-        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
-        productType VARCHAR(100) NOT NULL,
-        website VARCHAR(255),
+        producttype VARCHAR(100) NOT NULL,
+        website VARCHAR(255)
       );
     `;
 
     console.log(`Created "companies" table`);
 
-    // Insert data into the "projects" table
     const insertedCompanies = await Promise.all(
       companies.map(async (company) => {
         return client.sql`
-        INSERT INTO companies (id, name, productType, website)
+        INSERT INTO companies (id, name, producttype, website)
         VALUES (${company.id}, ${company.name}, ${company.productType}, ${company.website})
         ON CONFLICT (id) DO NOTHING;
       `;
@@ -89,85 +88,89 @@ async function seedProjectDimensions(client: VercelPoolClient) {
   try {
     // Create the "projectDimensions" table if it doesn't exist
     const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS projectDimensions (
-        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      CREATE TABLE IF NOT EXISTS projectdimensions (
+        id SERIAL PRIMARY KEY,
         height INT NOT NULL,
         width INT NOT NULL,
-        display VARCHAR(255),
+        display VARCHAR(255)
       );
     `;
 
-    console.log(`Created "projectDimensions" table`);
+    console.log(`Created "projectdimensions" table`);
 
     // Insert data into the "projects" table
     const insertedProjectDimensions = await Promise.all(
       projectDimensions.map(async (dimensions) => {
         return client.sql`
-        INSERT INTO companies (id, height, width, display)
+        INSERT INTO projectdimensions (id, height, width, display)
         VALUES (${dimensions.id}, ${dimensions.height}, ${dimensions.width}, ${dimensions.display})
         ON CONFLICT (id) DO NOTHING;
       `;
       })
     );
 
-    console.log(`Seeded ${insertedProjectDimensions.length} copmanies`);
+    console.log(`Seeded ${insertedProjectDimensions.length} projectdimensions`);
 
     return {
       createTable,
-      companies: insertedProjectDimensions,
+      projectDimensions: insertedProjectDimensions,
     };
   } catch (error) {
-    console.error("Error seeding companies:", error);
+    console.error("Error seeding projectdimensions:", error);
     throw error;
   }
 }
 
 async function seedFlossColors(client: VercelPoolClient) {
   try {
-    // Create the "flossColors" table if it doesn't exist
+    // Create the "flosscolors" table if it doesn't exist
     const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS flossColors (
-        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-        companyIdentifier VARCHAR(255) NOT NULL,
+      CREATE TABLE IF NOT EXISTS flosscolors (
+        id SERIAL PRIMARY KEY,
+        companyidentifier VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
         hex VARCHAR(10) NOT NULL,
-        companyId INT FOREIGN KEY REFERENCES companies (id)
+        companyid INT,
+        FOREIGN KEY (companyid) REFERENCES companies(id)
       );
     `;
 
-    console.log(`Created "flossColors" table`);
+    console.log(`Created "flosscolors" table`);
 
     // Insert data into the "projects" table
     const insertedFlossColors = await Promise.all(
       flossColors.map(async (color) => {
         return client.sql`
-        INSERT INTO flossColors (id, companyIdentifier, name, hex, companyId)
+        INSERT INTO flosscolors (id, companyidentifier, name, hex, companyid)
         VALUES (${color.id}, ${color.companyIdentifier}, ${color.name}, ${color.hex}, ${color.companyId})
         ON CONFLICT (id) DO NOTHING;
       `;
       })
     );
 
-    console.log(`Seeded ${insertedFlossColors.length} flossColors`);
+    console.log(`Seeded ${insertedFlossColors.length} flosscolors`);
 
     return {
       createTable,
       flossColors: insertedFlossColors,
     };
   } catch (error) {
-    console.error("Error seeding flossColors:", error);
+    console.error("Error seeding flosscolors:", error);
     throw error;
   }
 }
 
 async function seedProjects(client: VercelPoolClient) {
   try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     // Create the "projects" table if it doesn't exist
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS projects (
-        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        id SERIAL PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
-        dimensionId INT NOT NULL,
+        dimensionid INT NOT NULL,
+        creatorid UUID,
+        FOREIGN KEY (creatorid) REFERENCES users(id)
       );
     `;
 
@@ -177,8 +180,8 @@ async function seedProjects(client: VercelPoolClient) {
     const insertedProjects = await Promise.all(
       projects.map(async (project) => {
         return client.sql`
-        INSERT INTO projects (id, title, dimensionId)
-        VALUES (${project.id}, ${project.title}, ${project.dimensionsId})
+        INSERT INTO projects (title, dimensionid, creatorid)
+        VALUES (${project.title}, ${project.dimensionsId}, ${project.creatorId})
         ON CONFLICT (id) DO NOTHING;
       `;
       })
@@ -198,54 +201,51 @@ async function seedProjects(client: VercelPoolClient) {
 
 async function seedColorsUsed(client: VercelPoolClient) {
   try {
-    // Create the "flossColorsUsed" table if it doesn't exist
+    // Create the "flosscolorsused" table if it doesn't exist
     const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS flossColorsUsed (
-        projectId INT FOREIGN KEY REFERENCES projects (id),
-        flossColorId INT FOREIGN KEY REFERENCES flossColors (id),
-        row INT NOT NULL,
-        column INT NOT NULL,
-        CONSTRAINT colorsUsedId PRIMARY KEY (projectId, flossColorId),
+      CREATE TABLE IF NOT EXISTS flosscolorsused (
+        projectid INT NOT NULL,
+        flosscolorid INT NOT NULL,
+        rowid INT NOT NULL,
+        columnid INT NOT NULL,
+        FOREIGN KEY (projectid) REFERENCES projects(id),
+        FOREIGN KEY (flosscolorid) REFERENCES flosscolors(id),
+        PRIMARY KEY (projectid, flosscolorid, rowid, columnid)
       );
     `;
 
-    console.log(`Created "flossColorsUsed" table`);
+    console.log(`Created "flosscolorsused" table`);
 
     // Insert data into the "projects" table
     const insertedFlossColorsUsed = await Promise.all(
       flossColorsUsed.map(async (usedColor) => {
         return client.sql`
-        INSERT INTO flossColorsUsed (projectId, flossColorId, row, column)
-        VALUES (${usedColor.projectId}, ${usedColor.flossColorId}, ${usedColor.row}, ${usedColor.column} )
-        ON CONFLICT (id) DO NOTHING;
-      `;
+        INSERT INTO flosscolorsused (projectid, flosscolorid, rowid, columnid)
+        VALUES (${usedColor.projectId}, ${usedColor.flossColorId}, ${usedColor.rowId}, ${usedColor.columnId} );`;
       })
     );
 
-    console.log(`Seeded ${insertedFlossColorsUsed.length} flossColorsUsed`);
+    console.log(`Seeded ${insertedFlossColorsUsed.length} flosscolorsused`);
 
     return {
       createTable,
       usedFlossColors: insertedFlossColorsUsed,
     };
   } catch (error) {
-    console.error("Error seeding flossColorsUsed:", error);
+    console.error("Error seeding flosscolorsused:", error);
     throw error;
   }
 }
 
 export async function GET() {
-  console.log("here");
   try {
     const client: VercelPoolClient = await db.connect();
-    await client.sql`BEGIN`;
     await seedUsers(client);
     await seedCompanies(client);
     await seedProjectDimensions(client);
     await seedFlossColors(client);
     await seedProjects(client);
     await seedColorsUsed(client);
-    await client.sql`COMMIT`;
 
     return Response.json({ message: "Database seeded successfully" });
   } catch (error) {

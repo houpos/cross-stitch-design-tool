@@ -17,8 +17,18 @@ export const companies = [
 ];
 
 export const projectDimensions = [
-  { id: 1, height: 2, width: 2, display: "2 x 2" },
-  { id: 2, height: 4, width: 4, display: "4 x 4" },
+  {
+    id: 1,
+    height: 2,
+    width: 2,
+    display: "2 x 2",
+  },
+  {
+    id: 2,
+    height: 4,
+    width: 4,
+    display: "4 x 4",
+  },
 ];
 
 export const flossColors = [
@@ -57,13 +67,13 @@ export const projects = [
     id: 1,
     title: "First Project",
     dimensionsId: 1,
-    creatorId: 1,
+    creatorId: "410544b2-4001-4271-9855-fec4b6a6442a",
   },
   {
     id: 2,
     title: "Second Project",
     dimensionsId: 2,
-    creatorId: 1,
+    creatorId: "410544b2-4001-4271-9855-fec4b6a6442a",
   },
 ];
 
@@ -71,25 +81,25 @@ export const flossColorsUsed = [
   {
     projectId: 1,
     flossColorId: 3,
-    row: 1,
-    column: 1,
+    rowId: 1,
+    columnId: 1,
   },
   {
     projectId: 1,
     flossColorId: 1,
-    row: 1,
-    column: 2,
+    rowId: 1,
+    columnId: 2,
   },
   {
     projectId: 1,
     flossColorId: 2,
-    row: 1,
-    column: 3,
+    rowId: 1,
+    columnId: 3,
   },
   {
     projectId: 1,
     flossColorId: 3,
-    row: 1,
-    column: 4,
+    rowId: 1,
+    columnId: 4,
   },
 ];
